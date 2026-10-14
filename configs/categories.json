@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "categories": [
+    "Kernel", "Network", "File Management", "Game Tools", "Media",
+    "System Utility", "Debug & SDK", "Linux", "Activation & Spoof", "Unknown"
+  ],
+  "ffpfsc_types": ["compressor_tool", "helper_elf", "compressed_file"]
+}

@@ -1,0 +1,5 @@
+{
+  "schema_version": 1,
+  "comment": "Source definitions for pluz_check.py to scan. Each source maps an identity+variant to a GitHub release or raw URL.",
+  "sources": []
+}
