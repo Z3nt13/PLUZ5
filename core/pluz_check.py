@@ -52,6 +52,13 @@ def main(argv=None):
 
     all_ok = True
 
+    # Runtime folders hold generated files and are empty (so absent) in a fresh
+    # GitHub web upload: create them, additive and harmless.
+    for d in ["payloads", "pkgs", "ffpfsc", "manifests", "manifests/split", "logs"]:
+        if not (root / d).is_dir():
+            (root / d).mkdir(parents=True, exist_ok=True)
+            (root / d / ".gitkeep").touch()
+            log.line(f"[FIXED] created missing folder: {d}/")
     for d in ["configs", "data", "payloads", "pkgs", "ffpfsc", "manifests", "manifests/split", "core", "web", "logs"]:
         all_ok &= check(log, f"directory: {d}", (root / d).is_dir())
 
@@ -63,15 +70,17 @@ def main(argv=None):
         all_ok &= check(log, "config files parse", False, str(e))
 
     env = load_env(root)
+    # GH_TOKEN is optional (Actions and a signed-in git need none); the other
+    # three can come from .env or from the environment (GitHub Actions).
     env_file_exists = (root / ".env").exists()
-    all_ok &= check(log, ".env file present", env_file_exists,
-                     "run: cp .env.example .env  (then fill it in)" if not env_file_exists else "")
-    if env_file_exists:
-        missing = require_env(env, ["GH_TOKEN", "GH_USER", "GH_REPO", "GH_BRANCH"])
-        all_ok &= check(log, ".env has required keys", not missing,
-                         f"missing: {', '.join(missing)}" if missing else "")
+    missing = require_env(env, ["GH_USER", "GH_REPO", "GH_BRANCH"])
+    all_ok &= check(log, "GH_USER / GH_REPO / GH_BRANCH set (.env or environment)", not missing,
+                     (f"missing: {', '.join(missing)} -- copy .env.example to .env and fill it in") if missing else "")
 
     gi = root / ".gitignore"
+    if not gi.exists():
+        gi.write_text("# Secrets -- never commit\n.env\nlogs/*\n!logs/.gitkeep\n__pycache__/\n*.pyc\n*.tmp\n_backups/\n", encoding="utf-8")
+        log.line("[FIXED] created missing .gitignore (excludes .env)")
     gi_ok = gi.exists() and ".env" in gi.read_text(encoding="utf-8")
     all_ok &= check(log, ".gitignore excludes .env", gi_ok)
 

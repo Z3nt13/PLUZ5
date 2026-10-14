@@ -1,0 +1,67 @@
+name: PLUZ5 Update
+
+# Fetch new upstream releases, rebuild every manifest, validate, commit.
+# Runs daily, on demand (Actions tab -> Run workflow), and when you edit
+# configs/ or drop files into payloads/ pkgs/ ffpfsc/ by hand.
+on:
+  schedule:
+    - cron: '17 3 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'payloads/**'
+      - 'pkgs/**'
+      - 'ffpfsc/**'
+      - 'configs/**'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pluz5-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    env:
+      GH_USER: ${{ github.repository_owner }}
+      GH_REPO: ${{ github.event.repository.name }}
+      GH_BRANCH: ${{ github.ref_name }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # Only this step touches upstream. It is add-only and skips anything
+      # ambiguous (see core/pluz_fetch.py); skips are listed in the log.
+      - name: Fetch new releases
+        run: python core/pluz_fetch.py --apply
+
+      - name: Generate ELF/BIN manifests
+        run: python core/pluz_update.py
+
+      - name: Generate PKG manifest
+        run: python core/pluz_pkg.py
+
+      - name: Generate ffpfsc manifest
+        run: python core/pluz_ffpfsc.py
+
+      # Never commit a bad state: a failing validate stops the job here.
+      - name: Validate
+        run: python core/pluz_validate.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add payloads pkgs ffpfsc manifests
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "auto: fetch releases and regenerate manifests"
+            git push
+          fi

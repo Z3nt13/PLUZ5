@@ -1,0 +1,19 @@
+name: PLUZ-ps5 Validate Manifests
+
+on:
+  pull_request:
+    paths:
+      - 'manifests/**'
+      - 'configs/**'
+  workflow_dispatch: {}
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate
+        run: python core/pluz_validate.py

@@ -16,7 +16,8 @@
           "fw_max": "12.70",
           "port": null,
           "protected_fallback": false,
-          "note": "Fast-moving mainline. Normal retention -- newer builds may carry an expiry timestamp (_ExpiYYYYMMDD)."
+          "note": "Fast-moving mainline. Normal retention -- newer builds may carry an expiry timestamp (_ExpiYYYYMMDD).",
+          "asset_pattern": "etaHEN-*.bin"
         },
         "Zecoxao": {
           "display_name": "etaHEN (Zecoxao)",
@@ -378,7 +379,8 @@
           "fw_max": null,
           "port": null,
           "protected_fallback": false,
-          "note": "sibling tool -- see docs/rename-map.md"
+          "note": "sibling tool -- see docs/rename-map.md",
+          "asset_pattern": "ps5-self-decrypter-full-system.elf"
         }
       }
     },
@@ -396,7 +398,8 @@
           "fw_max": null,
           "port": null,
           "protected_fallback": false,
-          "note": "sibling tool -- see docs/rename-map.md"
+          "note": "sibling tool -- see docs/rename-map.md",
+          "asset_pattern": "ps5-self-decrypter-game.elf"
         }
       }
     },
@@ -414,7 +417,8 @@
           "fw_max": null,
           "port": null,
           "protected_fallback": false,
-          "note": "sibling tool -- see docs/rename-map.md"
+          "note": "sibling tool -- see docs/rename-map.md",
+          "asset_pattern": "ps5-self-decrypter-shellcore.elf"
         }
       }
     },
@@ -432,7 +436,8 @@
           "fw_max": null,
           "port": null,
           "protected_fallback": false,
-          "note": "sibling tool -- see docs/rename-map.md"
+          "note": "sibling tool -- see docs/rename-map.md",
+          "asset_pattern": "ps5-self-decrypter-system-common-lib.elf"
         }
       }
     },
@@ -450,7 +455,8 @@
           "fw_max": null,
           "port": null,
           "protected_fallback": false,
-          "note": "sibling tool -- see docs/rename-map.md"
+          "note": "sibling tool -- see docs/rename-map.md",
+          "asset_pattern": "ps5-self-pager-full-system.elf"
         }
       }
     },
@@ -468,7 +474,8 @@
           "fw_max": null,
           "port": null,
           "protected_fallback": false,
-          "note": "sibling tool -- see docs/rename-map.md"
+          "note": "sibling tool -- see docs/rename-map.md",
+          "asset_pattern": "ps5-self-pager-game.elf"
         }
       }
     },
@@ -486,7 +493,8 @@
           "fw_max": null,
           "port": null,
           "protected_fallback": false,
-          "note": "sibling tool -- see docs/rename-map.md"
+          "note": "sibling tool -- see docs/rename-map.md",
+          "asset_pattern": "ps5-self-pager-shellcore.elf"
         }
       }
     },
@@ -504,7 +512,8 @@
           "fw_max": null,
           "port": null,
           "protected_fallback": false,
-          "note": "sibling tool -- see docs/rename-map.md"
+          "note": "sibling tool -- see docs/rename-map.md",
+          "asset_pattern": "ps5-self-pager-system-common-lib.elf"
         }
       }
     },
@@ -558,7 +567,8 @@
           "fw_max": null,
           "port": null,
           "protected_fallback": false,
-          "note": "separate tool from hwinfo-sysinfo, shared prefix only"
+          "note": "separate tool from hwinfo-sysinfo, shared prefix only",
+          "asset_pattern": "hwinfo_bench.elf"
         }
       }
     },
@@ -576,7 +586,8 @@
           "fw_max": null,
           "port": null,
           "protected_fallback": false,
-          "note": "separate tool from hwinfo-bench, shared prefix only"
+          "note": "separate tool from hwinfo-bench, shared prefix only",
+          "asset_pattern": "hwinfo_sysinfo.elf"
         }
       }
     },
@@ -672,7 +683,8 @@
           "fw_max": null,
           "port": null,
           "protected_fallback": false,
-          "note": "unset -- fill in from release notes"
+          "note": "unset -- fill in from release notes",
+          "asset_pattern": "ftpsrv-ps5.elf"
         },
         "install": {
           "display_name": "ftpsrv (install)",

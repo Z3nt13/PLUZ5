@@ -1,0 +1,41 @@
+{
+  "name": "Z3nT1's PLUZ5 -- PKG",
+  "packages": [
+    {
+      "name": "PS5Library (rdiol12)",
+      "filename": "PS5Library_v0.2.91.pkg",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/pkgs/PS5Library_v0.2.91.pkg",
+      "backup_url": null,
+      "title_id": null,
+      "content_id": null,
+      "pkg_type": "homebrew",
+      "version": "0.2.91",
+      "required_system_version": null,
+      "platform": "ps5",
+      "hw_target": null,
+      "category": "File Management",
+      "author": "rdiol12",
+      "author_url": "https://github.com/rdiol12",
+      "checksum": "94a26a500ac3cec5000bf8ffa2494e37828c7a579318ccc32dafacdea6884895",
+      "retention": "current"
+    },
+    {
+      "name": "PS5Webkit",
+      "filename": "PS5Webkit_v1.0.pkg",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/pkgs/PS5Webkit_v1.0.pkg",
+      "backup_url": null,
+      "title_id": null,
+      "content_id": null,
+      "pkg_type": "homebrew",
+      "version": "1.0",
+      "required_system_version": null,
+      "platform": "ps5",
+      "hw_target": null,
+      "category": "Kernel",
+      "author": "nexgen999",
+      "author_url": "https://github.com/nexgen999",
+      "checksum": "59e308b8264c0cfe1648650ab6989c7cd4496a03fa647f261a6f3e8b974bf4cb",
+      "retention": "current"
+    }
+  ]
+}
