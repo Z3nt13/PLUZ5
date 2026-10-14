@@ -76,6 +76,12 @@ Everything runs on GitHub; your PC, Arch, Debian or Mac is only needed for a fir
 
 Copy `.env.example` to `.env` and edit only that file: `PLUZ_PY_DIR`, `PLUZ_GIT_DIR` (portable tool folders on Windows) or `PLUZ_PYTHON`, `PLUZ_GIT` (exact paths), plus `GH_USER`, `GH_REPO`, `GH_BRANCH`. Every launcher (`pluz-*.bat`, `pluz-*.sh`) reads those through `pluz-env.bat` / `pluz-env.sh`, so no path lives in the source. Blank values fall back to `python` / `git` on PATH. `PLUZ-AllStar.bat` / `pluz-allstar.sh` run the whole pipeline (check, fetch, update, pkg, ffpfsc, validate, git push) in one go. `pluz-fetch` is a dry run unless you pass `--apply`.
 
+**Debug mode.** `PLUZ-AllStar.bat debug` (or `PLUZ_DEBUG=1` in `.env`) prints a diagnostic report (token hidden), turns on git tracing and saves the whole run to `logs\allstar_debug_<time>.log`. `nodebug` forces it off. Send that log file when something breaks.
+
+**No sign-in pop-ups.** AllStar signs in with `GH_TOKEN` and never lets git open a credential window; without a token it stops with a clear message. The token must be limited to this repo with Contents AND Workflows set to Read and write.
+
+**`PLUZ-GHclean.bat`** (clean slate before an upload): a menu with a preview, and three actions: clean local junk (logs, caches), forget saved GitHub logins (git credential helper, `.git-credentials`, Windows Credential Manager), and reset the repo history to one fresh commit (old `.git` is moved to `_backups`, never deleted; you must type CLEAN). Everything is a preview until you pick an action.
+
 ## Two ways to run this
 
 **1. `PLUZ.pyz`** -- portable single file (built with Python's stdlib `zipapp`,

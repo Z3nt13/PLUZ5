@@ -11,3 +11,4 @@ if [ -f "$_here/.env" ]; then
 fi
 PY="${PLUZ_PYTHON:-python3}"
 GIT="${PLUZ_GIT:-git}"
+export PLUZ_GIT="$GIT" PLUZ_PYTHON="$PY"

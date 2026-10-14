@@ -18,22 +18,6 @@
       "checksum": "3561120f85e0ec32de5de15cdd61a1fe8d5146eb4c6aa99ee88209914a2774b1"
     },
     {
-      "name": "PIZZA-HEN",
-      "filename": "PIZZA-HEN_v2.00.elf",
-      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/PIZZA-HEN_v2.00.elf",
-      "backup_url": null,
-      "description": "unset -- fill in from release notes",
-      "version": "2.00",
-      "fw_min": null,
-      "fw_max": null,
-      "platform": "ps5",
-      "hw_target": null,
-      "category": "Kernel",
-      "author": "Michele-M-Media",
-      "author_url": "https://github.com/Michele-M-Media",
-      "checksum": "8535d399612d61c50a528b2ae416f2fc3ccfb7480296df99c17302583fb3e345"
-    },
-    {
       "name": "etaHEN (EchoStretch)",
       "filename": "etaHEN-EchoStretch_v1.0b.bin",
       "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/etaHEN-EchoStretch_v1.0b.bin",
@@ -80,6 +64,22 @@
       "author": "aydencharles",
       "author_url": "https://github.com/aydencharles",
       "checksum": "aa3f98847948e2ae8ea600c3f437e28247a0a4f8b73651a046d2859924bf97b3"
+    },
+    {
+      "name": "PIZZA-HEN",
+      "filename": "PIZZA-HEN_v2.00.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/PIZZA-HEN_v2.00.elf",
+      "backup_url": null,
+      "description": "unset -- fill in from release notes",
+      "version": "2.00",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": null,
+      "category": "Kernel",
+      "author": "Michele-M-Media",
+      "author_url": "https://github.com/Michele-M-Media",
+      "checksum": "8535d399612d61c50a528b2ae416f2fc3ccfb7480296df99c17302583fb3e345"
     },
     {
       "name": "PS5 Webkit Autoloader",

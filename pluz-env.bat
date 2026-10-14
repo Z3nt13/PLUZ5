@@ -22,3 +22,5 @@ if not defined GIT if defined PLUZ_GIT_DIR (
     if exist "%PLUZ_GIT_DIR%\bin" set "PATH=%PLUZ_GIT_DIR%\bin;%PLUZ_GIT_DIR%\cmd;%PATH%"
 )
 if not defined GIT set "GIT=git"
+set "PLUZ_GIT=%GIT%"
+set "PLUZ_PYTHON=%PY%"

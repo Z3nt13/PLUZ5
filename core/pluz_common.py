@@ -112,8 +112,8 @@ def resolve_identity(name_part: str, registry: dict) -> tuple[str, str] | None:
       1. name_part IS the payload, variant is literally 'default'
       2. name_part IS the payload, and it has exactly one variant defined
          (covers e.g. zftp's only variant being 'itsPLK', not 'default')
-      3. split on the LAST hyphen: everything before is the payload,
-         everything after is the variant (covers 'etaHEN-Zecoxao',
+      3. split on a hyphen: everything before is the payload,
+         everything after is the variant (any hyphen, if exactly one split matches) (covers 'etaHEN-Zecoxao',
          'ShadowMountPlus-Beta', 'CheatRunner-RDX')
 
     Returns (payload, variant) or None. Never guesses beyond what the
@@ -127,11 +127,20 @@ def resolve_identity(name_part: str, registry: dict) -> tuple[str, str] | None:
         if len(variants) == 1:
             return name_part, next(iter(variants))
 
-    if "-" in name_part:
-        payload, variant = name_part.rsplit("-", 1)
+    # Try every hyphen as the payload/variant boundary (variants may contain
+    # hyphens too, e.g. 'ftpsrv-ps5-payload' = ftpsrv + 'ps5-payload'). Both
+    # sides must exist in the registry. If more than one split matches, the
+    # name is ambiguous and is NOT guessed.
+    matches = []
+    for i, ch in enumerate(name_part):
+        if ch != "-":
+            continue
+        payload, variant = name_part[:i], name_part[i + 1:]
         entry = registry.get(payload)
         if entry is not None and variant in entry.get("variants", {}):
-            return payload, variant
+            matches.append((payload, variant))
+    if len(matches) == 1:
+        return matches[0]
 
     return None
 

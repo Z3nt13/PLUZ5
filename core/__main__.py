@@ -20,6 +20,8 @@ COMMANDS = {
     "validate": "pluz_validate",
     "dedupe": "pluz_dedupe",
     "backup": "pluz_backup",
+    "ghclean": "pluz_ghclean",
+    "debug": "pluz_debug",
 }
 
 
