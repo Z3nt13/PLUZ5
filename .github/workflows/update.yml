@@ -63,5 +63,8 @@ jobs:
             echo "No changes."
           else
             git commit -m "auto: fetch releases and regenerate manifests"
-            git push
+            for i in 1 2 3; do
+              git pull --rebase -X theirs origin main && git push && break
+              echo "push retry $i"; sleep 5
+            done
           fi

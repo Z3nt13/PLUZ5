@@ -95,7 +95,7 @@ def main(argv=None):
     new_payloads_dir.mkdir(parents=True, exist_ok=True)
 
     copied, dupe, conflict = 0, 0, 0
-    for f in sorted(old_files):
+    for f in sorted(old_files, key=lambda p: p.name):
         dest = new_payloads_dir / f.name
         if dest.exists():
             if sha256_file(dest) == sha256_file(f):

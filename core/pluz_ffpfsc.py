@@ -116,7 +116,7 @@ def main(argv=None):
     groups: dict = defaultdict(list)
     unresolved = []
 
-    for f in sorted(files):
+    for f in sorted(files, key=lambda p: p.name):
         parsed = parse_filename_raw(f.name)
         if parsed is None:
             unresolved.append((f.name, "does not match naming convention"))

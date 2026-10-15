@@ -121,7 +121,7 @@ def main(argv=None):
     with tempfile.TemporaryDirectory(prefix="pluz_extract_") as tmp:
         tmp_root = Path(tmp)
         candidates = [p for p in source_dir.iterdir() if p.is_file()]
-        for src_file in sorted(candidates):
+        for src_file in sorted(candidates, key=lambda p: p.name):
             plan = plan_for_file(src_file, log, tmp_root, cfg["registry"]["payloads"], cfg["pkg_registry"]["packages"])
             if plan is None:
                 skipped += 1
