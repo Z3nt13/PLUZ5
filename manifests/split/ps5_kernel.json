@@ -1,22 +1,6 @@
 {
-  "name": "Z3nT1's PLUZ5 -- Kernel",
+  "name": "Z3nT13's PLUZ5 -- Kernel",
   "payloads": [
-    {
-      "name": "ChronicLoader",
-      "filename": "ChronicLoader-PS5-Payload_v0.1.elf",
-      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/ChronicLoader-PS5-Payload_v0.1.elf",
-      "backup_url": null,
-      "description": "PS5 payload updater/autoloader -- downloads from configured GitHub releases and writes autoload.txt.",
-      "version": "0.1",
-      "fw_min": null,
-      "fw_max": null,
-      "platform": "ps5",
-      "hw_target": null,
-      "category": "Kernel",
-      "author": "StonedModder",
-      "author_url": "https://github.com/StonedModder",
-      "checksum": "3561120f85e0ec32de5de15cdd61a1fe8d5146eb4c6aa99ee88209914a2774b1"
-    },
     {
       "name": "PIZZA-HEN",
       "filename": "PIZZA-HEN_v2.00.elf",
@@ -48,6 +32,22 @@
       "author": "EchoStretch / LightningMods",
       "author_url": "https://github.com/etaHEN",
       "checksum": "9669c993a1036ac28cb7a84f7fc6f12aeafbf9be1104169d72547a851e09b2d4"
+    },
+    {
+      "name": "etaHEN (Zecoxao)",
+      "filename": "etaHEN-Zecoxao_v2.6B.bin",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/etaHEN-Zecoxao_v2.6B.bin",
+      "backup_url": null,
+      "description": "FW 3.00-11.40",
+      "version": "2.6B",
+      "fw_min": "3.00",
+      "fw_max": "11.40",
+      "platform": "ps5",
+      "hw_target": null,
+      "category": "Kernel",
+      "author": "Zecoxao",
+      "author_url": "https://github.com/zecoxao",
+      "checksum": "512c74a9d6f56bb5a4ab871a0306a8cbefb8b3d5454ba8f1d833b020b245a126"
     },
     {
       "name": "kstuff-lite (EchoStretch)",

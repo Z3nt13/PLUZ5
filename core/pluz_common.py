@@ -18,8 +18,6 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 BINARY_EXTS = {"elf", "bin"}
-PKG_EXTS = {"pkg"}
-FFPFSC_EXTS = {"ffpfsc", "ffpkg", "fpkg"}
 EXTRACTABLE_EXTS = {"zip"}
 
 
@@ -49,10 +47,23 @@ def load_env(root: Path | None = None) -> dict:
                 continue
             key, _, val = line.partition("=")
             values[key.strip()] = val.strip()
-    for key in ("GH_TOKEN", "GH_USER", "GH_REPO", "GH_BRANCH"):
+    for key in ("GH_TOKEN", "GH_USER", "GH_REPO", "GH_BRANCH", "PLUZ_MODE"):
         if os.environ.get(key):
             values[key] = os.environ[key]
     return values
+
+
+def get_mode(cfg: dict, env: dict | None = None) -> str:
+    """'source' (default): manifests link to the upstream release asset, nothing is
+    stored in this repo.  'hosted': binaries are copied into payloads/ and served
+    from this repo.  .env PLUZ_MODE (or the PLUZ_MODE environment variable) overrides settings.json."""
+    mode = ((env or {}).get("PLUZ_MODE") or os.environ.get("PLUZ_MODE")
+            or cfg["settings"].get("mode") or "source").strip().lower()
+    return mode if mode in ("source", "hosted") else "source"
+
+
+def resolved_path(root: Path) -> Path:
+    return root / "manifests" / "resolved.json"
 
 
 def require_env(values: dict, keys: list[str]) -> list[str]:
@@ -67,14 +78,10 @@ def load_json(path: Path) -> dict:
 def load_config(root: Path | None = None) -> dict:
     root = root or repo_root()
     cfg_dir = root / "configs"
-    ffpfsc_path = cfg_dir / "ffpfsc_registry.json"
     return {
         "settings": load_json(cfg_dir / "settings.json"),
         "categories": load_json(cfg_dir / "categories.json") if (cfg_dir / "categories.json").exists() else {},
         "registry": load_json(cfg_dir / "payload_registry.json"),
-        "pkg_registry": load_json(cfg_dir / "pkg_registry.json"),
-        "ffpfsc_registry": load_json(ffpfsc_path) if ffpfsc_path.exists() else {"schema_version": 1, "entries": {}},
-        "sources": load_json(cfg_dir / "sources.json") if (cfg_dir / "sources.json").exists() else {"sources": []},
     }
 
 
@@ -82,7 +89,7 @@ NAME_VERSION_RE = re.compile(
     r"^(?P<name_part>[A-Za-z0-9][A-Za-z0-9\-]*?)"
     r"_v(?P<version>[A-Za-z0-9.\-]+?)"
     r"(?:_Expi(?P<expiry>\d{8}))?"
-    r"\.(?P<ext>elf|bin|pkg|ffpfsc|ffpkg|fpkg)$"
+    r"\.(?P<ext>elf|bin)$"
 )
 
 

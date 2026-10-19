@@ -1,5 +1,5 @@
 {
-  "name": "Z3nT1's PLUZ5 -- Hosted",
+  "name": "Z3nT13's PLUZ5 -- Hosted",
   "payloads": [
     {
       "name": "BackPork",
@@ -19,23 +19,6 @@
       "retention": "current"
     },
     {
-      "name": "CheatRunner (RDX fork)",
-      "filename": "CheatRunner-RDX_v0.18.elf",
-      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/CheatRunner-RDX_v0.18.elf",
-      "backup_url": null,
-      "description": "unset -- fill in from release notes",
-      "version": "0.18",
-      "fw_min": null,
-      "fw_max": null,
-      "platform": "ps5",
-      "hw_target": null,
-      "category": "Game Tools",
-      "author": "notmaj0r",
-      "author_url": "https://github.com/notmaj0r",
-      "checksum": "4ae1ea4e37b2e67d5487355ddf671f166861ed6dceea348c048ad060770c0140",
-      "retention": "current"
-    },
-    {
       "name": "CheatRunner",
       "filename": "CheatRunner_v0.18.elf",
       "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/CheatRunner_v0.18.elf",
@@ -50,23 +33,6 @@
       "author": "notmaj0r",
       "author_url": "https://github.com/notmaj0r",
       "checksum": "4ae1ea4e37b2e67d5487355ddf671f166861ed6dceea348c048ad060770c0140",
-      "retention": "current"
-    },
-    {
-      "name": "ChronicLoader",
-      "filename": "ChronicLoader-PS5-Payload_v0.1.elf",
-      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/ChronicLoader-PS5-Payload_v0.1.elf",
-      "backup_url": null,
-      "description": "PS5 payload updater/autoloader -- downloads from configured GitHub releases and writes autoload.txt.",
-      "version": "0.1",
-      "fw_min": null,
-      "fw_max": null,
-      "platform": "ps5",
-      "hw_target": null,
-      "category": "Kernel",
-      "author": "StonedModder",
-      "author_url": "https://github.com/StonedModder",
-      "checksum": "3561120f85e0ec32de5de15cdd61a1fe8d5146eb4c6aa99ee88209914a2774b1",
       "retention": "current"
     },
     {
@@ -240,6 +206,23 @@
       "retention": "current"
     },
     {
+      "name": "etaHEN (Zecoxao)",
+      "filename": "etaHEN-Zecoxao_v2.6B.bin",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/etaHEN-Zecoxao_v2.6B.bin",
+      "backup_url": null,
+      "description": "FW 3.00-11.40",
+      "version": "2.6B",
+      "fw_min": "3.00",
+      "fw_max": "11.40",
+      "platform": "ps5",
+      "hw_target": null,
+      "category": "Kernel",
+      "author": "Zecoxao",
+      "author_url": "https://github.com/zecoxao",
+      "checksum": "512c74a9d6f56bb5a4ab871a0306a8cbefb8b3d5454ba8f1d833b020b245a126",
+      "retention": "current"
+    },
+    {
       "name": "FGG Unpack (FGGstore)",
       "filename": "fgg-unpack_v0.1.elf",
       "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/fgg-unpack_v0.1.elf",
@@ -342,21 +325,55 @@
       "retention": "current"
     },
     {
-      "name": "onionHEN",
-      "filename": "onionHEN_v0.0.13.elf",
-      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/onionHEN_v0.0.13.elf",
+      "name": "PoorDS4 (rc38)",
+      "filename": "poords4-rc_v0.1.0-rc51.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/poords4-rc_v0.1.0-rc51.elf",
       "backup_url": null,
-      "description": "unset -- fill in from release notes",
-      "version": "0.0.13",
+      "description": "sibling tool -- see docs/rename-map.md",
+      "version": "0.1.0-rc51",
       "fw_min": null,
       "fw_max": null,
       "platform": "ps5",
       "hw_target": null,
-      "category": "Kernel",
-      "author": "aydencharles",
-      "author_url": "https://github.com/aydencharles",
-      "checksum": "aa3f98847948e2ae8ea600c3f437e28247a0a4f8b73651a046d2859924bf97b3",
-      "retention": "previous"
+      "category": "System Utility",
+      "author": "ItsBlurf",
+      "author_url": "https://github.com/ItsBlurf",
+      "checksum": "e1b9f257f51678a977edaeafd4ca1f8a03e9df0afda7d5dd84435841fa20795d",
+      "retention": "current"
+    },
+    {
+      "name": "PoorDS4 (status)",
+      "filename": "poords4-status_v0.1.0-rc51.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/poords4-status_v0.1.0-rc51.elf",
+      "backup_url": null,
+      "description": "sibling tool -- see docs/rename-map.md",
+      "version": "0.1.0-rc51",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": null,
+      "category": "System Utility",
+      "author": "ItsBlurf",
+      "author_url": "https://github.com/ItsBlurf",
+      "checksum": "d47bb84a6ae05117f095c05b75dfee15d9fbf07864a3e52d0e2e626eab613440",
+      "retention": "current"
+    },
+    {
+      "name": "PoorDS4 (stop)",
+      "filename": "poords4-stop_v0.1.0-rc51.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/poords4-stop_v0.1.0-rc51.elf",
+      "backup_url": null,
+      "description": "sibling tool -- see docs/rename-map.md",
+      "version": "0.1.0-rc51",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": null,
+      "category": "System Utility",
+      "author": "ItsBlurf",
+      "author_url": "https://github.com/ItsBlurf",
+      "checksum": "ffdce4964f0d34a2b9be7cb65e6ad345d5beb582dcdf94d0214cde6bc79acd0d",
+      "retention": "current"
     },
     {
       "name": "PS5 Payload Manager",

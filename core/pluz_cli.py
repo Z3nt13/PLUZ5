@@ -1,5 +1,5 @@
 """
-__main__.py -- entry point for PLUZ.pyz (built via `python3 -m zipapp`).
+__main__.py -- entry point (called by pluz.py).
 
 Pure stdlib dispatcher. No network access, no third-party imports. Maps a
 subcommand name to the matching pluz_<name> module's main(argv) function.
@@ -10,16 +10,12 @@ import sys
 
 COMMANDS = {
     "check": "pluz_check",
-    "merge": "pluz_merge",
     "fetch": "pluz_fetch",
     "update": "pluz_update",
-    "pkg": "pluz_pkg",
-    "ffpfsc": "pluz_ffpfsc",
     "cleanup": "pluz_cleanup",
-    "migrate": "pluz_migrate",
     "validate": "pluz_validate",
+    "infos": "pluz_infos",
     "dedupe": "pluz_dedupe",
-    "backup": "pluz_backup",
     "ghclean": "pluz_ghclean",
     "debug": "pluz_debug",
 }
@@ -27,13 +23,13 @@ COMMANDS = {
 
 def main():
     if len(sys.argv) < 2 or sys.argv[1] in ("-h", "--help"):
-        print("PLUZ-ps5 -- usage: PLUZ.pyz <command> [args]")
+        print("PLUZ5 -- usage: python pluz.py <command> [args]")
         print("")
         print("Commands:")
         for name in COMMANDS:
             print(f"  {name}")
         print("")
-        print("Run 'PLUZ.pyz <command> --help' for a command's own options.")
+        print("Run 'python pluz.py <command> --help' for a command's own options.")
         return 0
 
     command = sys.argv[1]

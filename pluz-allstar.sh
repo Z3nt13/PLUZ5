@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # pluz-allstar.sh -- Linux/Mac companion to PLUZ-AllStar.bat.
-# sync -> check -> fetch -> update -> pkg -> ffpfsc -> validate -> commit/push.
+# sync -> check -> fetch -> build -> validate -> commit/push.
 # Stops at the first failing step. Repo name, token and tool paths come from .env.
 # Debug mode (off by default): PLUZ_DEBUG=1 in .env, or run with debug / nodebug.
 # On: diagnostic report (token hidden), git tracing, full output saved to
@@ -45,29 +45,37 @@ if [ "$PLUZ_DEBUG" = "1" ]; then
     export GIT_TRACE=1 GIT_CURL_VERBOSE=1 GIT_TRACE_REDACT=1
 fi
 
-echo; echo "==================== [0/7] sync with GitHub ===================="
+GHAUTH="$("$PY" core/pluz_ghauth.py)"
+if [ -n "$GHAUTH" ]; then echo "Signing in to GitHub with GH_TOKEN from .env"; else echo "No GH_TOKEN could be read from .env"; fi
+echo; echo "==================== [0/5] sync with GitHub ===================="
 if ! "$GIT" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
     [ -n "$GH_USER" ] && [ -n "$GH_REPO" ] || fail "Not a git repo and GH_USER / GH_REPO are not set in .env."
     echo "This folder is not a git repo yet. Connecting it to https://github.com/$GH_USER/$GH_REPO"
     "$GIT" init -b "$GH_BRANCH"
     "$GIT" remote add origin "https://github.com/$GH_USER/$GH_REPO.git"
-    "$GIT" "${NOHELP[@]}" fetch origin
+    "$GIT" "${NOHELP[@]}" -c "http.extraheader=$GHAUTH" fetch origin \
+        || echo "[WARN] Could not read the GitHub repo yet -- will try to push anyway. Check GH_USER / GH_REPO / GH_TOKEN in .env."
     "$GIT" reset "origin/$GH_BRANCH" >/dev/null 2>&1 || true
 fi
 "$GIT" remote get-url origin >/dev/null 2>&1 || fail "No remote named origin."
-GHAUTH="$("$PY" core/pluz_ghauth.py)"
-if [ -n "$GHAUTH" ]; then echo "Signing in to GitHub with GH_TOKEN from .env"; else echo "No GH_TOKEN could be read from .env"; fi
+"$PY" core/pluz_origin.py; rc=$?
+if [ "$rc" = "3" ]; then
+    "$GIT" "${NOHELP[@]}" -c "http.extraheader=$GHAUTH" fetch origin \
+        || echo "[WARN] Could not read the repo named in .env yet. Check GH_USER / GH_REPO / GH_TOKEN."
+    "$GIT" reset "origin/$GH_BRANCH" >/dev/null 2>&1 || true
+elif [ "$rc" != "0" ]; then
+    echo "[WARN] Could not check the repo address."
+fi
 "$GIT" "${NOHELP[@]}" -c "http.extraheader=$GHAUTH" pull --rebase --autostash origin "$GH_BRANCH" \
     || echo "[WARN] Could not pull the latest from GitHub -- continuing. If the push fails, run again with: debug"
 
-run_step "[1/7] pluz-check"    "$PY" core/pluz_check.py
-run_step "[2/7] pluz-fetch"    "$PY" core/pluz_fetch.py --apply
-run_step "[3/7] pluz-update"   "$PY" core/pluz_update.py
-run_step "[4/7] pluz-pkg"      "$PY" core/pluz_pkg.py
-run_step "[5/7] pluz-ffpfsc"   "$PY" core/pluz_ffpfsc.py
-run_step "[6/7] pluz-validate" "$PY" core/pluz_validate.py
+run_step "[1/5] pluz-check"    "$PY" core/pluz_check.py
+run_step "[2/5] pluz-fetch"    "$PY" core/pluz_fetch.py --apply
+run_step "[3/5] pluz-update"   "$PY" core/pluz_update.py
+run_step "[4/5] pluz-validate" "$PY" core/pluz_validate.py
+run_step "[4b/5] pluz-infos" "$PY" core/pluz_infos.py
 
-echo; echo "==================== [7/7] git add / commit / push ===================="
+echo; echo "==================== [5/5] git add / commit / push ===================="
 [ -n "$GHAUTH" ] || [ "${PLUZ_ALLOW_PROMPT:-0}" = "1" ] \
     || fail "GH_TOKEN is missing or was not read from .env, so the push cannot sign in (try: ./pluz-allstar.sh debug)."
 "$GIT" add -A || fail "git add failed."

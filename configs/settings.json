@@ -1,10 +1,10 @@
 {
-  "schema_version": 5,
+  "schema_version": 6,
   "project": "PLUZ5",
+  "mode": "hosted",
+  "mode_note": "hosted = binaries are copied into payloads/ and served from this repo (up to 3 builds per payload, old builds kept for protected_fallback entries). source = manifests link to upstream releases only. Override with PLUZ_MODE in .env.",
   "paths": {
     "payloads": "payloads",
-    "pkgs": "pkgs",
-    "ffpfsc": "ffpfsc",
     "manifests": "manifests",
     "split_manifests": "manifests/split",
     "logs": "logs",
@@ -12,23 +12,12 @@
   },
   "manifest_files": {
     "main": "manifests/PLUZ-ps5-Source.json",
-    "hosted": "manifests/PLUZ-ps5-Hosted.json",
-    "pkg": "manifests/PLUZ5-PKG.json",
-    "ffpfsc": "manifests/PLUZ5-ffpfsc.json"
+    "hosted": "manifests/PLUZ-ps5-Hosted.json"
   },
   "retention": {
     "main_keep": 1,
     "hosted_keep": 3,
     "comment": "for ELF/BIN payloads. protected_fallback entries in payload_registry.json are always kept in hosted regardless of these numbers"
-  },
-  "pkg_retention": {
-    "main_keep": 1,
-    "hosted_keep": 3,
-    "comment": "same rules as 'retention' but scoped to pkgs/ + pkg_registry.json"
-  },
-  "ffpfsc_retention": {
-    "hosted_keep": 3,
-    "comment": "same rules as 'retention' but scoped to ffpfsc/ + ffpfsc_registry.json"
   },
   "portable_tools": {
     "comment": "Optional. PLUZ check verifies these paths exist if set. Leave null to skip a check (e.g. tool is on system PATH via pacman/apt/portable WinPython, or you're using PLUZ.pyz which needs only python3). Examples: Arch '/home/you/portaz/git-portable/bin/git', Windows 'D:\\\\portaz\\\\Git-p\\\\bin\\\\git.exe'.",
@@ -40,12 +29,6 @@
   "supported_extensions": [
     "elf",
     "bin"
-  ],
-  "pkg_extension": "pkg",
-  "ffpfsc_extensions": [
-    "ffpfsc",
-    "ffpkg",
-    "fpkg"
   ],
   "extractable_extensions": [
     "zip"

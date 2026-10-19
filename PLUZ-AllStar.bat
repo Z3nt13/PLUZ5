@@ -5,7 +5,7 @@ set "RC=0"
 
 rem ============================================================
 rem PLUZ-AllStar.bat -- the whole PLUZ5 pipeline in one shot:
-rem   sync -> check -> fetch -> update -> pkg -> ffpfsc -> validate -> commit/push
+rem   sync -> check -> fetch -> build -> validate -> commit/push
 rem
 rem Stops at the first failing step and says which one. The window
 rem stays open at the end when you double-click this file.
@@ -77,28 +77,6 @@ if "%PLUZ_DEBUG%"=="1" (
     set "GIT_TRACE_REDACT=1"
 )
 
-echo.
-echo ==================== [0/7] sync with GitHub ====================
-"%GIT%" rev-parse --is-inside-work-tree >nul 2>&1
-if errorlevel 1 (
-    if not defined GH_USER (
-        echo [FAIL] This folder is not a git repo and GH_USER / GH_REPO are not set in .env.
-        set "RC=1"
-        goto :end
-    )
-    echo This folder is not a git repo yet. Connecting it to https://github.com/%GH_USER%/%GH_REPO%
-    "%GIT%" init -b %GH_BRANCH%
-    "%GIT%" remote add origin https://github.com/%GH_USER%/%GH_REPO%.git
-    "%GIT%" %NOHELP% fetch origin
-    "%GIT%" reset origin/%GH_BRANCH% >nul 2>&1
-)
-"%GIT%" remote get-url origin >nul 2>&1
-if errorlevel 1 (
-    echo [FAIL] No remote named origin. Run: git remote add origin https://github.com/%GH_USER%/%GH_REPO%.git
-    set "RC=1"
-    goto :end
-)
-
 rem Build the sign-in header from GH_USER + GH_TOKEN (written to a temp file
 rem and read back, which avoids cmd's nested-quote problems).
 set "GHAUTH="
@@ -110,18 +88,48 @@ if defined GHAUTH (
 ) else (
     echo No GH_TOKEN could be read from .env
 )
+echo.
+echo ==================== [0/5] sync with GitHub ====================
+"%GIT%" rev-parse --is-inside-work-tree >nul 2>&1
+if errorlevel 1 (
+    if not defined GH_USER (
+        echo [FAIL] This folder is not a git repo and GH_USER / GH_REPO are not set in .env.
+        set "RC=1"
+        goto :end
+    )
+    echo This folder is not a git repo yet. Connecting it to https://github.com/%GH_USER%/%GH_REPO%
+    "%GIT%" init -b %GH_BRANCH%
+    "%GIT%" remote add origin https://github.com/%GH_USER%/%GH_REPO%.git
+    "%GIT%" %NOHELP% -c "http.extraheader=%GHAUTH%" fetch origin
+    if errorlevel 1 echo [WARN] Could not read the GitHub repo yet - will try to push anyway. Check GH_USER / GH_REPO / GH_TOKEN in .env.
+    "%GIT%" reset origin/%GH_BRANCH% >nul 2>&1
+)
+"%GIT%" remote get-url origin >nul 2>&1
+if errorlevel 1 (
+    echo [FAIL] No remote named origin. Run: git remote add origin https://github.com/%GH_USER%/%GH_REPO%.git
+    set "RC=1"
+    goto :end
+)
+
+"%PY%" "core\pluz_origin.py"
+if errorlevel 3 (
+    "%GIT%" %NOHELP% -c "http.extraheader=%GHAUTH%" fetch origin
+    if errorlevel 1 echo [WARN] Could not read the repo named in .env yet. Check GH_USER / GH_REPO / GH_TOKEN.
+    "%GIT%" reset origin/%GH_BRANCH% >nul 2>&1
+) else (
+    if errorlevel 1 echo [WARN] Could not check the repo address.
+)
 "%GIT%" %NOHELP% -c "http.extraheader=%GHAUTH%" pull --rebase --autostash origin %GH_BRANCH%
 if errorlevel 1 echo [WARN] Could not pull the latest from GitHub - continuing. If the push fails at the end, run this again with: debug
 
-call :step "[1/7] pluz-check" pluz_check.py || goto :end
-call :step "[2/7] pluz-fetch" pluz_fetch.py --apply || goto :end
-call :step "[3/7] pluz-update" pluz_update.py || goto :end
-call :step "[4/7] pluz-pkg" pluz_pkg.py || goto :end
-call :step "[5/7] pluz-ffpfsc" pluz_ffpfsc.py || goto :end
-call :step "[6/7] pluz-validate" pluz_validate.py || goto :end
+call :step "[1/5] pluz-check" pluz_check.py || goto :end
+call :step "[2/5] pluz-fetch" pluz_fetch.py --apply || goto :end
+call :step "[3/5] pluz-update" pluz_update.py || goto :end
+call :step "[4/5] pluz-validate" pluz_validate.py || goto :end
+call :step "[4b/5] pluz-infos" pluz_infos.py || goto :end
 
 echo.
-echo ==================== [7/7] git add / commit / push ====================
+echo ==================== [5/5] git add / commit / push ====================
 if not defined GHAUTH if not "%PLUZ_ALLOW_PROMPT%"=="1" (
     echo [FAIL] GH_TOKEN is missing or was not read from .env, so the push cannot sign in.
     echo        Put GH_USER=... and GH_TOKEN=... in .env ^(no quotes, no spaces^), or run: PLUZ-AllStar.bat debug

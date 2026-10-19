@@ -1,6 +1,6 @@
 """
 plz_cleanup.py -- backs up the repo (always, not optional on --apply), then
-wipes payloads/, pkgs/, and manifests/ for a genuine from-scratch rebuild.
+wipes payloads/ and manifests/ for a genuine from-scratch rebuild.
 Also sweeps leftover .tmp files and orphaned extraction directories.
 
 Dry-run by default.
@@ -40,19 +40,15 @@ def main(argv=None):
         log.line(f"[DONE] backup written: {written}")
 
     payloads_dir = root / cfg["settings"]["paths"]["payloads"]
-    pkgs_dir = root / cfg["settings"]["paths"]["pkgs"]
     manifests_dir = root / cfg["settings"]["paths"]["manifests"]
     split_dir = root / cfg["settings"]["paths"]["split_manifests"]
 
     payload_files = [p for p in payloads_dir.glob("*") if p.is_file() and p.name != ".gitkeep"] \
         if payloads_dir.is_dir() else []
-    pkg_files = [p for p in pkgs_dir.glob("*") if p.is_file() and p.name != ".gitkeep"] \
-        if pkgs_dir.is_dir() else []
     manifest_files = list(manifests_dir.glob("*.json")) if manifests_dir.is_dir() else []
     split_files = list(split_dir.glob("*.json")) if split_dir.is_dir() else []
 
     log.line(f"[PLAN] delete {len(payload_files)} file(s) from payloads/")
-    log.line(f"[PLAN] delete {len(pkg_files)} file(s) from pkgs/")
     log.line(f"[PLAN] delete {len(manifest_files)} manifest(s) from manifests/")
     log.line(f"[PLAN] delete {len(split_files)} category split(s) from manifests/split/")
 
@@ -60,7 +56,7 @@ def main(argv=None):
     log.line(f"[PLAN] sweep {len(leftovers)} leftover tmp/extraction item(s)")
 
     if args.apply:
-        for f in payload_files + pkg_files + manifest_files + split_files:
+        for f in payload_files + manifest_files + split_files:
             f.unlink()
         for item in leftovers:
             if item.is_dir():
@@ -68,7 +64,7 @@ def main(argv=None):
             else:
                 item.unlink(missing_ok=True)
         log.line("")
-        log.line("Wipe complete. payloads/, pkgs/, and manifests/ are clean. "
+        log.line("Wipe complete. payloads/ and manifests/ are clean. "
                  "configs/ registries were NOT touched.")
     else:
         log.line("")

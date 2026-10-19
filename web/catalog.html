@@ -139,9 +139,9 @@ button.active,button.pill.active{background:var(--accent);color:#000;border-colo
 </head>
 <body>
 <header>
-  <div class="logo">PLUZ<span>5</span></div>
+  <div class="logo">PLUZ<span>5</span></div><a href="builder.html" style="color:var(--sub);font-size:.85rem;text-decoration:none">Builder</a> <a href="library.html" style="color:var(--sub);font-size:.85rem;text-decoration:none">Library</a>
   <div class="search-wrap">
-    <input type="search" id="search" placeholder="Search payloads, PKGs, tools…" autocomplete="off">
+    <input type="search" id="search" placeholder="Search payloads…" autocomplete="off">
   </div>
   <div class="hdr-right">
     <select id="theme-sel" title="Theme">
@@ -156,8 +156,6 @@ button.active,button.pill.active{background:var(--accent);color:#000;border-colo
 
 <div class="tabs" id="tabs">
   <div class="tab active" data-tab="payloads">Payloads <span id="tab-count-payloads"></span></div>
-  <div class="tab" data-tab="pkgs">PKGs <span id="tab-count-pkgs"></span></div>
-  <div class="tab" data-tab="ffpfsc">ffpfsc / Tools <span id="tab-count-ffpfsc"></span></div>
 </div>
 
 <div class="layout">
@@ -215,7 +213,7 @@ button.active,button.pill.active{background:var(--accent);color:#000;border-colo
       (same origin). To use a local dev server or a custom mirror, set the base URL below.
     </p>
     <label for="base-url-input">Base URL (no trailing slash)</label>
-    <input type="url" id="base-url-input" placeholder="https://z3nt1.github.io/PLUZ5">
+    <input type="url" id="base-url-input" placeholder="https://YOUR-NAME.github.io/YOUR-REPO">
     <div style="font-size:.78rem;color:var(--muted);margin-top:6px;">
       Leave blank to use relative paths (correct on GitHub Pages).
     </div>
@@ -239,9 +237,7 @@ var MANIFESTS = {
   payloads: [
     "manifests/PLUZ-ps5-Hosted.json",
     "manifests/PLUZ-ps5-Source.json"
-  ],
-  pkgs:     ["manifests/PLUZ5-PKG.json"],
-  ffpfsc:   ["manifests/PLUZ5-ffpfsc.json"]
+  ]
 };
 
 // ── state ────────────────────────────────────────────────────────────
@@ -252,8 +248,8 @@ var state = {
   filterCat: "",
   filterPlatform: "",
   filterHw: "",
-  data: { payloads: [], pkgs: [], ffpfsc: [] },
-  loaded: { payloads: false, pkgs: false, ffpfsc: false }
+  data: { payloads: [] },
+  loaded: { payloads: false }
 };
 
 // ── helpers ──────────────────────────────────────────────────────────
@@ -346,7 +342,7 @@ function loadManifest(tab) {
 }
 
 function updateTabCounts() {
-  ["payloads","pkgs","ffpfsc"].forEach(function(t) {
+  ["payloads"].forEach(function(t) {
     var el = $("tab-count-" + t);
     if (el && state.loaded[t]) el.textContent = "(" + state.data[t].length + ")";
   });
@@ -577,8 +573,6 @@ $("src-apply").onclick = function() {
 // ── boot ──────────────────────────────────────────────────────────────
 loadManifest("payloads");
 // pre-load others in background
-setTimeout(function() { loadManifest("pkgs"); }, 200);
-setTimeout(function() { loadManifest("ffpfsc"); }, 400);
 
 })();
 </script>

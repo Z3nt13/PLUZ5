@@ -1,6 +1,6 @@
 """
 plz_dedupe.py -- standalone SHA-256 collision report across payloads/ AND
-pkgs/. Settles "are these the same file?" with a hash instead of a guess.
+. Settles "are these the same file?" with a hash instead of a guess.
 Read-only, no network access -- reports only, never deletes anything.
 """
 from __future__ import annotations
@@ -40,10 +40,6 @@ def main(argv=None):
     cfg = load_config(root)
 
     report_dir(root / cfg["settings"]["paths"]["payloads"], "payloads", log)
-    log.line("=" * 60)
-    report_dir(root / cfg["settings"]["paths"]["pkgs"], "pkgs", log)
-    log.line("=" * 60)
-    report_dir(root / cfg["settings"]["paths"].get("ffpfsc", "ffpfsc"), "ffpfsc", log)
 
     log.close()
     print(f"\nLog written to: {log.path}")

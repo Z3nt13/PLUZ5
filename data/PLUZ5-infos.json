@@ -1,0 +1,1407 @@
+{
+  "schema_version": 1,
+  "comment": "Your Library. Edit with web/library.html.",
+  "entries": [
+    {
+      "id": "PlayStation-Payload-Center-org",
+      "name": "PlayStation Payload Center",
+      "url": "https://github.com/Pharaoh2k/PlayStation-Payload-Center",
+      "author": "Pharaoh2k",
+      "variant": "org",
+      "section": "Payload Senders / Managers (PC & Web)",
+      "desc": "Cross-platform Avalonia/.NET desktop tool. Discover consoles, browse payload catalogs, SHA-256 verify, queue, and stream payloads to jailbroken PS4/PS5.",
+      "tags": [
+        "sender",
+        "tool",
+        "ps4",
+        "P5U",
+        "catalog",
+        "queue",
+        "sha256",
+        "avalonia"
+      ],
+      "notes": "UDP discovery (PS4:987, PS5:9302). Common send ports 9020/9021.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "ps5-payload-manager-org",
+      "name": "ps5-payload-manager",
+      "url": "https://github.com/itsPLK/ps5-payload-manager",
+      "author": "itsPLK",
+      "variant": "org",
+      "section": "Payload Senders / Managers (PC & Web)",
+      "desc": "Modern web-based dashboard that runs on the PS5 itself. Manage, import, and auto-load payloads. Homescreen shortcut support.",
+      "tags": [
+        "payload",
+        "manager",
+        "webui",
+        "P5U",
+        "autoload",
+        "itsplk"
+      ],
+      "notes": "Can be set as only entry in autoload.txt.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "PKG-Sender-org",
+      "name": "PKG Sender",
+      "url": "https://github.com/Loopayeh/pkg-sender",
+      "author": "Loopayeh",
+      "variant": "org",
+      "section": "Payload Senders / Managers (PC & Web)",
+      "desc": "LAN PKG installer for PS4/PS5. Auto-find console, queue installs. No USB needed. Ships `pkg-receiver.elf` for PS5.",
+      "tags": [
+        "sender",
+        "pkg",
+        "tool",
+        "ps4",
+        "P5U",
+        "port-12800"
+      ],
+      "notes": "PS5 uses pkg-receiver.elf on port 12800. PS4 uses Remote Package Installer or GoldHEN.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "PS5-4-Payload-Sender-Android-org",
+      "name": "PS5-4-Payload-Sender-Android",
+      "url": "https://github.com/PixelPop25/PS5-4-Payload-Sender-Android",
+      "author": "PixelPop25",
+      "variant": "org",
+      "section": "Payload Senders / Managers (PC & Web)",
+      "desc": "Simple Android TCP payload injector. Supports .bin / .elf / .lua / .js / .jar.",
+      "tags": [
+        "sender",
+        "android",
+        "P5U",
+        "mobile"
+      ],
+      "notes": "Keep mobile data off so traffic stays on LAN.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "PS5AutopayloadHA-org",
+      "name": "PS5AutopayloadHA",
+      "url": "https://github.com/cosmicflow2512/PS5AutopayloadHA",
+      "author": "cosmicflow2512",
+      "variant": "org",
+      "section": "Payload Senders / Managers (PC & Web)",
+      "desc": "Home Assistant add-on that fully automates the post-exploit payload chain (send / delay / wait-for-port flows).",
+      "tags": [
+        "sender",
+        "ha",
+        "automation",
+        "P5U",
+        "autoload"
+      ],
+      "notes": "Supports multiple loaders (9021, 9025, 9026, 50000…).",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "web-based-ps-package-manager-org",
+      "name": "web-based-ps-package-manager",
+      "url": "https://github.com/h-haghpanah/web-based-ps-package-manager",
+      "author": "h-haghpanah",
+      "variant": "org",
+      "section": "Payload Senders / Managers (PC & Web)",
+      "desc": "Browser tool for managing and sending packages to PS4 and PS5.",
+      "tags": [
+        "sender",
+        "pkg",
+        "webui",
+        "ps4",
+        "P5U"
+      ],
+      "notes": "PS5 side can use ps5_file_downloader (8283) or pkg_receiver (12800).",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "Send-Payload-to-PS-org",
+      "name": "Send-Payload-to-PS",
+      "url": "https://github.com/Master-s/Send-Payload-to-PS",
+      "author": "Master-s",
+      "variant": "org",
+      "section": "Payload Senders / Managers (PC & Web)",
+      "desc": "Multi-platform payload sender including iOS support.",
+      "tags": [
+        "sender",
+        "ios",
+        "android",
+        "P5U",
+        "ps4"
+      ],
+      "notes": "Has PC and iOS components.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "ps5-payload-dev-sdk-org",
+      "name": "ps5-payload-dev/sdk",
+      "url": "https://github.com/ps5-payload-dev/sdk",
+      "author": "ps5-payload-dev",
+      "variant": "org",
+      "section": "Core Payload Infrastructure (PS5)",
+      "desc": "SDK for developing PS5 payloads using dynamic linking. Works with elfldr, websrv, BD-J, remote_lua_loader, etc.",
+      "tags": [
+        "sdk",
+        "P5U",
+        "ps5-payload-dev",
+        "elf"
+      ],
+      "notes": "Install to `/opt/ps5-payload-sdk`. Essential for building native payloads.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "ps5-payload-dev-websrv-org",
+      "name": "ps5-payload-dev/websrv",
+      "url": "https://github.com/ps5-payload-dev/websrv",
+      "author": "ps5-payload-dev",
+      "variant": "org",
+      "section": "Core Payload Infrastructure (PS5)",
+      "desc": "Simple web server payload (port 8080). Launch homebrew and ELF payloads from the PS5 browser or remotely.",
+      "tags": [
+        "payload",
+        "webui",
+        "P5U",
+        "port-8080",
+        "ps5-payload-dev"
+      ],
+      "notes": "Looks for homebrew under `/data/homebrew`, USB, and external storage.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "ps5-payload-dev-elfldr-org",
+      "name": "ps5-payload-dev/elfldr",
+      "url": "https://github.com/ps5-payload-dev/elfldr",
+      "author": "ps5-payload-dev",
+      "variant": "org",
+      "section": "Core Payload Infrastructure (PS5)",
+      "desc": "ELF loader for jailbroken PS5s. Accepts payloads on port 9021.",
+      "tags": [
+        "payload",
+        "loader",
+        "P5U",
+        "port-9021",
+        "elfdir",
+        "ps5-payload-dev"
+      ],
+      "notes": "Primary target for ZendRz and most PC senders.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "ps5-payload-dev-ftpsrv-org",
+      "name": "ps5-payload-dev/ftpsrv",
+      "url": "https://github.com/ps5-payload-dev/ftpsrv",
+      "author": "ps5-payload-dev",
+      "variant": "org",
+      "section": "Core Payload Infrastructure (PS5)",
+      "desc": "FTP server for jailbroken PS4 and PS5.",
+      "tags": [
+        "payload",
+        "ftp",
+        "P5U",
+        "ps4",
+        "ps5-payload-dev",
+        "port-2121"
+      ],
+      "notes": "Common companion after HEN.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "ps5-payload-dev-fetchpkg-org",
+      "name": "ps5-payload-dev/fetchpkg",
+      "url": "https://github.com/ps5-payload-dev/fetchpkg",
+      "author": "ps5-payload-dev",
+      "variant": "org",
+      "section": "Core Payload Infrastructure (PS5)",
+      "desc": "Fetch PS4/PS5 package updates referenced by a JSON-formatted manifest URL.",
+      "tags": [
+        "payload",
+        "pkg",
+        "tool",
+        "P5U",
+        "ps4",
+        "ps5-payload-dev"
+      ],
+      "notes": "Useful for update pipelines.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "etaHEN-forks-org",
+      "name": "etaHEN / forks",
+      "url": "https://github.com/MasterPS0/etaHEN-SPayload",
+      "author": "MasterPS0",
+      "variant": "org",
+      "section": "Core Payload Infrastructure (PS5)",
+      "desc": "AIO HEN + toolbox for jailbroken PS5. Debug settings replacement, plugins, rest mode options, etc.",
+      "tags": [
+        "hen",
+        "payload",
+        "P5U",
+        "toolbox",
+        "etahen"
+      ],
+      "notes": "Many tools assume etaHEN or compatible environment is running.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "onionHEN-org",
+      "name": "onionHEN",
+      "url": "",
+      "author": "",
+      "variant": "org",
+      "section": "Core Payload Infrastructure (PS5)",
+      "desc": "Homebrew enabler and toolbox built on top of etaHEN.",
+      "tags": [
+        "hen",
+        "payload",
+        "P5U",
+        "onionhen",
+        "toolbox"
+      ],
+      "notes": "Frequently listed in payload mirrors.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "PIZZA-HEN-org",
+      "name": "PIZZA-HEN",
+      "url": "https://github.com/Michele-M-Media/PIZZA-HEN",
+      "author": "Michele-M-Media",
+      "variant": "org",
+      "section": "Core Payload Infrastructure (PS5)",
+      "desc": "Experimental all-in-one PS5 homebrew environment with its own integration layer, Toolbox, service chain, and branding (builds on upstream open-source projects).",
+      "tags": [
+        "hen",
+        "payload",
+        "P5U",
+        "toolbox",
+        "aio"
+      ],
+      "notes": "v2.00 public source checkpoint. Maintained by Michele Media.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "ShadowMountPlus-org",
+      "name": "ShadowMountPlus",
+      "url": "https://github.com/drakmor/ShadowMountPlus",
+      "author": "drakmor",
+      "variant": "org",
+      "section": "Core Payload Infrastructure (PS5)",
+      "desc": "Automated background auto-mounter for jailbroken PS5. Detects, mounts, and installs game backups from internal/external storage. Supports UFS, exFAT, PFS, and nested compressed PFS containers.",
+      "tags": [
+        "payload",
+        "mount",
+        "P5U",
+        "shadowmount",
+        "automation",
+        "drakmor"
+      ],
+      "notes": "Core for game library / KmprZ workflows. Very widely used.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "kstuff-lite-EchoStretch",
+      "name": "kstuff-lite",
+      "url": "https://github.com/EchoStretch/kstuff-lite",
+      "author": "EchoStretch",
+      "variant": "EchoStretch",
+      "section": "Core Payload Infrastructure (PS5)",
+      "desc": "Lite kstuff build – crypto, FSELF, NPDRM, loader work. Optimized UELF/KELF transitions and diagnostics.",
+      "tags": [
+        "payload",
+        "kstuff",
+        "P5U",
+        "echostretch",
+        "fself"
+      ],
+      "notes": "Popular base; many forks exist (including drakmor).",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "kstuff-lite-Drakmor",
+      "name": "kstuff-lite",
+      "url": "https://github.com/drakmor/kstuff-lite",
+      "author": "drakmor",
+      "variant": "Drakmor",
+      "section": "Core Payload Infrastructure (PS5)",
+      "desc": "drakmor fork of kstuff-lite with improved fpkg/FSELF handling, faster startup and internal optimizations.",
+      "tags": [
+        "payload",
+        "kstuff",
+        "P5U",
+        "drakmor",
+        "fself"
+      ],
+      "notes": "Alternative optimized build.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "nanoDNS-org",
+      "name": "nanoDNS",
+      "url": "https://github.com/drakmor/nanoDNS",
+      "author": "drakmor",
+      "variant": "org",
+      "section": "Core Payload Infrastructure (PS5)",
+      "desc": "PlayStation 4/5 DNS proxy server.",
+      "tags": [
+        "payload",
+        "dns",
+        "tool",
+        "P5U",
+        "ps4",
+        "drakmor"
+      ],
+      "notes": "Local DNS proxy useful for blocking/redirecting Sony endpoints.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "ampr-emu-org",
+      "name": "ampr_emu",
+      "url": "https://github.com/drakmor/ampr_emu",
+      "author": "drakmor",
+      "variant": "org",
+      "section": "Core Payload Infrastructure (PS5)",
+      "desc": "AMPR userland emulation.",
+      "tags": [
+        "payload",
+        "emu",
+        "P5U",
+        "drakmor"
+      ],
+      "notes": "Public beta; Discord linked from repo.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "BackPork-org",
+      "name": "BackPork",
+      "url": "https://github.com/BestPig/BackPork",
+      "author": "BestPig",
+      "variant": "org",
+      "section": "Core Payload Infrastructure (PS5)",
+      "desc": "Lets you sideload system libraries into PS5 games.",
+      "tags": [
+        "payload",
+        "sideload",
+        "P5U",
+        "library",
+        "bestpig"
+      ],
+      "notes": "Useful for advanced game patching / library injection.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "ps5debug-NG-org",
+      "name": "ps5debug-NG",
+      "url": "https://github.com/EchoStretch/ps5debug-NG",
+      "author": "EchoStretch",
+      "variant": "org",
+      "section": "Core Payload Infrastructure (PS5)",
+      "desc": "PS5 debugger payload – userland TCP wire-protocol server hosted inside SceShellCore.",
+      "tags": [
+        "payload",
+        "debug",
+        "P5U",
+        "echostretch"
+      ],
+      "notes": "GPL-3. For development / reverse engineering.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "PS5-Account-Activator-org",
+      "name": "PS5 Account Activator",
+      "url": "https://github.com/Epinorr/ps5-account-activator",
+      "author": "Epinorr",
+      "variant": "org",
+      "section": "Core Payload Infrastructure (PS5)",
+      "desc": "All-in-one ELF that combines offline account activation + NP Fake Signin in a single execution. Idempotent, region-aware, clean on-screen notifications.",
+      "tags": [
+        "payload",
+        "activator",
+        "account",
+        "np",
+        "P5U",
+        "port-9021"
+      ],
+      "notes": "Send `AIO-Activator.elf` to the foreground user (port 9021). ~v2.1.0.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "np-fake-signin-org",
+      "name": "np-fake-signin",
+      "url": "https://github.com/earthonion/np-fake-signin",
+      "author": "earthonion",
+      "variant": "org",
+      "section": "Core Payload Infrastructure (PS5)",
+      "desc": "Sets PSN state to \"signed in\" on PS4/PS5. Standalone NP fake sign-in (also folded into Account Activator AIO builds).",
+      "tags": [
+        "payload",
+        "np",
+        "account",
+        "P5U",
+        "ps4"
+      ],
+      "notes": "Primary GitHub home for the payload.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "ps5-account-tools-org",
+      "name": "ps5-account-tools",
+      "url": "https://github.com/MangoScango/ps5-account-tools",
+      "author": "MangoScango",
+      "variant": "org",
+      "section": "Core Payload Infrastructure (PS5)",
+      "desc": "Web UI (port 6769) to manage local PS5 accounts — offline activation + fake PSN sign-in in one place, plus local profile avatar change. Enables Remote Play pairing (Chiaki / Px Play).",
+      "tags": [
+        "payload",
+        "account",
+        "activator",
+        "np",
+        "webui",
+        "P5U",
+        "port-6769",
+        "remote-play"
+      ],
+      "notes": "After activation, note Account IDs, reboot, then pair remote play. Pair with nanoDNS to keep PSN blocked.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "ps5-fw-spoof-org",
+      "name": "ps5-fw-spoof",
+      "url": "https://github.com/illusionyy/ps5-fw-spoof",
+      "author": "illusionyy",
+      "variant": "org",
+      "section": "Core Payload Infrastructure (PS5)",
+      "desc": "Patch PS4 SDK + PS5 Update version in kernel data to `99.99` without hardcoded offsets.",
+      "tags": [
+        "payload",
+        "spoof",
+        "firmware",
+        "P5U",
+        "ps4"
+      ],
+      "notes": "Version spoof helper for tools that gate on FW/SDK version.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "ps5-self-pager-org",
+      "name": "ps5-self-pager",
+      "url": "https://github.com/idlesauce/ps5-self-pager",
+      "author": "idlesauce",
+      "variant": "org",
+      "section": "Core Payload Infrastructure (PS5)",
+      "desc": "PS5 SELF decryptor (“yet another PS5 SELF decryptor”).",
+      "tags": [
+        "tool",
+        "decrypt",
+        "self",
+        "P5U",
+        "dev"
+      ],
+      "notes": "Development / reverse-engineering utility.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "WelcomeHubActivator-org",
+      "name": "WelcomeHubActivator",
+      "url": "https://github.com/ghost1372/WelcomeHubActivator",
+      "author": "ghost1372",
+      "variant": "org",
+      "section": "Core Payload Infrastructure (PS5)",
+      "desc": "PS5 ELF payload that enables the Welcome Hub (FW 10.00–13.60). Requires prior fake account activation + fake sign-in (e.g. ProsperoManager / Account Activator).",
+      "tags": [
+        "payload",
+        "activator",
+        "welcome-hub",
+        "account",
+        "P5U",
+        "port-9021"
+      ],
+      "notes": "One-shot; persists across reboots. Binary: `WelcomeHubActivator-org_v1.0.0.elf`. Backs up `app.db` → `app.bckdb` before edit. If activation fails, may need System *Feature* Update (not full System Software Update). Sign out/in after success.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "ps5upload-org",
+      "name": "ps5upload",
+      "url": "",
+      "author": "",
+      "variant": "org",
+      "section": "Core Payload Infrastructure (PS5)",
+      "desc": "Fast, reliable file transfer between PC and PS5 (requires companion PC app).",
+      "tags": [
+        "tool",
+        "transfer",
+        "P5U",
+        "upload"
+      ],
+      "notes": "Useful for pushing large game dumps or packages.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "ps5-webkit-autoloader-org",
+      "name": "ps5-webkit-autoloader",
+      "url": "https://github.com/itsPLK/ps5-webkit-autoloader",
+      "author": "itsPLK",
+      "variant": "org",
+      "section": "Autoloaders / Exploit Loaders",
+      "desc": "Automated payload loader for exploited PS5 consoles (WebKit path).",
+      "tags": [
+        "autoload",
+        "loader",
+        "P5U",
+        "webkit",
+        "itsplk"
+      ],
+      "notes": "Very popular (1k+ stars).",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "ps5-bdjb-autoloader-org",
+      "name": "ps5-bdjb-autoloader",
+      "url": "https://github.com/itsPLK/ps5-bdjb-autoloader",
+      "author": "itsPLK",
+      "variant": "org",
+      "section": "Autoloaders / Exploit Loaders",
+      "desc": "Automated payload loader for exploited PS5 consoles (BD-J path).",
+      "tags": [
+        "autoload",
+        "loader",
+        "P5U",
+        "bdj",
+        "itsplk"
+      ],
+      "notes": "BD-J entry point automation.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "ps5-lua-autoloader-org",
+      "name": "ps5-lua-autoloader",
+      "url": "https://github.com/itsPLK/ps5-lua-autoloader",
+      "author": "itsPLK",
+      "variant": "org",
+      "section": "Autoloaders / Exploit Loaders",
+      "desc": "Automated payload and Lua script loader for exploited PS5 consoles.",
+      "tags": [
+        "autoload",
+        "loader",
+        "P5U",
+        "lua",
+        "itsplk"
+      ],
+      "notes": "For Lua-based exploit chains.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "ps5-y2jb-autoloader-org",
+      "name": "ps5-y2jb-autoloader",
+      "url": "https://github.com/itsPLK/ps5-y2jb-autoloader",
+      "author": "itsPLK",
+      "variant": "org",
+      "section": "Autoloaders / Exploit Loaders",
+      "desc": "Automated payload loader for exploited PS5 consoles (Y2JB path).",
+      "tags": [
+        "autoload",
+        "loader",
+        "P5U",
+        "y2jb",
+        "itsplk"
+      ],
+      "notes": "Very popular Y2JB automation (~900 stars).",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "P2JB-Y2JB-Porting-org",
+      "name": "P2JB-Y2JB-Porting",
+      "url": "https://github.com/matem6/P2JB-Y2JB-Porting",
+      "author": "matem6",
+      "variant": "org",
+      "section": "Autoloaders / Exploit Loaders",
+      "desc": "PS5 jailbreak via Y2JB. Ports Gezine’s p2jb kqueueex cr_ref overflow.",
+      "tags": [
+        "exploit",
+        "y2jb",
+        "P5U",
+        "jailbreak",
+        "port"
+      ],
+      "notes": "Exploit porting work around Y2JB / p2jb.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "Luac0re-org",
+      "name": "Luac0re",
+      "url": "https://github.com/Gezine/Luac0re",
+      "author": "Gezine",
+      "variant": "org",
+      "section": "Autoloaders / Exploit Loaders",
+      "desc": "mast1c0re variation that uses Lua scripting for easier exploit development.",
+      "tags": [
+        "exploit",
+        "lua",
+        "mast1c0re",
+        "P5U",
+        "ps4",
+        "dev"
+      ],
+      "notes": "Scriptable save-game exploit framework variant.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "mast1c0re-org",
+      "name": "mast1c0re",
+      "url": "https://github.com/McCaulay/mast1c0re",
+      "author": "McCaulay",
+      "variant": "org",
+      "section": "Autoloaders / Exploit Loaders",
+      "desc": "Develop payloads that can be executed on PS4 or PS5 through a game save file.",
+      "tags": [
+        "exploit",
+        "mast1c0re",
+        "P5U",
+        "ps4",
+        "save",
+        "dev"
+      ],
+      "notes": "Classic save-file payload framework. Docs: https://cturt.github.io/mast1c0re.html",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "PS5-Super-PLDMGR-Auto-Updater-org",
+      "name": "PS5-Super-PLDMGR-Auto-Updater",
+      "url": "https://github.com/nexgen999/PS5-Super-PLDMGR-Auto-Updater",
+      "author": "nexgen999",
+      "variant": "org",
+      "section": "Autoloaders / Exploit Loaders",
+      "desc": "Auto-updater focused on the PS5 Payload Manager (PLDMGR) ecosystem.",
+      "tags": [
+        "tool",
+        "autoload",
+        "updater",
+        "P5U",
+        "pldmgr"
+      ],
+      "notes": "Keeps payload manager related components current.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "ps5-web-file-manager-org",
+      "name": "ps5-web-file-manager",
+      "url": "https://github.com/owendswang/ps5-web-file-manager",
+      "author": "owendswang",
+      "variant": "org",
+      "section": "File Managers / Web UIs",
+      "desc": "File manager for PS5 with a web UI.",
+      "tags": [
+        "file-manager",
+        "webui",
+        "payload",
+        "P5U"
+      ],
+      "notes": "Browse/manage files from browser.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "BFpilot-org",
+      "name": "BFpilot",
+      "url": "https://github.com/ItsBlurf/BFpilot",
+      "author": "ItsBlurf",
+      "variant": "org",
+      "section": "File Managers / Web UIs",
+      "desc": "Lightweight PS5 file manager – browser based.",
+      "tags": [
+        "file-manager",
+        "webui",
+        "payload",
+        "P5U"
+      ],
+      "notes": "Minimal alternative to heavier managers.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "NetDis-PS5-NetDis-org",
+      "name": "NetDis / PS5-NetDis",
+      "url": "https://github.com/eladharels/PS5-NetDis",
+      "author": "eladharels",
+      "variant": "org",
+      "section": "File Managers / Web UIs",
+      "desc": "Network diagnostic payload — lists every TCP/UDP socket on a jailbroken PS5 (listening ports, connections, owner process + title ID, reachable from network vs localhost only). Live page in console browser or phone.",
+      "tags": [
+        "payload",
+        "network",
+        "diagnostic",
+        "webui",
+        "P5U",
+        "port-8070",
+        "port-9021"
+      ],
+      "notes": "Send `NetDis.elf` to 9021; UI at `http://<ps5-ip>:8070`. Homescreen Media tile. Binary: `NetDis-org_v1.0.0.elf`. Useful before starting tools that need a free port.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "Prospero-Menu-org",
+      "name": "Prospero-Menu",
+      "url": "https://github.com/StonedModder/Prospero-Menu",
+      "author": "StonedModder",
+      "variant": "org",
+      "section": "Overlays / Menus / System UI",
+      "desc": "Community expandable overlay system for jailbroken PS5 (Tesla Menu style). Drop-in overlays (program `.ovl` or pure JSON menus). Accessible at any time without web UIs.",
+      "tags": [
+        "overlay",
+        "menu",
+        "tesla",
+        "P5U",
+        "fan-control",
+        "boot-anim",
+        "elfdir",
+        "games",
+        "dumper",
+        "stonedmodder"
+      ],
+      "notes": "Overlays live in `/data/ProsperoMenu/overlays/`. Bundled: Fan Control, Console Tools, Games, App Dumper, Elf-Updater, Quick Launch. Supports boot animation / splash via elfdir addon.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "LiveShell-org",
+      "name": "LiveShell",
+      "url": "https://github.com/ZiZc3/LiveShell",
+      "author": "ZiZc3",
+      "variant": "org",
+      "section": "Themes / Home Screen / Visual",
+      "desc": "Animated video wallpapers for the PS5 home screen (LiveShell Engine). Discover tab with hundreds of wallpapers, per-game/app videos (experimental), PS Store-only mode, sound support, look effects (Dim/Vignette/Haze), parallax, rest-mode resume, phone/PC remote control.",
+      "tags": [
+        "theme",
+        "wallpaper",
+        "homescreen",
+        "video",
+        "P5U",
+        "visual",
+        "webui",
+        "media"
+      ],
+      "notes": "Load `liveshell.elf`. Videos go in `/data/LiveShell/video` or USB `liveshell/` folder. H.264/HEVC ≤1080p only (4K not yet). Pause while games run so they keep the video decoder. Current version ~v1.3.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "PS-Play-org",
+      "name": "PS-Play",
+      "url": "https://github.com/MounirHero/PS-Play",
+      "author": "MounirHero",
+      "variant": "org",
+      "section": "Media / Players",
+      "desc": "All-in-one media hub for jailbroken PS5 — DLNA receiver, DLNA/UPnP browser, native Stremio client, IPTV/Live TV and USB playback. Minimal AMOLED-black UI.",
+      "tags": [
+        "media",
+        "player",
+        "dlna",
+        "stremio",
+        "iptv",
+        "P5U",
+        "native-app"
+      ],
+      "notes": "Based on Prospero Player; Stremio integration from Nuvio Portable.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "ProsperoStore-org",
+      "name": "ProsperoStore",
+      "url": "https://github.com/darkxex/ProsperoStore",
+      "author": "darkxex",
+      "variant": "org",
+      "section": "Stores / Download Managers",
+      "desc": "Native PS5 homebrew app store (title `PPSA99000`) for the catalog at prosperostore.net / homebrew.page. Browse, install, update, uninstall from the couch; signed catalog with download verification.",
+      "tags": [
+        "store",
+        "native-app",
+        "P5U",
+        "shadowmount",
+        "port-9021",
+        "catalog"
+      ],
+      "notes": "Aggregator only — apps belong to their own devs. Needs ShadowMountPlus (≥1.7beta4) + ELF loader on 9021; ships a one-shot Lapy helper if no resident Lapy is running. Previous folders kept under `/data/prosperostore/previous/<TITLE ID>` on update. Catalog fallback mirror: darkxex.github.io (signature-checked). Alpha ~v1.000.100. Binary: `ProsperoStore-org_v1.000.100` (native app / FFPKG style, not a single ELF).",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "Orbit-Store-org",
+      "name": "Orbit Store",
+      "url": "https://github.com/saawant12/orbit-store-ps5",
+      "author": "saawant12",
+      "variant": "org",
+      "section": "Stores / Download Managers",
+      "desc": "Modern PS5 download manager with native TV app, phone controls, and Orbit Zero (Mac/Windows/Linux). Browse ~1600 games (PS5 + PS4), compare sources/formats, single-file downloads to console or attached drive. Catalogue updates automatically.",
+      "tags": [
+        "store",
+        "download-manager",
+        "P5U",
+        "ps4",
+        "webui",
+        "native-app",
+        "shadowmount"
+      ],
+      "notes": "Sources include Archive.org, Vikingfile, AkiraBox. Optional TorBox + Archive.org sign-in. Library integrates with ShadowMount. Always free. Latest beta ~v1.3.5.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "RecompStore-org",
+      "name": "RecompStore",
+      "url": "https://github.com/elripalda/RecompStore",
+      "author": "elripalda",
+      "variant": "org",
+      "section": "Stores / Download Managers",
+      "desc": "Homebrew app store for jailbroken PS5 that installs and updates native ports of recompiled games. Bring your own disc.",
+      "tags": [
+        "store",
+        "recomp",
+        "P5U",
+        "native-app"
+      ],
+      "notes": "Focused on recompiled / ported titles rather than dumps.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "RemotePFS-org",
+      "name": "RemotePFS",
+      "url": "https://github.com/PSBrew/RemotePFS",
+      "author": "PSBrew",
+      "variant": "org",
+      "section": "Stores / Download Managers",
+      "desc": "Linux SBC service that emulates an exFAT USB mass storage device via USB OTG, presenting files from a remote Synology NAS to a jailbroken PS5 via ShadowMountPlus.",
+      "tags": [
+        "tool",
+        "mount",
+        "pfs",
+        "shadowmount",
+        "P5U",
+        "nas",
+        "psbrew"
+      ],
+      "notes": "Hardware bridge: NAS → SBC → fake USB → PS5. Pairs with ShadowMountPlus.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "ps5-payloads-mirror-org",
+      "name": "ps5-payloads-mirror",
+      "url": "https://github.com/itsPLK/ps5-payloads-mirror",
+      "author": "itsPLK",
+      "variant": "org",
+      "section": "Payload Mirrors & Catalogs",
+      "desc": "Automated mirror of useful PS5 payloads with version tracking, source links, and direct downloads. Excellent living reference list.",
+      "tags": [
+        "mirror",
+        "catalog",
+        "P5U",
+        "itsplk",
+        "payload"
+      ],
+      "notes": "Keep an eye on this for new releases.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "PS5LinkCentalizer-org",
+      "name": "PS5LinkCentalizer",
+      "url": "https://github.com/pedrohti/PS5LinkCentalizer",
+      "author": "pedrohti",
+      "variant": "org",
+      "section": "Payload Mirrors & Catalogs",
+      "desc": "Community link hub for the PS5 jailbreak scene. Auto-updates project data from GitHub.",
+      "tags": [
+        "mirror",
+        "catalog",
+        "links",
+        "P5U"
+      ],
+      "notes": "Good discovery source.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "zecoxao-github-io-org",
+      "name": "zecoxao.github.io",
+      "url": "https://github.com/zecoxao/zecoxao.github.io",
+      "author": "zecoxao",
+      "variant": "org",
+      "section": "Payload Mirrors & Catalogs",
+      "desc": "Host of many historical PS scene sites and tools.",
+      "tags": [
+        "mirror",
+        "archive",
+        "ps4",
+        "P5",
+        "historical"
+      ],
+      "notes": "Useful for older payloads and documentation.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "MkPFS-org",
+      "name": "MkPFS",
+      "url": "https://github.com/PSBrew/MkPFS",
+      "author": "PSBrew",
+      "variant": "org",
+      "section": "Game / Library / Compression (KmprZ relevance)",
+      "desc": "Tool for building PFS images from loose game files. Reads `sce_sys/param.json`. Core building block for future KmprZ compression stage.",
+      "tags": [
+        "tool",
+        "pfs",
+        "compression",
+        "P5U",
+        "kmprz",
+        "param-json"
+      ],
+      "notes": "Directly relevant to Stage 1 of KmprZ.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "PS5-Game-Compressor-org",
+      "name": "PS5-Game-Compressor",
+      "url": "https://github.com/juma-sayeh/PS5-Game-Compressor",
+      "author": "juma-sayeh",
+      "variant": "org",
+      "section": "Game / Library / Compression (KmprZ relevance)",
+      "desc": "Standalone PS5 payload for compressing, unpacking, validating, and repairing ShadowMountPlus-mounted games.",
+      "tags": [
+        "payload",
+        "compression",
+        "P5U",
+        "shadowmount",
+        "kmprz",
+        "tool"
+      ],
+      "notes": "Directly relevant to KmprZ Stage 1. Works on games already mounted via ShadowMountPlus.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "Convertidor-Pro-org",
+      "name": "Convertidor-Pro",
+      "url": "https://github.com/TheWizWikii/Convertidor-Pro",
+      "author": "TheWizWikii",
+      "variant": "org",
+      "section": "Game / Library / Compression (KmprZ relevance)",
+      "desc": "PC automation suite (RedumpScraper ecosystem) for decrypting, converting, compressing and optimizing game backups — aimed at both emulation and real hardware.",
+      "tags": [
+        "tool",
+        "compression",
+        "conversion",
+        "pc",
+        "redump"
+      ],
+      "notes": "Spanish-language project; useful offline prep pipeline before pushing dumps to PS5.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "ps5-custom-payloads-org",
+      "name": "ps5-custom-payloads",
+      "url": "https://github.com/TheWizWikii/ps5-custom-payloads",
+      "author": "TheWizWikii",
+      "variant": "org",
+      "section": "Game / Library / Compression (KmprZ relevance)",
+      "desc": "Custom payload source repo intended for PS5 Payload Manager (multiple sources support).",
+      "tags": [
+        "mirror",
+        "catalog",
+        "payload",
+        "P5U",
+        "pldmgr"
+      ],
+      "notes": "Add via Payload Manager → Manage Sources (QR / URL).",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "PS5-Repository-List-org",
+      "name": "PS5-Repository-List",
+      "url": "https://github.com/nexgen999/PS5-Repository-List",
+      "author": "nexgen999",
+      "variant": "org",
+      "section": "Game / Library / Compression (KmprZ relevance)",
+      "desc": "Curated list of PS5 repositories / scene resources.",
+      "tags": [
+        "mirror",
+        "catalog",
+        "links",
+        "P5U"
+      ],
+      "notes": "Good discovery index alongside PS5LinkCentalizer.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "ps5-app-dumper-org",
+      "name": "ps5-app-dumper",
+      "url": "https://github.com/EchoStretch/ps5-app-dumper",
+      "author": "EchoStretch",
+      "variant": "org",
+      "section": "Game / Library / Compression (KmprZ relevance)",
+      "desc": "Utility to dump application files from the console’s pfsmnt to a connected USB device.",
+      "tags": [
+        "dumper",
+        "payload",
+        "P5U",
+        "usb",
+        "echostretch"
+      ],
+      "notes": "Also available as built-in overlay inside Prospero-Menu.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "apr-emu-updater-org",
+      "name": "apr-emu-updater",
+      "url": "https://github.com/tsuramatsu1/apr-emu-updater",
+      "author": "tsuramatsu1",
+      "variant": "org",
+      "section": "Game / Library / Compression (KmprZ relevance)",
+      "desc": "PS5 payload that keeps APR Emu up to date on installed titles, managed from a web interface on the console.",
+      "tags": [
+        "emu",
+        "updater",
+        "webui",
+        "payload",
+        "P5U"
+      ],
+      "notes": "Targets APR emulator patches on installed games.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "PS5-Stuff-org",
+      "name": "PS5-Stuff",
+      "url": "https://github.com/TheWizWikii/PS5-Stuff",
+      "author": "TheWizWikii",
+      "variant": "org",
+      "section": "Game / Library / Compression (KmprZ relevance)",
+      "desc": "Collection of BD-JB ISOs, payloads and related PS5 tools/releases.",
+      "tags": [
+        "mirror",
+        "payload",
+        "bdj",
+        "P5U",
+        "collection"
+      ],
+      "notes": "Useful grab-bag of scene releases.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "phantomptr-ps5upload-org",
+      "name": "phantomptr/ps5upload",
+      "url": "",
+      "author": "",
+      "variant": "org",
+      "section": "Game / Library / Compression (KmprZ relevance)",
+      "desc": "Upload tooling referenced in KmprZ credits.",
+      "tags": [
+        "transfer",
+        "tool",
+        "P5U"
+      ],
+      "notes": "Related to the ps5upload entry.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "etaHEN-EchoStretch",
+      "name": "etaHEN",
+      "url": "https://github.com/etaHEN/etaHEN",
+      "author": "EchoStretch / LightningMods",
+      "variant": "EchoStretch",
+      "section": "From the Store",
+      "desc": "",
+      "tags": [
+        "payload"
+      ],
+      "notes": "Fast-moving mainline. Normal retention -- newer builds may carry an expiry timestamp (_ExpiYYYYMMDD).",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "CheatRunner-org",
+      "name": "CheatRunner",
+      "url": "https://github.com/notmaj0r/CheatRunner",
+      "author": "notmaj0r",
+      "variant": "org",
+      "section": "From the Store",
+      "desc": "",
+      "tags": [
+        "payload"
+      ],
+      "notes": "unset -- fill in from release notes",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "elfldr-itsPLK",
+      "name": "elfldr",
+      "url": "https://github.com/itsPLK/ps5-elfldr",
+      "author": "itsPLK",
+      "variant": "itsPLK",
+      "section": "From the Store",
+      "desc": "",
+      "tags": [
+        "payload"
+      ],
+      "notes": "unset -- fill in from release notes",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "PoorDS4-org",
+      "name": "PoorDS4",
+      "url": "https://github.com/ItsBlurf/PoorDS4",
+      "author": "ItsBlurf",
+      "variant": "org",
+      "section": "From the Store",
+      "desc": "",
+      "tags": [
+        "payload"
+      ],
+      "notes": "sibling tool -- see docs/rename-map.md",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "Self-Decrypter-Full-System-org",
+      "name": "Self Decrypter: Full System",
+      "url": "https://github.com/idlesauce/PS5-SELF-Decrypter",
+      "author": "idlesauce",
+      "variant": "org",
+      "section": "From the Store",
+      "desc": "",
+      "tags": [
+        "payload"
+      ],
+      "notes": "sibling tool -- see docs/rename-map.md",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "GarlicSaves-org",
+      "name": "GarlicSaves",
+      "url": "https://git.etawen.dev/earthonion/garlic-savemgr",
+      "author": "earthonion",
+      "variant": "org",
+      "section": "From the Store",
+      "desc": "",
+      "tags": [
+        "payload"
+      ],
+      "notes": "separate tool from garlic-worker, shared prefix only | Not on GitHub (Forgejo host): listed only. Add direct_url + version once you have a file link, then remove fetch:false.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "Garlic-Worker-org",
+      "name": "Garlic Worker",
+      "url": "https://git.etawen.dev/earthonion/garlic-worker",
+      "author": "earthonion",
+      "variant": "org",
+      "section": "From the Store",
+      "desc": "",
+      "tags": [
+        "payload"
+      ],
+      "notes": "separate tool from garlic-savemgr, shared prefix only | Not on GitHub (Forgejo host): listed only. Add direct_url + version once you have a file link, then remove fetch:false.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "HWInfo-Bench-org",
+      "name": "HWInfo Bench",
+      "url": "https://github.com/drakmor/ps5-hwinfo",
+      "author": "drakmor",
+      "variant": "org",
+      "section": "From the Store",
+      "desc": "",
+      "tags": [
+        "payload"
+      ],
+      "notes": "separate tool from hwinfo-sysinfo, shared prefix only",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "onionHEN-org-2",
+      "name": "onionHEN",
+      "url": "https://github.com/aydencharles/onionHEN",
+      "author": "aydencharles",
+      "variant": "org",
+      "section": "From the Store",
+      "desc": "",
+      "tags": [
+        "payload"
+      ],
+      "notes": "unset -- fill in from release notes",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "ProsperoMgr-org",
+      "name": "ProsperoMgr",
+      "url": "https://github.com/notmaj0r/ProsperoMgr",
+      "author": "notmaj0r",
+      "variant": "org",
+      "section": "From the Store",
+      "desc": "",
+      "tags": [
+        "payload"
+      ],
+      "notes": "All-in-one PS5 manager -- files, transfers, PKG installer, save backups, payload autoloader.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "JailbreakStore-org",
+      "name": "JailbreakStore",
+      "url": "https://github.com/notmaj0r/JailbreakStore",
+      "author": "notmaj0r",
+      "variant": "org",
+      "section": "From the Store",
+      "desc": "",
+      "tags": [
+        "payload"
+      ],
+      "notes": "unset -- fill in from release notes",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "ChronicLoader-org",
+      "name": "ChronicLoader",
+      "url": "https://github.com/StonedModder/ChronicLoader-PS5-Payload",
+      "author": "StonedModder",
+      "variant": "org",
+      "section": "From the Store",
+      "desc": "",
+      "tags": [
+        "payload"
+      ],
+      "notes": "PS5 payload updater/autoloader -- downloads from configured GitHub releases and writes autoload.txt. Same repo as the ChronicLoader entry; kept for old file names.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "PS5Library-Agent-org",
+      "name": "PS5Library Agent",
+      "url": "https://github.com/rdiol12/PS5Library",
+      "author": "rdiol12",
+      "variant": "org",
+      "section": "From the Store",
+      "desc": "",
+      "tags": [
+        "payload"
+      ],
+      "notes": "Console-side agent ELF for the PS5Library native storefront. Pairs with PS5Library.pkg. Provides the on-console backend that the storefront UI talks to. GPL-3.0.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "PS5-PKG-Manager-org",
+      "name": "PS5 PKG Manager",
+      "url": "https://github.com/itsPLK/ps5-pkg-manager",
+      "author": "itsPLK",
+      "variant": "org",
+      "section": "From the Store",
+      "desc": "",
+      "tags": [
+        "payload"
+      ],
+      "notes": "Console-side PKG browser and installer (pkgmgr.elf). Scans USB and SMB shares for PKG files and installs them directly on the PS5. GPL-3.0.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "FGG-Unpack-org",
+      "name": "FGG Unpack",
+      "url": "https://github.com/FGGstore/FGG-Unpack",
+      "author": "FGGstore",
+      "variant": "org",
+      "section": "From the Store",
+      "desc": "",
+      "tags": [
+        "payload"
+      ],
+      "notes": "Background watcher ELF that auto-extracts .zip and .7z archives uploaded via FTP, in-place. Great for uploading compressed game folders. Ships with .elf.json for pldmgr. GPL-3.0.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "ELF-Launcher-org",
+      "name": "ELF Launcher",
+      "url": "https://github.com/X-F1REBALL-X/elf-launcher",
+      "author": "X-F1REBALL-X",
+      "variant": "org",
+      "section": "From the Store",
+      "desc": "",
+      "tags": [
+        "payload"
+      ],
+      "notes": "Home screen tile + browser UI for sending ELF payloads to the PS5 (elfldr on port 9021). Serves launcher at port 1000. Companion to wk-autoloader. FOSS.",
+      "removed": false,
+      "hidden": false
+    },
+    {
+      "id": "WK-AutoLoader-org",
+      "name": "WK-AutoLoader",
+      "url": "https://github.com/X-F1REBALL-X/WK-AutoLoader",
+      "author": "X-F1REBALL-X",
+      "variant": "org",
+      "section": "From the Store",
+      "desc": "",
+      "tags": [
+        "payload"
+      ],
+      "notes": "WebKit-based jailbreak loader UI on port 1022. Supports FW 1.xx-5.xx, 7.00-12.00, 12.02-12.70. installer.elf. GPL-3.0.",
+      "removed": false,
+      "hidden": false
+    }
+  ],
+  "powered_by": "Powered By Z3nT13's PLUZ5"
+}

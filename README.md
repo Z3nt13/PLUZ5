@@ -1,222 +1,142 @@
-# PLUZ5 (formerly PLUZ-ps5 / PayLoadUpdaterZ-PS5)
+# PLUZ5
 
-A personal, pldmgr-compatible payload, PKG and ffpfsc-tool mirror and manifest
-generator for PS5 homebrew (PS4 payloads can be included too). Free for anyone
-to use. Cross-platform (Windows + Arch Linux), dependency-free (Python stdlib
-only: no pip installs, no 7-Zip binary, no third-party packages of any kind).
+The maintained PS5 payload store: a ready list of 42 sources, kept fresh by GitHub. **Hosted mode:** the workflow copies each payload into `payloads/` (latest 3 builds) and writes manifests that
+[pldmgr](https://github.com/itsPLK/ps5-payload-manager) on your PS5 reads.
 
-## Security note (read this first)
+```
+builder.html ─► payload_registry.json ─► configs/ ─► Actions (fetch, build, validate) ─► manifests/PLUZ-ps5-Source.json ─► pldmgr
+```
 
-Every script in `core/` is plain, readable Python standard library code. There is:
-- no `eval`/`exec` of remote or dynamic content
-- no network call from any `core/` script
-- no obfuscation, no base64-encoded payloads, no bundled binaries
-- nothing that shells out to `curl`/`wget`/`iwr` or similar
+## 1 · Get your copy (10 min, browser only)
 
-The only places this repo touches the network:
-- `web/add-source.html` -- only when you click "Fetch from GitHub" / "Scrape All", never on load
-- `web/catalog.html` -- on load it fetches this repo's own manifest JSON files (nothing else)
+This repo already holds the full list (`configs/payload_registry.json`). Fork it or use it as a template, then:
 
-Verify yourself in about two minutes:
-`grep -rn "eval(\|exec(\|urllib\|requests\|socket\|subprocess" core/`
-The only `subprocess` usage is local `git` commands in `pluz_update.py`
-(add/commit/push) -- `pluz_check.py` only looks for `git` on PATH.
+| # | Do this | Where |
+|---|---|---|
+| 1 | **Use this template → Create a new repository** (Public) | this repo |
+| 2 | **Settings → Actions → General → Workflow permissions → Read and write → Save** | your repo |
+| 3 | **Settings → Pages → Source: Deploy from a branch → Branch `main` → `/ (root)` → Save**. Wait for the green "site is live" box (1-3 min) | your repo |
+
+## 2 · Build your list
+
+Open `https://<you>.github.io/<repo>/web/builder.html`
+
+1. Type your **store name** (shown in pldmgr).
+2. Paste GitHub repo URLs, one per line → **Add**. Or **Load example list** for a ready-made start.
+3. Tidy the cards: category, FW min/max, hardware tag. Use the **Info %** badge to find thin entries; sort by it.
+4. **Download payload_registry.json**.
+
+## 3 · Publish it
+
+1. In your repo open `configs/` → **Add file → Upload files** → drop `payload_registry.json` → **Commit**.
+2. **Actions → PLUZ5 Update → Run workflow.** Green tick in about a minute. (Then it runs daily and on every change.)
+3. Check `manifests/PLUZ-ps5-Source.json` exists. `[SKIP]` lines in the log say what to fix (see Troubleshooting).
+
+## 4 · Use it on the PS5
+
+pldmgr → add a custom repository (open the link in a browser first; you should see JSON):
+
+```
+https://raw.githubusercontent.com/<you>/<repo>/main/manifests/PLUZ-ps5-Source.json
+```
+
+**Edit later:** builder → section 3 fill user + repo → **Load from my repo** → change → Download → upload to `configs/` again.
+
+## 5 · Add your own .elf / .bin
+
+For a file that is not on GitHub (your build, a friend's file, a download).
+
+1. Builder → **Add your own .elf / .bin** → type a name → **Add personal file**. Download and upload the json as in step 3.
+2. Name your file `<name>_v<version>.elf`, for example `My-Tool_v1.0.elf` (`.bin` works too).
+3. Put it in the repo's `payloads/` folder (web uploader is fine for one file; many files: use "From a PC").
+4. Run the workflow. Your file is listed with its checksum and served from your repo.
+
+Notes: a personal file **beats** an upstream copy with the same name. New version = upload `My-Tool_v1.1.elf`.
+Only share files you may redistribute.
+
+## Library + Store (keep notes on every repo you find)
+
+`web/library.html` keeps two lists side by side:
+
+| | File | Used by |
+|---|---|---|
+| 📚 **Library** | `data/PLUZ5-infos.json` (`.md` and `.xlsx` are built from it) | you: notes, author, variant, tags |
+| 🏪 **Store** | `configs/payload_registry.json` | pldmgr: only what the PS5 downloads |
+
+1. Add a repo link (it lands in the Library). Tick blocks, or **drag** them from Library to Store (and back to remove).
+2. Every bulk action shows a count and a list before it runs. **Undo** works for the session. Nothing is hard-deleted: "Mark removed" is restorable.
+3. **Copy block** (text), **Copy JSON** or **Copy Store JSON** on any selection.
+4. Download both files, upload them to `data/` and `configs/`, run the workflow.
+
+Variant = who made *that build* (`org` = original). In the Store `org` is written as `default`, so no file renames are needed.
+
+## Other source types
+
+| Need | Set on the card |
+|---|---|
+| Several files in a release | **Asset pattern**, e.g. `name-*.elf` |
+| Pre-releases not tagged beta/alpha | **Tag pattern**, e.g. `v0.1.*` |
+| File on a web page, not a release | **Direct file URL** + **Version** |
+| Keep it listed but never fetch | `"fetch": false` (edit json) |
+
+## P5 · P5P · P5U (hardware tag)
+
+`P5` regular/slim PS5 only · `P5P` PS5 Pro · `P5U` universal (both) · blank = not stated (never guessed).
+It describes the **console model**; FW min/max describes the **firmware**.
+
+## Modes
+
+| | source | **hosted** (this repo) |
+|---|---|---|
+| Repo holds | json only | the binaries in `payloads/` |
+| pldmgr downloads from | the original release | your repo |
+| Old builds | latest | up to 3 per payload |
+| Zip-only releases | skipped | extracted |
+
+**This repo ships in hosted mode.** Set `mode` in `configs/settings.json` or `PLUZ_MODE` in `.env`. In both modes, files you put in `payloads/` are used.
+
+## From a PC (the web uploader drops hidden files and big batches)
+
+1. Create an **empty** repo. 2. Unzip this project. 3. Edit `.env`: `GH_USER`, `GH_REPO`, portable tool folders, and a **classic** token (`repo` + `workflow`); `.env` is never uploaded.
+4. Run **`PLUZ-AllStar.bat`** (Linux: `./pluz-allstar.sh`): links the folder to the repo, fetches, builds, validates, pushes. 5. Do steps 2-3 of section 1 once.
+
+`PLUZ-AllStar.bat debug` writes a log (token hidden) to `logs/`. Stuck logins: `PLUZ-GHclean.bat`.
+
+## Troubleshooting
+
+| You see | Do this |
+|---|---|
+| Workflow red, push `403` | Section 1 step 2, re-run |
+| Builder 404 | Pages not live yet: Branch must say `main`, press Save, repo Public. Or open `web/builder.html` from the unzipped folder |
+| `[SKIP] N candidate assets` | Set **Asset pattern** |
+| `[SKIP] no 'beta' release` | Set **Tag pattern** or Channel; the log lists real tags |
+| `[SKIP] only a .zip asset` | Pick another asset, use hosted mode, or unzip and add it as your own file |
+| `[SKIP] does not resolve` | A file in `payloads/` is not named `<name>_v<version>.elf` or has no registry entry |
+| `could not read releases (403)` | GitHub rate limit; re-run later |
+| Manifest has 0 entries | `configs/payload_registry.json` is still the empty one |
+| Daily runs stopped | GitHub pauses idle repos after 60 days: press **Run workflow** once |
+| AllStar: `Repository not found` | Fix `GH_USER` / `GH_REPO` in `.env` |
+| pldmgr shows nothing | Open the raw link in a browser: 404 = wrong name/branch |
 
 ## Layout
 
 ```
-PLUZ5/
-├── PLUZ.pyz                  # portable single-file executor (see below)
-├── PLUZ-AllStar.bat / pluz-allstar.sh   # one-shot pipeline (see below)
-├── pluz-*.sh / pluz-*.bat    # thin per-command launchers
-├── README.md / GamePlan.md
-├── .env.example               # copy to .env (gitignored) and fill in
-├── .github/workflows/         # update.yml (regenerate manifests), validate.yml
-├── core/                      # the actual engine -- everything lives here
-│   ├── __main__.py            # dispatcher (used by PLUZ.pyz)
-│   ├── pluz_common.py         # shared helpers -- no network calls, ever
-│   ├── pluz_check.py          # health check (read-only)
-│   ├── pluz_merge.py          # import payloads/pkgs from any directory
-│   ├── pluz_update.py         # ELF/BIN manifests (Source, Hosted, category splits)
-│   ├── pluz_pkg.py            # PKG manifest
-│   ├── pluz_ffpfsc.py         # ffpfsc-tool manifest
-│   ├── pluz_validate.py       # schema + filename + dupe checks
-│   ├── pluz_dedupe.py         # SHA-256 collision report
-│   ├── pluz_cleanup.py        # backup + wipe for a clean rebuild
-│   ├── pluz_migrate.py        # one-time old-repo retirement
-│   └── pluz_backup.py         # on-demand backup
-├── configs/
-│   ├── settings.json          # paths, manifest names, retention, hw_targets
-│   ├── categories.json
-│   ├── sources.json           # documentation-only reference list
-│   ├── payload_registry.json  # ELF/BIN identity -> metadata
-│   ├── pkg_registry.json      # PKG identity -> metadata
-│   └── ffpfsc_registry.json   # ffpfsc-ecosystem tool identity -> metadata
-├── data/                      # placeholder for the future source/override database
-├── web/
-│   ├── catalog.html           # read-only browser: tabs, search, filters, themes
-│   └── add-source.html        # registry editor (add / edit / delete), human review
-├── payloads/  pkgs/  ffpfsc/  # flat artifact storage (.elf/.bin, .pkg, ffpfsc tools)
-├── manifests/                 # generated -- see "The 4 manifests"
-│   └── split/                 # category-split ELF/BIN manifests
-├── docs/rename-map.md
-└── logs/
+.github/workflows/update.yml    daily + on change + manual
+configs/payload_registry.json   YOUR list (the one file you edit)
+core/                           engine, plain Python
+manifests/                      generated (Source.json, split/, resolved.json)
+payloads/                       your own files (and all files in hosted mode)
+web/                            builder.html, catalog.html
+examples/example-full.json      42-entry starter list
 ```
 
-## GitHub-first (the default way to work)
+## Credits
 
-Everything runs on GitHub; your PC, Arch, Debian or Mac is only needed for a first upload or an emergency.
+Built on the work of the PS5 scene. Thank you to **itsPLK** (pldmgr and the webkit autoloader),
+**notmaj0r** (ProsperoMgr, JailbreakStore), **nexgen999** (evoX-CoreOS ideas), **ps5-payload-dev**, **earthonion**,
+**drakmor**, **Nazky**, **zecoxao**, the etaHEN and kstuff developers, and every author whose payloads these lists point to.
+Thanks also to the community members who test, report and share links.
 
-1. **Edit in the web UI.** Change `configs/*.json` (registries, settings) with GitHub's editor, or use `web/add-source.html`. Commit.
-2. **The `PLUZ5 Update` workflow does the rest.** Daily at 03:17 UTC, on every push to `configs/ payloads/ pkgs/ ffpfsc/`, and on demand (Actions tab, Run workflow). It runs `fetch` (downloads new upstream releases into `payloads/` and `pkgs/`), then `update`, `pkg`, `ffpfsc`, then `validate`, and commits the result. A failing validate stops the job before anything is committed.
-3. **`fetch` never guesses.** It only downloads when a release channel matches and exactly one asset fits. Everything else is listed as `[SKIP]` in the Actions log. Fix a skipped entry by adding `asset_pattern` (asset name, e.g. `*.elf`) or `tag_pattern` (release tag) to its registry variant. Set `"fetch": false` to exclude a variant. It is add-only: it never deletes or overwrites a file.
-4. **No secrets needed.** The workflow uses GitHub's built-in token.
+Designed by **Z3nT13**, built together with **Sparkz** (Claude, Anthropic).
 
-### Local (optional)
-
-Copy `.env.example` to `.env` and edit only that file: `PLUZ_PY_DIR`, `PLUZ_GIT_DIR` (portable tool folders on Windows) or `PLUZ_PYTHON`, `PLUZ_GIT` (exact paths), plus `GH_USER`, `GH_REPO`, `GH_BRANCH`. Every launcher (`pluz-*.bat`, `pluz-*.sh`) reads those through `pluz-env.bat` / `pluz-env.sh`, so no path lives in the source. Blank values fall back to `python` / `git` on PATH. `PLUZ-AllStar.bat` / `pluz-allstar.sh` run the whole pipeline (check, fetch, update, pkg, ffpfsc, validate, git push) in one go. `pluz-fetch` is a dry run unless you pass `--apply`.
-
-**Debug mode.** `PLUZ-AllStar.bat debug` (or `PLUZ_DEBUG=1` in `.env`) prints a diagnostic report (token hidden), turns on git tracing and saves the whole run to `logs\allstar_debug_<time>.log`. `nodebug` forces it off. Send that log file when something breaks.
-
-**No sign-in pop-ups.** AllStar signs in with `GH_TOKEN` and never lets git open a credential window; without a token it stops with a clear message. The token must be limited to this repo with Contents AND Workflows set to Read and write.
-
-**`PLUZ-GHclean.bat`** (clean slate before an upload): a menu with a preview, and three actions: clean local junk (logs, caches), forget saved GitHub logins (git credential helper, `.git-credentials`, Windows Credential Manager), and reset the repo history to one fresh commit (old `.git` is moved to `_backups`, never deleted; you must type CLEAN). Everything is a preview until you pick an action.
-
-## Two ways to run this
-
-**1. `PLUZ.pyz`** -- portable single file (built with Python's stdlib `zipapp`,
-not a third-party packer). Inspect it yourself: `unzip -l PLUZ.pyz` shows plain
-`.py` files. Run it from inside the repo folder:
-```
-python3 PLUZ.pyz check
-python3 PLUZ.pyz merge --source /path/to/payloads --apply
-python3 PLUZ.pyz update --push
-python3 PLUZ.pyz pkg
-python3 PLUZ.pyz ffpfsc
-python3 PLUZ.pyz validate
-python3 PLUZ.pyz dedupe
-python3 PLUZ.pyz backup
-python3 PLUZ.pyz cleanup --apply
-python3 PLUZ.pyz migrate --old /path/to/old/repo --apply
-```
-Rebuild it anytime: `python3 -m zipapp core -o PLUZ.pyz -p "/usr/bin/env python3"`
-
-**2. Individual `pluz-*.sh` / `pluz-*.bat` launchers** -- same commands, one file
-per command. Both call the same `core/pluz_*.py` code; `core/` is the source of truth.
-
-**One-shot:** `PLUZ-AllStar.bat` (Windows) / `pluz-allstar.sh` (Arch/Linux) run
-check -> update -> pkg -> ffpfsc -> validate -> git add/commit/push, stopping at the
-first failing step. `.github/workflows/update.yml` regenerates all manifests on
-GitHub when `payloads/`, `pkgs/`, `ffpfsc/` or `configs/` change.
-
-## Design principles (do not violate these)
-
-1. **Unknown is better than wrong.** Unparseable filenames, unclear categories,
-   ambiguous zip contents, firmware ranges, hardware targets -- all left unset or
-   flagged for manual review, never guessed. Human review is the final authority.
-2. **Never delete on ambiguity.** Retention only removes a file when PLUZ is certain
-   it is superseded. `protected_fallback: true` entries are never auto-deleted.
-3. **Non-destructive by default.** Every script defaults to dry-run; `--apply` (or
-   `--push` for update) is required to actually change anything.
-4. **Secrets and local paths never touch git.** `.env` only, gitignored.
-5. **Backups before anything destructive.** `cleanup` and `migrate` always zip a backup first.
-6. **Never assume `.bin` and `.elf` are duplicates.** Investigate (or run `dedupe`) first.
-
-## The "stable + fast" variant pattern
-
-Some tools ship two tracks you want to keep at once. Model both as **variants of
-the same payload name**, with the stable one `protected_fallback: true` and the
-fast one on normal retention:
-
-```json
-"ShadowMountPlus": {
-  "variants": {
-    "Beta":  { "channel": "beta",  "protected_fallback": true  },
-    "Alpha": { "channel": "alpha", "protected_fallback": false }
-  }
-}
-```
-Filenames: `ShadowMountPlus-Beta_v1.6beta16.elf`, `ShadowMountPlus-Alpha_v1.7alpha9.elf`.
-Same pattern for `etaHEN-EchoStretch` (fast) vs `etaHEN-Zecoxao` (protected).
-
-## The 4 manifests
-
-| File | Contents |
-|---|---|
-| `PLUZ-ps5-Source.json` | Latest/current ELF+BIN, one entry per (payload, variant). **This is what pldmgr consumes.** |
-| `PLUZ-ps5-Hosted.json` | ELF+BIN fallbacks, up to 3 retained builds (`retention` tag: current / previous / previous-2). `protected_fallback` entries always included. |
-| `PLUZ5-PKG.json` | All PKG entries in one file, each tagged with `retention`. PKGs use a different consumption model than pldmgr's autoloader. |
-| `PLUZ5-ffpfsc.json` | ffpfsc-ecosystem tools: `compressor_tool`, `helper_elf`, `compressed_file` (metadata only -- PLUZ5 never hosts full game images). |
-
-`manifests/split/*.json` are per-category copies of the Source manifest. All
-manifests are deterministic (no per-run timestamps), so re-running changes nothing
-unless an input changed. Source and Hosted keep their original `PLUZ-ps5-` file
-names; PKG and ffpfsc use the `PLUZ5-` prefix.
-
-## Filename convention
-
-```
-{payload}[-{variant}]_v{version}[_Expi{YYYYMMDD}].{ext}
-```
-`ext` is `elf`, `bin`, `pkg`, `ffpfsc`, `ffpkg` or `fpkg`. Firmware compatibility and
-hardware target are **registry metadata, never part of the filename**. Official Sony
-content-id PKG filenames do not match this and need manual handling -- see
-`docs/rename-map.md`.
-
-## Registry fields
-
-All three registries share: `display_name`, `source_repo` (the project's primary
-URL), `author`, `author_url`, `backup_url` (optional mirror -- if you hold files from
-both sources, run `dedupe`; matching SHA-256 means the same artifact),
-`category`, `protected_fallback`, `note`, and the optional fields below.
-
-- `payload_registry.json` (ELF/BIN) adds `channel`, `port`.
-- `pkg_registry.json` (PKG) adds `pkg_type`, `title_id`, `content_id`, `required_system_version`.
-- `ffpfsc_registry.json` adds `ffpfsc_type` (`compressor_tool` | `helper_elf` | `compressed_file`).
-
-Optional on any entry (absent or `null` means "not stated", never guessed):
-
-| Field | Values |
-|---|---|
-| `platform` | `ps5` (default) \| `ps4` \| `ps4/ps5` |
-| `fw_min` / `fw_max` | firmware strings, **hand-typed**, never auto-parsed (e.g. `"3.00"`, `"13.60"`) |
-| `hw_target` | `P5` = regular/slim PS5 only \| `P5P` = optimized for PS5 Pro \| `P5U` = universal, optimized for both |
-
-Categories (capped at 10 on purpose): Kernel, Network, File Management, Game
-Tools, Media, System Utility, Debug & SDK, Linux, Activation & Spoof, Unknown.
-A longer list does not scale without an automated review workflow.
-
-## `web/catalog.html` -- read-only catalog
-
-Static page (works on GitHub Pages or any static host). Tabs for payloads, PKGs
-and ffpfsc tools; tile and list views; search; filters for platform, hardware
-target (P5 / P5P / P5U) and category; per-entry detail with firmware range and
-checksum; selectable themes. It only reads the manifest JSON files above.
-
-## `web/add-source.html` -- registry editor
-
-Offline-first: every field is editable by hand. Load a real `payload_registry.json`
-or `pkg_registry.json` through the browser's File System Access API, browse and
-filter entries, edit or delete one in place, then Save. Fields the form has no
-input for (for example `platform`) are preserved when you edit. GitHub discovery
-is on-demand only: a single "Fetch from GitHub", or a multi-link batch scrape that
-shows one result card per repo with a "Load into form" button, so you review each
-before anything is saved. Firefox lacks the File System Access API; use
-Copy/Download there. The editor does not cover `ffpfsc_registry.json` yet.
-
-## First-time order of operations
-
-1. `pluz-check`
-2. `pluz-merge --source /path/to/your/payloads` (dry-run), review the log
-3. Check `docs/rename-map.md` for anything flagged, rename on disk if wanted
-4. `pluz-merge --source /path/to/your/payloads --apply`
-5. Fill registry gaps flagged in the registries (new entries default to `Unknown`)
-6. `pluz-validate`
-7. `pluz-update`, `pluz-pkg` and `pluz-ffpfsc`, review the manifests, then
-   `pluz-update --push` (or `PLUZ-AllStar`) when ready
-
-## What's deferred (on purpose)
-
-The full SOURCE -> PROJECT -> ARTIFACT database with rescrape-proof human overrides
-isn't built (see `data/README.md`). Also open: RSS/Atom export, per-type AIO zip
-bundles. See `GamePlan.md` section 3.
+*Powered By Z3nT13's PLUZ5*

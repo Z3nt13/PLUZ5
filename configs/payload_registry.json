@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "comment": "Keyed by payload name. Each payload has one or more variants. fw_min/fw_max are hand-typed from the dev's own release notes -- never auto-parsed. author/author_url are attribution fields. source_repo is the project's primary URL; backup_url is an optional mirror/fallback location for the SAME artifact -- if you have files sourced from both, run dedupe to confirm they're byte-identical (matching SHA-256 means it's the same artifact, safe to trust either source). This isn't auto-verified yet -- core/ never fetches over the network by design, so cross-checking backup_url against source_repo is future discovery/sync-engine work, not something done automatically today. protected_fallback=true means this artifact is NEVER deleted by retention even if older/superseded. Categories use the condensed 10-category list in categories.json v3. v6: added onionHEN, ChronicLoader, PIZZA-HEN (as PIZZAHEN), kstuff-lite (as kstufflite), BackPork, ps5-webkit-autoloader, ps5-payload-manager, ftpsrv, ProsperoMgr, JailbreakStore; added itsPLK variant to elfldr; confirmed etaHEN-Zecoxao's real hosting URL. Registry keys avoid internal hyphens where the real filename's base name has none (PIZZAHEN, kstufflite, webkitautoloader, ps5payloadmanager) purely so the key reads cleanly -- resolve_identity() matches against whatever the actual filename's name_part is, so this is a naming choice, not a technical requirement. v7: fixed registry keys that didn't match real filenames -- PIZZAHEN->PIZZA-HEN, ChronicLoader->ChronicLoader-PS5-Payload, kstufflite->kstuff-lite, webkitautoloader->webkit-autoloader (split into installer/host variants), ps5payloadmanager->ps5-payload-manager. Caught by testing real filenames against resolve_identity() before shipping, not assumed correct.",
+  "comment": "PLUZ5 maintained list. Edit with web/builder.html.",
   "payloads": {
     "etaHEN": {
       "variants": {
@@ -31,7 +31,9 @@
           "fw_max": "11.40",
           "port": null,
           "protected_fallback": true,
-          "note": "No expiry timer. More stable on FW 11.40 than current EchoStretch beta. Permanent fallback. Exact upstream path: luasauce/payloads/etaHEN-2.6B.bin -- correction confirmed via direct link, not guessed."
+          "note": "No expiry timer. More stable on FW 11.40 than current EchoStretch beta. Permanent fallback. Exact upstream path: luasauce/payloads/etaHEN-2.6B.bin -- correction confirmed via direct link, not guessed. Not a GitHub release: fetched from the project web page (direct_url, version typed by hand). Unverified address: check the fetch log.",
+          "direct_url": "https://zecoxao.github.io/luasauce/payloads/etaHEN-2.6B.bin",
+          "version": "2.6B"
         }
       }
     },
@@ -64,42 +66,6 @@
           "port": null,
           "protected_fallback": false,
           "note": "Updates every few days. Normal 3-version hosted retention applies."
-        }
-      }
-    },
-    "zftp": {
-      "variants": {
-        "itsPLK": {
-          "display_name": "zftp",
-          "source_repo": "unset -- attribution unconfirmed, do not guess (see docs/rename-map.md)",
-          "author": "unset -- attribution unconfirmed, do not guess",
-          "author_url": null,
-          "backup_url": null,
-          "category": "Network",
-          "channel": "stable",
-          "fw_min": null,
-          "fw_max": null,
-          "port": 21,
-          "protected_fallback": false,
-          "note": "Naming/attribution not yet verified -- leave for the future scraper/discovery engine to confirm rather than fixing by hand now."
-        }
-      }
-    },
-    "zhttp": {
-      "variants": {
-        "itsPLK": {
-          "display_name": "zhttp",
-          "source_repo": "unset -- attribution unconfirmed, do not guess",
-          "author": "unset -- attribution unconfirmed, do not guess",
-          "author_url": null,
-          "backup_url": null,
-          "category": "Network",
-          "channel": "stable",
-          "fw_min": null,
-          "fw_max": null,
-          "port": null,
-          "protected_fallback": false,
-          "note": "Naming/attribution not yet verified -- leave for the future scraper/discovery engine to confirm rather than fixing by hand now."
         }
       }
     },
@@ -149,7 +115,8 @@
           "fw_max": null,
           "port": null,
           "protected_fallback": false,
-          "note": "unset -- fill in from release notes"
+          "note": "unset -- fill in from release notes No separate source known: same repo as the default entry.",
+          "fetch": false
         }
       }
     },
@@ -185,132 +152,6 @@
         }
       }
     },
-    "fan-target-70c": {
-      "variants": {
-        "default": {
-          "display_name": "Fan Target 70C",
-          "source_repo": "unset",
-          "author": "unset",
-          "author_url": null,
-          "backup_url": null,
-          "category": "System Utility",
-          "channel": "stable",
-          "fw_min": null,
-          "fw_max": null,
-          "port": null,
-          "protected_fallback": false,
-          "note": "sibling tool, not a version of fan-target-75c/80c -- see docs/rename-map.md"
-        }
-      }
-    },
-    "fan-target-75c": {
-      "variants": {
-        "default": {
-          "display_name": "Fan Target 75C",
-          "source_repo": "unset",
-          "author": "unset",
-          "author_url": null,
-          "backup_url": null,
-          "category": "System Utility",
-          "channel": "stable",
-          "fw_min": null,
-          "fw_max": null,
-          "port": null,
-          "protected_fallback": false,
-          "note": "sibling tool -- see docs/rename-map.md"
-        }
-      }
-    },
-    "fan-target-80c": {
-      "variants": {
-        "default": {
-          "display_name": "Fan Target 80C",
-          "source_repo": "unset",
-          "author": "unset",
-          "author_url": null,
-          "backup_url": null,
-          "category": "System Utility",
-          "channel": "stable",
-          "fw_min": null,
-          "fw_max": null,
-          "port": null,
-          "protected_fallback": false,
-          "note": "sibling tool -- see docs/rename-map.md"
-        }
-      }
-    },
-    "ps5power-notify": {
-      "variants": {
-        "default": {
-          "display_name": "PS5 Power: Notify (test)",
-          "source_repo": "unset",
-          "author": "unset",
-          "author_url": null,
-          "backup_url": null,
-          "category": "System Utility",
-          "channel": "beta",
-          "fw_min": null,
-          "fw_max": null,
-          "port": null,
-          "protected_fallback": false,
-          "note": "sibling tool -- see docs/rename-map.md"
-        }
-      }
-    },
-    "ps5power-poweroff": {
-      "variants": {
-        "default": {
-          "display_name": "PS5 Power: Poweroff",
-          "source_repo": "unset",
-          "author": "unset",
-          "author_url": null,
-          "backup_url": null,
-          "category": "System Utility",
-          "channel": "stable",
-          "fw_min": null,
-          "fw_max": null,
-          "port": null,
-          "protected_fallback": false,
-          "note": "sibling tool -- see docs/rename-map.md"
-        }
-      }
-    },
-    "ps5power-reboot": {
-      "variants": {
-        "default": {
-          "display_name": "PS5 Power: Reboot",
-          "source_repo": "unset",
-          "author": "unset",
-          "author_url": null,
-          "backup_url": null,
-          "category": "System Utility",
-          "channel": "stable",
-          "fw_min": null,
-          "fw_max": null,
-          "port": null,
-          "protected_fallback": false,
-          "note": "sibling tool -- see docs/rename-map.md"
-        }
-      }
-    },
-    "ps5power-suspend": {
-      "variants": {
-        "default": {
-          "display_name": "PS5 Power: Suspend",
-          "source_repo": "unset",
-          "author": "unset",
-          "author_url": null,
-          "backup_url": null,
-          "category": "System Utility",
-          "channel": "stable",
-          "fw_min": null,
-          "fw_max": null,
-          "port": null,
-          "protected_fallback": false,
-          "note": "sibling tool -- see docs/rename-map.md"
-        }
-      }
-    },
     "poords4-rc": {
       "variants": {
         "default": {
@@ -320,12 +161,13 @@
           "author_url": "https://github.com/ItsBlurf",
           "backup_url": null,
           "category": "System Utility",
-          "channel": "beta",
+          "channel": "stable",
           "fw_min": null,
           "fw_max": null,
           "port": null,
           "protected_fallback": false,
-          "note": "sibling tool -- see docs/rename-map.md"
+          "note": "sibling tool -- see docs/rename-map.md",
+          "asset_pattern": "PoorDS4rc*.elf"
         }
       }
     },
@@ -338,12 +180,13 @@
           "author_url": "https://github.com/ItsBlurf",
           "backup_url": null,
           "category": "System Utility",
-          "channel": "beta",
+          "channel": "stable",
           "fw_min": null,
           "fw_max": null,
           "port": null,
           "protected_fallback": false,
-          "note": "sibling tool -- see docs/rename-map.md"
+          "note": "sibling tool -- see docs/rename-map.md",
+          "asset_pattern": "PoorDS4-status.elf"
         }
       }
     },
@@ -356,12 +199,13 @@
           "author_url": "https://github.com/ItsBlurf",
           "backup_url": null,
           "category": "System Utility",
-          "channel": "beta",
+          "channel": "stable",
           "fw_min": null,
           "fw_max": null,
           "port": null,
           "protected_fallback": false,
-          "note": "sibling tool -- see docs/rename-map.md"
+          "note": "sibling tool -- see docs/rename-map.md",
+          "asset_pattern": "PoorDS4-stop.elf"
         }
       }
     },
@@ -520,7 +364,7 @@
     "garlic-savemgr": {
       "variants": {
         "default": {
-          "display_name": "Garlic Save Manager",
+          "display_name": "GarlicSaves",
           "source_repo": "https://git.etawen.dev/earthonion/garlic-savemgr",
           "author": "earthonion",
           "author_url": "https://git.etawen.dev/earthonion",
@@ -531,7 +375,8 @@
           "fw_max": null,
           "port": null,
           "protected_fallback": false,
-          "note": "separate tool from garlic-worker, shared prefix only"
+          "note": "separate tool from garlic-worker, shared prefix only | Not on GitHub (Forgejo host): listed only. Add direct_url + version once you have a file link, then remove fetch:false.",
+          "fetch": false
         }
       }
     },
@@ -549,7 +394,8 @@
           "fw_max": null,
           "port": null,
           "protected_fallback": false,
-          "note": "separate tool from garlic-savemgr, shared prefix only"
+          "note": "separate tool from garlic-savemgr, shared prefix only | Not on GitHub (Forgejo host): listed only. Add direct_url + version once you have a file link, then remove fetch:false.",
+          "fetch": false
         }
       }
     },
@@ -629,48 +475,6 @@
     },
     "ftpsrv": {
       "variants": {
-        "default": {
-          "display_name": "ftpsrv",
-          "source_repo": "unset -- not yet confirmed",
-          "author": "unset",
-          "author_url": null,
-          "backup_url": null,
-          "category": "Network",
-          "channel": "stable",
-          "fw_min": null,
-          "fw_max": null,
-          "port": null,
-          "protected_fallback": false,
-          "note": "Un-suffixed builds (v1.15-ng, v1.16-ng-test2) -- source not confirmed which fork these are."
-        },
-        "drakmor": {
-          "display_name": "ftpsrv (drakmor fork)",
-          "source_repo": "unset -- fork of ps5-payload-dev/ftpsrv, exact repo unconfirmed",
-          "author": "drakmor",
-          "author_url": "https://github.com/drakmor",
-          "backup_url": null,
-          "category": "Network",
-          "channel": "beta",
-          "fw_min": null,
-          "fw_max": null,
-          "port": 21,
-          "protected_fallback": false,
-          "note": "Test fork -- confirm exact repo before treating as authoritative."
-        },
-        "autopause": {
-          "display_name": "ftpsrv (autopause)",
-          "source_repo": "unset -- not yet confirmed",
-          "author": "unset",
-          "author_url": null,
-          "backup_url": null,
-          "category": "Network",
-          "channel": "stable",
-          "fw_min": null,
-          "fw_max": null,
-          "port": null,
-          "protected_fallback": false,
-          "note": "Feature-flagged build -- source not confirmed, do not assume same repo as ps5-payload-dev."
-        },
         "ps5-payload": {
           "display_name": "ftpsrv (ps5-payload-dev)",
           "source_repo": "https://github.com/ps5-payload-dev/ftpsrv",
@@ -685,20 +489,6 @@
           "protected_fallback": false,
           "note": "unset -- fill in from release notes",
           "asset_pattern": "ftpsrv-ps5.elf"
-        },
-        "install": {
-          "display_name": "ftpsrv (install)",
-          "source_repo": "unset -- not yet confirmed",
-          "author": "unset",
-          "author_url": null,
-          "backup_url": null,
-          "category": "Network",
-          "channel": "stable",
-          "fw_min": null,
-          "fw_max": null,
-          "port": null,
-          "protected_fallback": false,
-          "note": "unset -- fill in from release notes"
         }
       }
     },
@@ -770,7 +560,8 @@
           "fw_max": null,
           "port": null,
           "protected_fallback": false,
-          "note": "PS5 payload updater/autoloader -- downloads from configured GitHub releases and writes autoload.txt."
+          "note": "PS5 payload updater/autoloader -- downloads from configured GitHub releases and writes autoload.txt. Same repo as the ChronicLoader entry; kept for old file names.",
+          "fetch": false
         }
       }
     },
@@ -789,20 +580,6 @@
           "port": null,
           "protected_fallback": false,
           "note": "unset -- fill in from release notes"
-        },
-        "drakmor": {
-          "display_name": "kstuff-lite (drakmor)",
-          "source_repo": "unset -- not yet confirmed",
-          "author": "unset",
-          "author_url": null,
-          "backup_url": null,
-          "category": "Kernel",
-          "channel": "stable",
-          "fw_min": null,
-          "fw_max": null,
-          "port": null,
-          "protected_fallback": false,
-          "note": "Sibling build referenced by kstuff-lite_drakmor_v1.2-dr-test2.elf -- source not confirmed, do not guess."
         }
       }
     },
@@ -820,7 +597,8 @@
           "fw_max": null,
           "port": null,
           "protected_fallback": false,
-          "note": "Unified exploit autoloader: umtx2 (FW 1.00-5.50), slopkit (9.00-12.00), p2jb (12.02-12.70). Installs a homescreen app for offline autoloading."
+          "note": "Unified exploit autoloader: umtx2 (FW 1.00-5.50), slopkit (9.00-12.00), p2jb (12.02-12.70). Installs a homescreen app for offline autoloading. Same file as the ps5-webkit-autoloader entry -- kept only so old file names still resolve.",
+          "fetch": false
         },
         "host": {
           "display_name": "ps5-webkit-autoloader (PC host)",
@@ -834,7 +612,8 @@
           "fw_max": null,
           "port": null,
           "protected_fallback": false,
-          "note": "Unified exploit autoloader: umtx2 (FW 1.00-5.50), slopkit (9.00-12.00), p2jb (12.02-12.70). Installs a homescreen app for offline autoloading. This variant is the PC-side host companion (.py/.exe), not a PS5 payload."
+          "note": "Unified exploit autoloader: umtx2 (FW 1.00-5.50), slopkit (9.00-12.00), p2jb (12.02-12.70). Installs a homescreen app for offline autoloading. This variant is the PC-side host companion (.py/.exe), not a PS5 payload. PC-side tool (.exe/.py), not a console payload.",
+          "fetch": false
         }
       }
     },
@@ -871,38 +650,6 @@
           "port": null,
           "protected_fallback": false,
           "note": "PS5 payload updater/autoloader -- checks GitHub releases, manages autoload.txt."
-        }
-      }
-    },
-    "kstuff": {
-      "variants": {
-        "EchoStretch": {
-          "display_name": "kstuff (EchoStretch)",
-          "source_repo": "unset -- not yet confirmed",
-          "author": "unset",
-          "author_url": null,
-          "backup_url": null,
-          "category": "Kernel",
-          "channel": "stable",
-          "fw_min": null,
-          "fw_max": null,
-          "port": null,
-          "protected_fallback": false,
-          "note": "Mainline kstuff by EchoStretch -- only the kstuff-lite repo was confirmed directly, this one wasn't."
-        },
-        "default": {
-          "display_name": "kstuff",
-          "source_repo": "unset -- not yet confirmed",
-          "author": "unset",
-          "author_url": null,
-          "backup_url": null,
-          "category": "Kernel",
-          "channel": "stable",
-          "fw_min": null,
-          "fw_max": null,
-          "port": null,
-          "protected_fallback": false,
-          "note": "Vanilla/original kstuff build referenced by kstuff_v1.09.elf -- source not confirmed."
         }
       }
     },
@@ -1014,5 +761,6 @@
         }
       }
     }
-  }
+  },
+  "store_name": "Z3nT13's PLUZ5"
 }

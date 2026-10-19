@@ -3,8 +3,6 @@ pluz_update.py -- regenerates the pldmgr-compatible ELF/BIN manifests from
 whatever is currently in payloads/, re-verifies every on-disk SHA-256, and
 (with --push) commits + pushes using your LOCAL git auth if anything changed.
 
-For PKG manifests, see pluz_pkg.py -- PKGs are a separate consumption model
-from pldmgr's autoloader payloads and get their own manifest.
 
 No network access happens in this script itself -- `git push` is a local
 git subprocess call that uses whatever credential helper/SSH key you
@@ -23,7 +21,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from pluz_common import (  # noqa: E402
     repo_root, load_env, load_config, parse_filename_raw, resolve_identity, sha256_file,
-    version_sort_key, Log,
+    version_sort_key, Log, get_mode, resolved_path, load_json,
 )
 
 
@@ -32,7 +30,7 @@ def build_url(gh_user: str, gh_repo: str, gh_branch: str, subdir: str, filename:
 
 
 def make_manifest_entry(payload_name: str, variant: str, artifact: dict, reg: dict, env: dict, subdir: str) -> dict:
-    url = build_url(env["GH_USER"], env["GH_REPO"], env["GH_BRANCH"], subdir, artifact["filename"])
+    url = artifact.get("url") or build_url(env["GH_USER"], env["GH_REPO"], env["GH_BRANCH"], subdir, artifact["filename"])
     display_name = reg.get("display_name", payload_name if variant == "default" else f"{payload_name} ({variant})")
 
     desc_bits = []
@@ -92,13 +90,37 @@ def main(argv=None):
     retention = cfg["settings"]["retention"]
     main_keep, hosted_keep = retention["main_keep"], retention["hosted_keep"]
 
+    mode = get_mode(cfg, env)
+    groups = defaultdict(list)
+    unresolved = []
+    # Files in payloads/ are always scanned: in hosted mode they are the store;
+    # in source mode they are your personal .elf/.bin files and win over upstream.
     files = [p for p in payloads_dir.iterdir()
              if p.is_file() and p.suffix.lstrip(".").lower() in {"elf", "bin"}] \
         if payloads_dir.is_dir() else []
-    log.line(f"Scanning {len(files)} files in {payloads_dir}")
-
-    groups = defaultdict(list)
-    unresolved = []
+    log.line(f"mode={mode}: {len(files)} file(s) in {payloads_dir.name}/")
+    local_keys = set()
+    for f in files:
+        pf = parse_filename_raw(f.name)
+        rid = resolve_identity(pf["name_part"], registry) if pf else None
+        if rid:
+            local_keys.add(f"{rid[0]}/{rid[1]}")
+    if mode == "source":
+        rp = resolved_path(root)
+        resolved = load_json(rp) if rp.exists() else {}
+        log.line(f"mode=source: building from {rp.name} ({len(resolved)} resolved upstream assets)")
+        for key in sorted(resolved):
+            ident, _, variant = key.partition("/")
+            reg_entry = registry.get(ident, {}).get("variants", {}).get(variant)
+            if reg_entry is None:
+                continue                                  # removed from the registry
+            if key in local_keys:
+                log.line(f"  [LOCAL WINS] {key}: your file in {payloads_dir.name}/ is used instead of upstream")
+                continue
+            rec = resolved[key]
+            groups[(ident, variant)].append({
+                "filename": rec["filename"], "version": rec["version"], "expiry": None,
+                "sha256": rec["sha256"], "url": rec["url"], "registry": reg_entry})
 
     for f in sorted(files, key=lambda p: p.name):
         parsed = parse_filename_raw(f.name)
@@ -151,22 +173,32 @@ def main(argv=None):
 
     # pldmgr shape: {"name": ..., "payloads": [...]} -- 'name' first, no per-run
     # timestamp (a changing timestamp would make every run produce a git diff).
-    main_manifest = {"name": "Z3nT1's PLUZ5 -- Source", "payloads": main_entries}
-    hosted_manifest = {"name": "Z3nT1's PLUZ5 -- Hosted", "payloads": hosted_entries}
+    owner = env.get("GH_USER") or "My"
+    store = str(cfg["registry"].get("store_name") or "").strip()   # set in the builder
+    base = store or f"{owner}'s PLUZ5"
+    main_manifest = {"name": base if store else f"{base} -- Source", "payloads": main_entries}
+    hosted_manifest = {"name": f"{base} -- Hosted", "payloads": hosted_entries}
 
     (root / cfg["settings"]["manifest_files"]["main"]).parent.mkdir(parents=True, exist_ok=True)
     (root / cfg["settings"]["manifest_files"]["main"]).write_text(json.dumps(main_manifest, indent=2), encoding="utf-8")
-    (root / cfg["settings"]["manifest_files"]["hosted"]).write_text(json.dumps(hosted_manifest, indent=2), encoding="utf-8")
+    hosted_path = root / cfg["settings"]["manifest_files"]["hosted"]
+    if mode == "hosted":
+        hosted_path.write_text(json.dumps(hosted_manifest, indent=2), encoding="utf-8")
+    elif hosted_path.exists():
+        hosted_path.unlink()                              # source mode has no hosted builds
 
     split_dir = root / cfg["settings"]["paths"]["split_manifests"]
     split_dir.mkdir(parents=True, exist_ok=True)
+    for old in split_dir.glob("ps5_*.json"):             # drop categories that are now empty
+        old.unlink()
     for category, entries in split_buckets.items():
         safe_name = category.lower().replace(" ", "_").replace("&", "and")
-        out = {"name": f"Z3nT1's PLUZ5 -- {category}", "payloads": entries}
+        out = {"name": f"{base} -- {category}", "payloads": entries}
         (split_dir / f"ps5_{safe_name}.json").write_text(json.dumps(out, indent=2), encoding="utf-8")
     log.line(f"Category splits written: {len(split_buckets)}")
     log.line(f"Wrote {len(main_entries)} entries to {cfg['settings']['manifest_files']['main']}")
-    log.line(f"Wrote {len(hosted_entries)} entries to {cfg['settings']['manifest_files']['hosted']}")
+    if mode == "hosted":
+        log.line(f"Wrote {len(hosted_entries)} entries to {cfg['settings']['manifest_files']['hosted']}")
 
     if unresolved:
         log.line(f"[WARN] {len(unresolved)} files skipped -- see log for details")

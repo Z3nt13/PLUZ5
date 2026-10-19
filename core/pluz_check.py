@@ -54,12 +54,12 @@ def main(argv=None):
 
     # Runtime folders hold generated files and are empty (so absent) in a fresh
     # GitHub web upload: create them, additive and harmless.
-    for d in ["payloads", "pkgs", "ffpfsc", "manifests", "manifests/split", "logs"]:
+    for d in ["payloads", "manifests", "manifests/split", "logs"]:
         if not (root / d).is_dir():
             (root / d).mkdir(parents=True, exist_ok=True)
             (root / d / ".gitkeep").touch()
             log.line(f"[FIXED] created missing folder: {d}/")
-    for d in ["configs", "data", "payloads", "pkgs", "ffpfsc", "manifests", "manifests/split", "core", "web", "logs"]:
+    for d in ["configs", "payloads", "manifests", "manifests/split", "core", "web", "logs"]:
         all_ok &= check(log, f"directory: {d}", (root / d).is_dir())
 
     try:
@@ -105,8 +105,6 @@ def main(argv=None):
 
     if cfg:
         check_dir_coverage(log, root / cfg["settings"]["paths"]["payloads"], cfg["registry"]["payloads"], "payloads")
-        check_dir_coverage(log, root / cfg["settings"]["paths"]["pkgs"], cfg["pkg_registry"]["packages"], "pkgs")
-        check_dir_coverage(log, root / cfg["settings"]["paths"].get("ffpfsc", "ffpfsc"), cfg["ffpfsc_registry"].get("entries", {}), "ffpfsc")
 
     log.line("=" * 50)
     log.line("PLUZ environment is READY." if all_ok else "PLUZ environment has issues -- see FAIL lines above.")

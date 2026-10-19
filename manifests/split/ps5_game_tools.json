@@ -1,5 +1,5 @@
 {
-  "name": "Z3nT1's PLUZ5 -- Game Tools",
+  "name": "Z3nT13's PLUZ5 -- Game Tools",
   "payloads": [
     {
       "name": "BackPork",
@@ -16,22 +16,6 @@
       "author": "BestPig",
       "author_url": "https://github.com/BestPig",
       "checksum": "d74e4cd119b2bb1fd423f2f5b1c9a7f096b3e588c753af1ab48b983d56216a52"
-    },
-    {
-      "name": "CheatRunner (RDX fork)",
-      "filename": "CheatRunner-RDX_v0.18.elf",
-      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/CheatRunner-RDX_v0.18.elf",
-      "backup_url": null,
-      "description": "unset -- fill in from release notes",
-      "version": "0.18",
-      "fw_min": null,
-      "fw_max": null,
-      "platform": "ps5",
-      "hw_target": null,
-      "category": "Game Tools",
-      "author": "notmaj0r",
-      "author_url": "https://github.com/notmaj0r",
-      "checksum": "4ae1ea4e37b2e67d5487355ddf671f166861ed6dceea348c048ad060770c0140"
     },
     {
       "name": "CheatRunner",

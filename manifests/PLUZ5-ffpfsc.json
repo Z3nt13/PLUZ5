@@ -1,6 +1,0 @@
-{
-  "name": "Z3nT1's PLUZ5 -- ffpfsc",
-  "schema_version": 1,
-  "comment": "PS5 ffpfsc/ffpkg/fpkg ecosystem tools and helpers. ffpfsc_type field: compressor_tool | helper_elf | compressed_file.",
-  "entries": []
-}
