@@ -37,6 +37,8 @@ Open `https://<you>.github.io/<repo>/web/builder.html`
 pldmgr → add a custom repository (open the link in a browser first; you should see JSON):
 
 ```
+https://raw.githubusercontent.com/Z3nt13/PLUZ5/refs/heads/main/configs/payload_registry.json
+or
 https://raw.githubusercontent.com/<you>/<repo>/main/manifests/PLUZ-ps5-Source.json
 ```
 
