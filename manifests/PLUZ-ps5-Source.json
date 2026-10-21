@@ -115,11 +115,11 @@
     },
     {
       "name": "ShadowMountPlus (Beta)",
-      "filename": "ShadowMountPlus-Beta_v1.7beta4.elf",
-      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/ShadowMountPlus-Beta_v1.7beta4.elf",
+      "filename": "ShadowMountPlus-Beta_v1.7beta6-fix2.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/ShadowMountPlus-Beta_v1.7beta6-fix2.elf",
       "backup_url": null,
       "description": "Slower-moving, more-tested track. Always kept regardless of retention count.",
-      "version": "1.7beta4",
+      "version": "1.7beta6-fix2",
       "fw_min": null,
       "fw_max": null,
       "platform": "ps5",
@@ -127,7 +127,7 @@
       "category": "Game Tools",
       "author": "drakmor",
       "author_url": "https://github.com/drakmor",
-      "checksum": "fc4e5f715e76660ce34bde2adb10eaf1d069cb2cdf06f7a380896dfb62bd0c4a"
+      "checksum": "ec87ad20f78be2d7cb82e9d77e72352b079e049baac3c1a211960ccd6f252e62"
     },
     {
       "name": "ELF Launcher (X-F1REBALL-X)",
@@ -323,11 +323,11 @@
     },
     {
       "name": "PoorDS4 (status)",
-      "filename": "poords4-status_v0.1.0-rc51.elf",
-      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/poords4-status_v0.1.0-rc51.elf",
+      "filename": "poords4-status_v0.2.0.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/poords4-status_v0.2.0.elf",
       "backup_url": null,
       "description": "sibling tool -- see docs/rename-map.md",
-      "version": "0.1.0-rc51",
+      "version": "0.2.0",
       "fw_min": null,
       "fw_max": null,
       "platform": "ps5",
@@ -335,15 +335,15 @@
       "category": "System Utility",
       "author": "ItsBlurf",
       "author_url": "https://github.com/ItsBlurf",
-      "checksum": "d47bb84a6ae05117f095c05b75dfee15d9fbf07864a3e52d0e2e626eab613440"
+      "checksum": "100a21631a86a1fed456d822bb923012252575adf9cb0ca8e5346ccdacb38da5"
     },
     {
       "name": "PoorDS4 (stop)",
-      "filename": "poords4-stop_v0.1.0-rc51.elf",
-      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/poords4-stop_v0.1.0-rc51.elf",
+      "filename": "poords4-stop_v0.2.0.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/poords4-stop_v0.2.0.elf",
       "backup_url": null,
       "description": "sibling tool -- see docs/rename-map.md",
-      "version": "0.1.0-rc51",
+      "version": "0.2.0",
       "fw_min": null,
       "fw_max": null,
       "platform": "ps5",
@@ -351,7 +351,7 @@
       "category": "System Utility",
       "author": "ItsBlurf",
       "author_url": "https://github.com/ItsBlurf",
-      "checksum": "ffdce4964f0d34a2b9be7cb65e6ad345d5beb582dcdf94d0214cde6bc79acd0d"
+      "checksum": "fab1ad04daf8346e5952c115f3a08621598d29e222ff80e328a14e73a0f968c8"
     },
     {
       "name": "PS5 Payload Manager",
