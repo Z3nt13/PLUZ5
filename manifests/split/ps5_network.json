@@ -19,11 +19,11 @@
     },
     {
       "name": "elfldr",
-      "filename": "elfldr_v0.26.elf",
-      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/elfldr_v0.26.elf",
+      "filename": "elfldr_v0.27.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/elfldr_v0.27.elf",
       "backup_url": null,
       "description": "port 9021",
-      "version": "0.26",
+      "version": "0.27",
       "fw_min": null,
       "fw_max": null,
       "platform": "ps5",
@@ -31,7 +31,7 @@
       "category": "Network",
       "author": "ps5-payload-dev",
       "author_url": "https://github.com/ps5-payload-dev",
-      "checksum": "ed6d587a057c09d6a95b2176e336d9ffc605e547ac56462128b029e47b8ccea1"
+      "checksum": "82f6227610172c98bad6efe68219fc93a10027035991f47eb4b75532d023407d"
     },
     {
       "name": "ftpsrv (ps5-payload-dev)",
