@@ -70,6 +70,23 @@
       "retention": "current"
     },
     {
+      "name": "JailbreakStore",
+      "filename": "JailbreakStore_vRelapse.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/JailbreakStore_vRelapse.elf",
+      "backup_url": null,
+      "description": "unset -- fill in from release notes",
+      "version": "Relapse",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": null,
+      "category": "System Utility",
+      "author": "notmaj0r",
+      "author_url": "https://github.com/notmaj0r",
+      "checksum": "ca6b3c707f86c040269a34234046925080466bcc9266683e731e5442d22458ba",
+      "retention": "previous"
+    },
+    {
       "name": "PIZZA-HEN",
       "filename": "PIZZA-HEN_v2.00.elf",
       "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/PIZZA-HEN_v2.00.elf",
