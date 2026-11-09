@@ -83,11 +83,11 @@
     },
     {
       "name": "ProsperoMgr",
-      "filename": "ProsperoMgr_v1.1.elf",
-      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/ProsperoMgr_v1.1.elf",
+      "filename": "ProsperoMgr_v1.2.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/ProsperoMgr_v1.2.elf",
       "backup_url": null,
       "description": "All-in-one PS5 manager -- files, transfers, PKG installer, save backups, payload autoloader.",
-      "version": "1.1",
+      "version": "1.2",
       "fw_min": null,
       "fw_max": null,
       "platform": "ps5",
@@ -95,7 +95,7 @@
       "category": "System Utility",
       "author": "notmaj0r",
       "author_url": "https://github.com/notmaj0r",
-      "checksum": "e7a6bb544adb2fb2a61aa9cc83b0ad15f70b32d7511a3de0f1fb88812f11983c"
+      "checksum": "127394cc4f1ac7347fea509e010e80bab7b5ee13d820665474cdc3928d173bce"
     },
     {
       "name": "ShadowMountPlus (Alpha)",
@@ -115,11 +115,11 @@
     },
     {
       "name": "ShadowMountPlus (Beta)",
-      "filename": "ShadowMountPlus-Beta_v1.7beta8.elf",
-      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/ShadowMountPlus-Beta_v1.7beta8.elf",
+      "filename": "ShadowMountPlus-Beta_v1.7beta12.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/ShadowMountPlus-Beta_v1.7beta12.elf",
       "backup_url": null,
       "description": "Slower-moving, more-tested track. Always kept regardless of retention count.",
-      "version": "1.7beta8",
+      "version": "1.7beta12",
       "fw_min": null,
       "fw_max": null,
       "platform": "ps5",
@@ -127,7 +127,7 @@
       "category": "Game Tools",
       "author": "drakmor",
       "author_url": "https://github.com/drakmor",
-      "checksum": "7163472217a2390f5bcbe3b61a96963976f7b7bd84d960b8d926f35b9cbecf28"
+      "checksum": "8755172ec9bef1bff5453ea75606e0caf7c41b5963f94f5a1087e7e8c6d9b1bd"
     },
     {
       "name": "ELF Launcher (X-F1REBALL-X)",
@@ -227,11 +227,11 @@
     },
     {
       "name": "ftpsrv (ps5-payload-dev)",
-      "filename": "ftpsrv-ps5-payload_v0.21.1.elf",
-      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/ftpsrv-ps5-payload_v0.21.1.elf",
+      "filename": "ftpsrv-ps5-payload_v0.22.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/ftpsrv-ps5-payload_v0.22.elf",
       "backup_url": null,
       "description": "unset -- fill in from release notes",
-      "version": "0.21.1",
+      "version": "0.22",
       "fw_min": null,
       "fw_max": null,
       "platform": "ps5",
@@ -239,7 +239,7 @@
       "category": "Network",
       "author": "ps5-payload-dev",
       "author_url": "https://github.com/ps5-payload-dev",
-      "checksum": "7d4b31c83eae4e056580482a3a074e1db25922efc74ac1e439473b45d71a5938"
+      "checksum": "41148c2c1cad1ea9e7cfde03e389fa918e3338e896d06167346de09adbdc8757"
     },
     {
       "name": "HWInfo Bench",
@@ -515,11 +515,11 @@
     },
     {
       "name": "PS5 Webkit Autoloader",
-      "filename": "ps5-webkit-autoloader_v0.7.0.elf",
-      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/ps5-webkit-autoloader_v0.7.0.elf",
+      "filename": "ps5-webkit-autoloader_v0.7.1.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/ps5-webkit-autoloader_v0.7.1.elf",
       "backup_url": null,
       "description": "Unified exploit autoloader -- umtx2 (FW 1.00-5.50), slopkit (9.00-12.00), p2jb (12.02-12.70).",
-      "version": "0.7.0",
+      "version": "0.7.1",
       "fw_min": null,
       "fw_max": null,
       "platform": "ps5",
@@ -527,7 +527,7 @@
       "category": "Kernel",
       "author": "itsPLK",
       "author_url": "https://github.com/itsPLK",
-      "checksum": "10cb38baae078e41f252cffb0d356829c89ee63fd3234f1fd1e6b19f81eab1c7"
+      "checksum": "df60538570e9811bb0b4652a3fdb3e1a35ec3455b3ca7c80edc4140c5bb47ce2"
     },
     {
       "name": "PS5Library Agent (rdiol12)",
