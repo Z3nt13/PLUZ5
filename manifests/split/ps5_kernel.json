@@ -1,5 +1,6 @@
 {
   "name": "Z3nT13's PLUZ5 -- Kernel",
+  "icons_url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/manifests/PLUZ-ps5-Icons.json",
   "payloads": [
     {
       "name": "PIZZA-HEN",
@@ -15,7 +16,8 @@
       "category": "Kernel",
       "author": "Michele-M-Media",
       "author_url": "https://github.com/Michele-M-Media",
-      "checksum": "8535d399612d61c50a528b2ae416f2fc3ccfb7480296df99c17302583fb3e345"
+      "checksum": "8535d399612d61c50a528b2ae416f2fc3ccfb7480296df99c17302583fb3e345",
+      "icon_key": "c0d20f1e52b6c024565e31ed97d03f4ebbd1effa2394927bae314951f845cb92"
     },
     {
       "name": "etaHEN (EchoStretch)",
@@ -31,7 +33,8 @@
       "category": "Kernel",
       "author": "EchoStretch / LightningMods",
       "author_url": "https://github.com/etaHEN",
-      "checksum": "9669c993a1036ac28cb7a84f7fc6f12aeafbf9be1104169d72547a851e09b2d4"
+      "checksum": "9669c993a1036ac28cb7a84f7fc6f12aeafbf9be1104169d72547a851e09b2d4",
+      "icon_key": "740ac66797e42011291d452133599850a5fdd6f1a336d625abdfee17f356411c"
     },
     {
       "name": "etaHEN (Zecoxao)",
@@ -47,7 +50,8 @@
       "category": "Kernel",
       "author": "Zecoxao",
       "author_url": "https://github.com/zecoxao",
-      "checksum": "512c74a9d6f56bb5a4ab871a0306a8cbefb8b3d5454ba8f1d833b020b245a126"
+      "checksum": "512c74a9d6f56bb5a4ab871a0306a8cbefb8b3d5454ba8f1d833b020b245a126",
+      "icon_key": "740ac66797e42011291d452133599850a5fdd6f1a336d625abdfee17f356411c"
     },
     {
       "name": "kstuff-lite (EchoStretch)",
@@ -63,7 +67,25 @@
       "category": "Kernel",
       "author": "EchoStretch",
       "author_url": "https://github.com/EchoStretch",
-      "checksum": "ab9a6cb4d3b1daf139d4d646e402b1cf569071acd64599c936d7a3a6164dc779"
+      "checksum": "ab9a6cb4d3b1daf139d4d646e402b1cf569071acd64599c936d7a3a6164dc779",
+      "icon_key": "4ab896aedafca2d80168fdbbe4f36c37dd1b37915a2933cb8df7629646513e00"
+    },
+    {
+      "name": "kstuff-lite",
+      "filename": "kstuff-lite_v1.2-dr-test1.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/kstuff-lite_v1.2-dr-test1.elf",
+      "backup_url": null,
+      "description": "fork of EchoStretch. Alternative optimized build.",
+      "version": "1.2-dr-test1",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": "P5U",
+      "category": "Kernel",
+      "author": "drakmor",
+      "author_url": "https://github.com/drakmor",
+      "checksum": "9c1b242eaed3704ef18be45d001a2c4ebf2d9222cfe3cbb0f0c3db33309abac9",
+      "icon_key": "4ab896aedafca2d80168fdbbe4f36c37dd1b37915a2933cb8df7629646513e00"
     },
     {
       "name": "onionHEN",
@@ -79,7 +101,8 @@
       "category": "Kernel",
       "author": "aydencharles",
       "author_url": "https://github.com/aydencharles",
-      "checksum": "1f1f7c883d5d998be1d95d7d80b718f85180f8156f257661b0f445a7c6b7c212"
+      "checksum": "1f1f7c883d5d998be1d95d7d80b718f85180f8156f257661b0f445a7c6b7c212",
+      "icon_key": "ec05f70c1b34b8595f0e80a5385317ec93f757834d530fd72783d156d4417754"
     },
     {
       "name": "PS5 Webkit Autoloader",
@@ -95,7 +118,8 @@
       "category": "Kernel",
       "author": "itsPLK",
       "author_url": "https://github.com/itsPLK",
-      "checksum": "df60538570e9811bb0b4652a3fdb3e1a35ec3455b3ca7c80edc4140c5bb47ce2"
+      "checksum": "df60538570e9811bb0b4652a3fdb3e1a35ec3455b3ca7c80edc4140c5bb47ce2",
+      "icon_key": "613e43cadd088927853dc6edbf69e0e851d9829440de66b14c09f22729deabde"
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "Z3nT13's PLUZ5 -- System Utility",
+  "icons_url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/manifests/PLUZ-ps5-Icons.json",
   "payloads": [
     {
       "name": "ChronicLoader",
@@ -15,15 +16,16 @@
       "category": "System Utility",
       "author": "StonedModder",
       "author_url": "https://github.com/StonedModder",
-      "checksum": "3561120f85e0ec32de5de15cdd61a1fe8d5146eb4c6aa99ee88209914a2774b1"
+      "checksum": "3561120f85e0ec32de5de15cdd61a1fe8d5146eb4c6aa99ee88209914a2774b1",
+      "icon_key": "2e98ff0407579e40133bb13d75ea92f822286303c304c7b47342993885d27c43"
     },
     {
       "name": "JailbreakStore",
-      "filename": "JailbreakStore_vRelease.elf",
-      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/JailbreakStore_vRelease.elf",
+      "filename": "JailbreakStore_vRelapse.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/JailbreakStore_vRelapse.elf",
       "backup_url": null,
       "description": "unset -- fill in from release notes",
-      "version": "Release",
+      "version": "Relapse",
       "fw_min": null,
       "fw_max": null,
       "platform": "ps5",
@@ -31,7 +33,8 @@
       "category": "System Utility",
       "author": "notmaj0r",
       "author_url": "https://github.com/notmaj0r",
-      "checksum": "deb47ab4a9cee35c58a6777fb99eaeb397528e2518b4d4f5db52e8dce373de55"
+      "checksum": "ca6b3c707f86c040269a34234046925080466bcc9266683e731e5442d22458ba",
+      "icon_key": "e4581bf9259c834fb0e050f017df32db0b6de5a25cfbc9a319727d8420fb0d69"
     },
     {
       "name": "ProsperoMgr",
@@ -47,23 +50,8 @@
       "category": "System Utility",
       "author": "notmaj0r",
       "author_url": "https://github.com/notmaj0r",
-      "checksum": "127394cc4f1ac7347fea509e010e80bab7b5ee13d820665474cdc3928d173bce"
-    },
-    {
-      "name": "PoorDS4 (rc38)",
-      "filename": "poords4-rc_v0.1.0-rc51.elf",
-      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/poords4-rc_v0.1.0-rc51.elf",
-      "backup_url": null,
-      "description": "sibling tool -- see docs/rename-map.md",
-      "version": "0.1.0-rc51",
-      "fw_min": null,
-      "fw_max": null,
-      "platform": "ps5",
-      "hw_target": null,
-      "category": "System Utility",
-      "author": "ItsBlurf",
-      "author_url": "https://github.com/ItsBlurf",
-      "checksum": "e1b9f257f51678a977edaeafd4ca1f8a03e9df0afda7d5dd84435841fa20795d"
+      "checksum": "127394cc4f1ac7347fea509e010e80bab7b5ee13d820665474cdc3928d173bce",
+      "icon_key": "6d0c1481cc4fe1de0881307f6f89826fc4cb2c9a19a090d9f0e2dcf4bc3dec6c"
     },
     {
       "name": "PoorDS4 (status)",
@@ -79,7 +67,8 @@
       "category": "System Utility",
       "author": "ItsBlurf",
       "author_url": "https://github.com/ItsBlurf",
-      "checksum": "100a21631a86a1fed456d822bb923012252575adf9cb0ca8e5346ccdacb38da5"
+      "checksum": "100a21631a86a1fed456d822bb923012252575adf9cb0ca8e5346ccdacb38da5",
+      "icon_key": "80f0d9ae2637e830067766babb29ada1c76a96b1aaadb171c05fe5b31564861a"
     },
     {
       "name": "PoorDS4 (stop)",
@@ -95,7 +84,8 @@
       "category": "System Utility",
       "author": "ItsBlurf",
       "author_url": "https://github.com/ItsBlurf",
-      "checksum": "fab1ad04daf8346e5952c115f3a08621598d29e222ff80e328a14e73a0f968c8"
+      "checksum": "fab1ad04daf8346e5952c115f3a08621598d29e222ff80e328a14e73a0f968c8",
+      "icon_key": "80f0d9ae2637e830067766babb29ada1c76a96b1aaadb171c05fe5b31564861a"
     },
     {
       "name": "PS5 Payload Manager",
@@ -111,7 +101,8 @@
       "category": "System Utility",
       "author": "itsPLK",
       "author_url": "https://github.com/itsPLK",
-      "checksum": "2a42054fd9725e1d9595ff4add95abc30e5b49446fcdcb96c06775a376a841c4"
+      "checksum": "2a42054fd9725e1d9595ff4add95abc30e5b49446fcdcb96c06775a376a841c4",
+      "icon_key": "b2909d31d7234eaf2d016a77f98e62a71f77cf472ae65f23328c555e89996c84"
     }
   ]
 }

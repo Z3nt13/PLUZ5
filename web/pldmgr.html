@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PLUZ5 - pldmgr link</title>
+<style>
+:root{--bg:#000;--surface:#050b08;--card:#081209;--border:#0e2016;--text:#e2e8f0;--muted:#6b8070;--accent:#00e699;--sub:#00f0ff;--warn:#facc15;--bad:#ff6b6b;--r:8px}
+*{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:-apple-system,"Segoe UI",sans-serif;line-height:1.5;padding-bottom:40px}
+header{background:var(--surface);border-bottom:1px solid var(--border);padding:12px 16px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.logo{font-weight:700;color:var(--accent);font-size:1.15rem}.logo span{color:var(--sub)}header a{color:var(--sub);font-size:.85rem;text-decoration:none}
+main{max-width:820px;margin:0 auto;padding:16px}.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px;margin-bottom:12px}
+h2{font-size:1rem;color:var(--accent);margin-bottom:6px}.row{display:flex;gap:8px;flex-wrap:wrap}.row input{flex:1;min-width:120px}
+input{background:#02070a;border:1px solid var(--border);color:var(--text);border-radius:6px;padding:8px}
+pre{background:#02070a;border:1px solid var(--border);border-radius:5px;padding:10px;word-break:break-all;white-space:pre-wrap;font-family:Consolas,monospace;font-size:.9rem;margin:8px 0}
+button{background:var(--accent);color:#000;border:0;border-radius:6px;padding:7px 12px;font-weight:600;cursor:pointer;margin:4px 6px 4px 0}
+ol{margin:6px 0 6px 20px}li{margin:3px 0}a{color:var(--sub)}.muted{color:var(--muted);font-size:.85rem}#res.ok{color:#4ade80}#res.bad{color:var(--bad)}
+</style></head><body>
+<header><div class="logo">PLUZ<span>5</span> pldmgr link</div><a href="start.html">Start</a><a href="builder.html">Builder</a><a href="library.html">Library</a></header>
+<main>
+<div class="card"><h2>Your store link</h2>
+<div class="row"><input id="u" placeholder="GitHub user"><input id="r" placeholder="repo"><input id="b" placeholder="branch" value="main" style="max-width:110px"></div>
+<div class="row" style="margin-top:6px"><select id="f" style="background:#02070a;color:#e2e8f0;border:1px solid #0e2016;border-radius:6px;padding:8px">
+<option value="PLUZ-ps5-Source.json">Source (links to the original releases)</option><option value="PLUZ-ps5-Hosted.json">Hosted (files from your repo)</option></select></div>
+<pre id="url">fill user and repo</pre>
+<button id="cp">Copy</button><button id="chk">Check it works</button><span id="res" class="muted"></span>
+<p class="muted">Share only this link. It is public by design: pldmgr on the PS5 downloads it.</p></div>
+
+<div class="card"><h2>Add it in pldmgr (on the PS5)</h2>
+<ol><li>Open <b>pldmgr</b>.</li><li><b>Settings</b> (gear icon) → <b>Manage Sources</b> → <b>Add Source</b>.</li>
+<li>Paste the link above → <b>Add</b>.</li><li>Back on the main screen your store name appears with the payload list. Pick one → download → send.</li></ol></div>
+
+<div class="card"><h2>If something is off</h2>
+<ol><li><b>Check it works</b> says 404: the workflow has not run yet, or user/repo/branch is wrong (case matters).</li>
+<li>Shows JSON in a browser but pldmgr is empty: re-add the source; make sure the repo is <b>Public</b>.</li>
+<li>Entry missing: open the Actions log, look for <code>[SKIP]</code> lines for that name.</li></ol></div>
+<p class="muted">Powered By Z3nT13's PLUZ5</p>
+</main>
+<script>
+var $=function(i){return document.getElementById(i)};
+var q=new URLSearchParams(location.search);
+(function(){var h=location.hostname.match(/^([^.]+)\.github\.io$/),p=location.pathname.split("/")[1];
+ $("u").value=q.get("u")||(h?h[1]:"");$("r").value=q.get("r")||(h?p:"");if(q.get("b"))$("b").value=q.get("b")})();
+function url(){var u=$("u").value.trim(),r=$("r").value.trim(),b=$("b").value.trim()||"main";
+ return u&&r?"https://raw.githubusercontent.com/"+u+"/"+r+"/"+b+"/manifests/"+$("f").value:""}
+function upd(){$("url").textContent=url()||"fill user and repo";$("res").textContent=""}
+["u","r","b","f"].forEach(function(i){$(i).addEventListener("input",upd)});upd();
+$("cp").onclick=function(){var t=url();if(!t)return;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).catch(function(){var a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();document.execCommand("copy");a.remove()});$("res").textContent=" copied"};
+$("chk").onclick=function(){var t=url();if(!t)return;$("res").className="muted";$("res").textContent=" checking...";
+ fetch(t,{cache:"no-store"}).then(function(r){if(!r.ok)throw new Error("HTTP "+r.status);return r.json()}).then(function(j){
+  var n=(j.payloads||[]).length;$("res").className="ok";$("res").textContent=" OK: \""+(j.name||"(no name)")+"\" with "+n+" payloads"}).catch(function(e){$("res").className="bad";$("res").textContent=" not reachable ("+e.message+")"})};
+</script></body></html>

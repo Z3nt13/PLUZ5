@@ -35,8 +35,8 @@ def validate_pldmgr_manifest(path: Path, log: Log) -> bool:
 
     ok = True
     keys = list(data.keys())
-    if keys[:2] != ["name", "payloads"]:
-        log.line(f"[FAIL] {path.name} -- top-level keys must be ['name','payloads'] in that order, got {keys}")
+    if keys not in (["name", "payloads"], ["name", "icons_url", "payloads"]):
+        log.line(f"[FAIL] {path.name} -- top-level keys must be ['name','payloads'] (optional 'icons_url' between), got {keys}")
         ok = False
 
     for entry in data.get("payloads", []):

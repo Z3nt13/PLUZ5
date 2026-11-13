@@ -1,5 +1,6 @@
 {
   "name": "Z3nT13's PLUZ5 -- Network",
+  "icons_url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/manifests/PLUZ-ps5-Icons.json",
   "payloads": [
     {
       "name": "elfldr (itsPLK)",
@@ -15,7 +16,8 @@
       "category": "Network",
       "author": "itsPLK",
       "author_url": "https://github.com/itsPLK",
-      "checksum": "116d023e9a6cb243d1d6c539b325bd0d140cc79de3afc3add5f34a98ccda4c93"
+      "checksum": "116d023e9a6cb243d1d6c539b325bd0d140cc79de3afc3add5f34a98ccda4c93",
+      "icon_key": "33a16891fe0d7363dec0575fcdc1748f3c699a738712fd184583e7caa7271f7f"
     },
     {
       "name": "elfldr",
@@ -31,7 +33,8 @@
       "category": "Network",
       "author": "ps5-payload-dev",
       "author_url": "https://github.com/ps5-payload-dev",
-      "checksum": "82f6227610172c98bad6efe68219fc93a10027035991f47eb4b75532d023407d"
+      "checksum": "82f6227610172c98bad6efe68219fc93a10027035991f47eb4b75532d023407d",
+      "icon_key": "33a16891fe0d7363dec0575fcdc1748f3c699a738712fd184583e7caa7271f7f"
     },
     {
       "name": "ftpsrv (ps5-payload-dev)",
@@ -47,7 +50,8 @@
       "category": "Network",
       "author": "ps5-payload-dev",
       "author_url": "https://github.com/ps5-payload-dev",
-      "checksum": "41148c2c1cad1ea9e7cfde03e389fa918e3338e896d06167346de09adbdc8757"
+      "checksum": "41148c2c1cad1ea9e7cfde03e389fa918e3338e896d06167346de09adbdc8757",
+      "icon_key": "f992141d459811922ecd29c44b2de4822678fed8785ac8d73f9edebde0f616d3"
     },
     {
       "name": "websrv",
@@ -63,23 +67,8 @@
       "category": "Network",
       "author": "ps5-payload-dev",
       "author_url": "https://github.com/ps5-payload-dev",
-      "checksum": "54730c867c6e1148536fdcb370e63a7762d989ea87b62488ad4caff64d43f263"
-    },
-    {
-      "name": "WK-AutoLoader (X-F1REBALL-X)",
-      "filename": "wk-autoloader_v1.1.2.elf",
-      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/wk-autoloader_v1.1.2.elf",
-      "backup_url": null,
-      "description": "FW 1.00-12.70 -- port 1022",
-      "version": "1.1.2",
-      "fw_min": "1.00",
-      "fw_max": "12.70",
-      "platform": "ps5",
-      "hw_target": null,
-      "category": "Network",
-      "author": "X-F1REBALL-X",
-      "author_url": "https://github.com/X-F1REBALL-X",
-      "checksum": "c5489f708e0e19769fd8d84c667942916778af39924d23c13e42f9a8f93c544c"
+      "checksum": "54730c867c6e1148536fdcb370e63a7762d989ea87b62488ad4caff64d43f263",
+      "icon_key": "78982fbf16bd3cb7f2577b36dfd31fd01e3f24b5ef376af8cc1ce7f2874bf697"
     }
   ]
 }

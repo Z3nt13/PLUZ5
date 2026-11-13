@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PLUZ5 - Start</title>
+<style>
+:root{--bg:#000;--surface:#050b08;--card:#081209;--border:#0e2016;--text:#e2e8f0;--muted:#6b8070;--accent:#00e699;--sub:#00f0ff;--warn:#facc15;--r:8px}
+*{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:-apple-system,"Segoe UI",sans-serif;line-height:1.5;padding-bottom:40px}
+header{background:var(--surface);border-bottom:1px solid var(--border);padding:12px 16px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.logo{font-weight:700;color:var(--accent);font-size:1.15rem}.logo span{color:var(--sub)}header a{color:var(--sub);font-size:.85rem;text-decoration:none}
+main{max-width:820px;margin:0 auto;padding:16px}.step{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px;margin-bottom:12px}
+.step h2{font-size:1rem;color:var(--accent);margin-bottom:6px;display:flex;gap:10px;align-items:center}.step h2 input{width:18px;height:18px}
+.step.done{opacity:.55}ol,ul{margin:6px 0 6px 20px}li{margin:3px 0}a{color:var(--sub)}code,pre{background:#02070a;border:1px solid var(--border);border-radius:5px;font-family:Consolas,monospace;font-size:.85rem}
+code{padding:1px 5px}pre{padding:8px;overflow:auto;white-space:pre-wrap;word-break:break-all;margin:6px 0}
+input[type=text]{width:100%;background:#02070a;border:1px solid var(--border);color:var(--text);border-radius:6px;padding:8px;font-size:.95rem}
+button{background:var(--accent);color:#000;border:0;border-radius:6px;padding:7px 12px;font-weight:600;cursor:pointer;margin:4px 6px 4px 0}button.s{background:#0e2016;color:var(--text)}
+.muted{color:var(--muted);font-size:.85rem}.warn{color:var(--warn)}.links a{display:block;margin:2px 0}
+</style></head><body>
+<header><div class="logo">PLUZ<span>5</span> Start</div><a href="builder.html">Builder</a><a href="library.html">Library</a><a href="pldmgr.html">pldmgr link</a></header>
+<main>
+<p class="muted">Tick each step when done (your ticks stay in this browser). Everything below works from a browser; no install needed.</p>
+
+<div class="step" data-k="1"><h2><input type="checkbox"> 1 · Make your repository</h2>
+<ol><li>Sign in at <a href="https://github.com" target="_blank">github.com</a> (free account).</li>
+<li>Open the template page of PLUZ5 → <b>Use this template → Create a new repository</b>.</li>
+<li>Name it (e.g. <code>PLUZ5-mine</code>), choose <b>Public</b>, create.</li></ol></div>
+
+<div class="step" data-k="2"><h2><input type="checkbox"> 2 · Paste your repo address</h2>
+<input type="text" id="repo" placeholder="https://github.com/you/your-repo">
+<p class="muted" id="parsed">Waiting for a link...</p>
+<div class="links" id="links"></div></div>
+
+<div class="step" data-k="3"><h2><input type="checkbox"> 3 · Two switches in your repo (once)</h2>
+<ol><li><a id="lAct" target="_blank" href="#">Settings → Actions → General</a> → <b>Workflow permissions: Read and write</b> → Save.</li>
+<li><a id="lPg" target="_blank" href="#">Settings → Pages</a> → Source <b>Deploy from a branch</b> → Branch <b>main</b>, <code>/ (root)</code> → Save. Wait 1-3 min for "site is live".</li></ol></div>
+
+<div class="step" data-k="4"><h2><input type="checkbox"> 4 · Get a GitHub token (makes everything easier)</h2>
+<p>With a token the web pages can save straight to your repo, and the PC scripts can push without asking for a password.</p>
+<ol><li>GitHub → your photo → <b>Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token</b>.</li>
+<li>Name it <code>PLUZ5</code>, Expiration 90 days, <b>Only select repositories</b> → pick your repo.</li>
+<li>Permissions → Repository: <b>Contents: Read and write</b> and <b>Workflows: Read and write</b>. Generate.</li>
+<li>Copy the token now (shown once). Keep it secret. It goes only in <code>.env</code> (PC) or into the page's Connect box (memory only, never saved).</li></ol></div>
+
+<div class="step" data-k="5"><h2><input type="checkbox"> 5 · Your settings file (.env, for PC / Linux use)</h2>
+<p class="muted">Copy this into <code>.env</code> in the unzipped folder. Add your token after <code>GH_TOKEN=</code>. Never upload .env.</p>
+<pre id="env">(paste your repo link above)</pre><button id="cpEnv" class="s">Copy</button></div>
+
+<div class="step" data-k="6"><h2><input type="checkbox"> 6 · Pick your payloads</h2>
+<ol><li>Open the <a id="lB" href="builder.html">Builder</a> or the <a id="lL" href="library.html">Library</a>.</li>
+<li>Library: tick sources you want → drag to Store (or "Add to Store"). Builder: paste repo links or <b>Load example list</b>.</li>
+<li>Download <code>payload_registry.json</code> (and <code>PLUZ5-infos.json</code> from the Library).</li></ol></div>
+
+<div class="step" data-k="7"><h2><input type="checkbox"> 7 · Publish</h2>
+<ol><li>Upload the files: <code>payload_registry.json</code> into <code>configs/</code>, <code>PLUZ5-infos.json</code> into <code>data/</code> (repo → <b>Add file → Upload files</b> → Commit).</li>
+<li><a id="lRun" target="_blank" href="#">Actions → PLUZ5 Update → Run workflow</a>. Green tick in about a minute.</li>
+<li>Open your manifest link (next step). You should see JSON, not an error.</li></ol></div>
+
+<div class="step" data-k="8"><h2><input type="checkbox"> 8 · Add it to pldmgr on the PS5</h2>
+<pre id="src">(paste your repo link above)</pre><button id="cpSrc">Copy link</button> <a id="lPl" href="pldmgr.html">Full pldmgr guide with check button</a>
+<ol><li>pldmgr → <b>Settings (gear) → Manage Sources → Add Source</b>.</li><li>Paste the link → <b>Add</b>.</li></ol></div>
+
+<div class="step" data-k="9"><h2><input type="checkbox"> 9 · Maintain it later</h2>
+<ul><li><b>Add sources:</b> Library → add a repo link → drag to Store → upload both json files → run the workflow.</li>
+<li><b>Own .elf / .bin:</b> name it <code>Name_v1.0.elf</code>, put it in <code>payloads/</code>, run the workflow.</li>
+<li><b>From a PC:</b> unzip, edit <code>.env</code>, run <code>PLUZ-AllStar.bat</code> (Linux: <code>./pluz-allstar.sh</code>).</li>
+<li>Daily updates run by themselves. If they stop after 60 idle days, press Run workflow once.</li></ul></div>
+
+<p class="muted">Powered By Z3nT13's PLUZ5</p>
+</main>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)},cfg={};
+function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+function parse(u){var m=String(u).trim().match(/github\.com\/([^\/\s]+)\/([^\/\s#?]+?)(?:\.git)?(?:\/(?:tree|blob)\/([^\/\s]+))?\/?$/i);return m?{u:m[1],r:m[2],b:m[3]||"main"}:null}
+function upd(){var p=parse($("repo").value);
+ if(!p){$("parsed").textContent=$("repo").value?"Not a GitHub repo link. Example: https://github.com/you/your-repo":"Waiting for a link...";return}
+ cfg=p;store("pluz_repo",$("repo").value);
+ var base="https://github.com/"+p.u+"/"+p.r,raw="https://raw.githubusercontent.com/"+p.u+"/"+p.r+"/"+p.b+"/manifests/PLUZ-ps5-Source.json",pg="https://"+p.u.toLowerCase()+".github.io/"+p.r+"/web/";
+ $("parsed").innerHTML="User <b>"+p.u+"</b> · repo <b>"+p.r+"</b> · branch <b>"+p.b+"</b>";
+ $("lAct").href=base+"/settings/actions";$("lPg").href=base+"/settings/pages";$("lRun").href=base+"/actions";
+ $("lB").href=pg+"builder.html";$("lL").href=pg+"library.html";$("lPl").href="pldmgr.html?u="+encodeURIComponent(p.u)+"&r="+encodeURIComponent(p.r)+"&b="+encodeURIComponent(p.b);
+ $("links").innerHTML='<a target="_blank" href="'+base+'">Your repo</a><a target="_blank" href="'+pg+'builder.html">Your Builder page</a><a target="_blank" href="'+raw+'">Your manifest (after step 7)</a>';
+ $("env").textContent="GH_USER="+p.u+"\nGH_REPO="+p.r+"\nGH_BRANCH="+p.b+"\nGH_TOKEN=\n";
+ $("src").textContent=raw}
+$("repo").addEventListener("input",upd);
+function cp(id){var t=$(id).textContent;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).catch(function(){var a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();document.execCommand("copy");a.remove()})}
+$("cpEnv").onclick=function(){cp("env")};$("cpSrc").onclick=function(){cp("src")};
+document.querySelectorAll(".step").forEach(function(s){var k="pluz_step_"+s.dataset.k,c=s.querySelector("h2 input");if(!c)return;
+ if(store(k)==="1"){c.checked=true;s.classList.add("done")}
+ c.addEventListener("change",function(){s.classList.toggle("done",c.checked);store(k,c.checked?"1":"0")})});
+var r=store("pluz_repo");if(r){$("repo").value=r;upd()}
+})();
+</script></body></html>

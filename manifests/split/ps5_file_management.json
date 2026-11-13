@@ -1,6 +1,24 @@
 {
   "name": "Z3nT13's PLUZ5 -- File Management",
+  "icons_url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/manifests/PLUZ-ps5-Icons.json",
   "payloads": [
+    {
+      "name": "BFpilot",
+      "filename": "BFpilot_v0.4.4.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/BFpilot_v0.4.4.elf",
+      "backup_url": null,
+      "description": "",
+      "version": "0.4.4",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": "P5U",
+      "category": "File Management",
+      "author": "ItsBlurf",
+      "author_url": "https://github.com/ItsBlurf",
+      "checksum": "5a8237630260026ad054d71fbbe661e433ac9ffa2cb4eea2785769c1eb7ee1c1",
+      "icon_key": "bde82469bde1c68f2ab67f356da72a52b540d11c3bf928dedd40afbfe2f6cb76"
+    },
     {
       "name": "ELF Launcher (X-F1REBALL-X)",
       "filename": "elf-launcher_v2.1.6.elf",
@@ -15,7 +33,8 @@
       "category": "File Management",
       "author": "X-F1REBALL-X",
       "author_url": "https://github.com/X-F1REBALL-X",
-      "checksum": "5c4a9c3146cf7ac14ce0dab35358eb5ab9cd17c647735d9fcd0932913ac2a9d2"
+      "checksum": "5c4a9c3146cf7ac14ce0dab35358eb5ab9cd17c647735d9fcd0932913ac2a9d2",
+      "icon_key": "bfee8d2b9cff381e5ab4c29373a2f43761f2f48b58b247d4bae577823429b259"
     },
     {
       "name": "FGG Unpack (FGGstore)",
@@ -31,7 +50,8 @@
       "category": "File Management",
       "author": "FGGstore",
       "author_url": "https://github.com/FGGstore",
-      "checksum": "e8c8e57bbda31b5d16d131797aac6f83b555cae8d439b1f475c952f3d9554eff"
+      "checksum": "e8c8e57bbda31b5d16d131797aac6f83b555cae8d439b1f475c952f3d9554eff",
+      "icon_key": "717b97af4a0f2b8508b54d23325825693eedf520457f433b15d88d2b23d243b3"
     },
     {
       "name": "PS5 PKG Manager (itsPLK)",
@@ -47,7 +67,8 @@
       "category": "File Management",
       "author": "itsPLK",
       "author_url": "https://github.com/itsPLK",
-      "checksum": "82e3548edcc41419b644482cccaef65689334fc0315dc20247f48b90bf182dca"
+      "checksum": "82e3548edcc41419b644482cccaef65689334fc0315dc20247f48b90bf182dca",
+      "icon_key": "7b43636affbbd1e99ba6740be824b0c31672a98498622aa5df54ed9f5cb79f82"
     },
     {
       "name": "PS5Library Agent (rdiol12)",
@@ -63,7 +84,8 @@
       "category": "File Management",
       "author": "rdiol12",
       "author_url": "https://github.com/rdiol12",
-      "checksum": "ac78389a628401edba3c081f00156238ad5652b1b7ad241f5ccc7713179f0c82"
+      "checksum": "ac78389a628401edba3c081f00156238ad5652b1b7ad241f5ccc7713179f0c82",
+      "icon_key": "7c7e553e4fa88bf4245dfeba94abda6e79afb48fd65cc2f445376aea04ba11a7"
     }
   ]
 }

@@ -1,6 +1,24 @@
 {
   "name": "Z3nT13's PLUZ5 -- Debug & SDK",
+  "icons_url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/manifests/PLUZ-ps5-Icons.json",
   "payloads": [
+    {
+      "name": "PS5-NetDis",
+      "filename": "PS5-NetDis_v1.0.0.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/PS5-NetDis_v1.0.0.elf",
+      "backup_url": null,
+      "description": "port 8070",
+      "version": "1.0.0",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": "P5U",
+      "category": "Debug & SDK",
+      "author": "eladharels",
+      "author_url": "https://github.com/eladharels",
+      "checksum": "9b635ff7aacd785ff79c09d17c3734fd0427d0a7c644abb7f8bea4093420c534",
+      "icon_key": "c0062ac10f90b33dc0013828595a74da452ed953067433f91760a0c4f15f6da2"
+    },
     {
       "name": "HWInfo Bench",
       "filename": "hwinfo-bench_v0.1.elf",
@@ -15,7 +33,8 @@
       "category": "Debug & SDK",
       "author": "drakmor",
       "author_url": "https://github.com/drakmor",
-      "checksum": "4514bdbc0c556df1a66544615942d5087d1cbee5c2026b3b66e688ba01e5a5b0"
+      "checksum": "4514bdbc0c556df1a66544615942d5087d1cbee5c2026b3b66e688ba01e5a5b0",
+      "icon_key": "44f6c06c1d3fb7ca11eabd3a19570422423fa1cf57ac70644d8720aa6f11fe88"
     },
     {
       "name": "HWInfo Sysinfo",
@@ -31,7 +50,42 @@
       "category": "Debug & SDK",
       "author": "drakmor",
       "author_url": "https://github.com/drakmor",
-      "checksum": "ad5014112dec619779619d0ea01a984b3c8267fed682eca5687f34c9eade51cb"
+      "checksum": "ad5014112dec619779619d0ea01a984b3c8267fed682eca5687f34c9eade51cb",
+      "icon_key": "2823abbdf49b91db44c02aed3f2c37ff4e61c8ae96f33cd3a64bd10d62cdc82d"
+    },
+    {
+      "name": "kdump_ps5",
+      "filename": "kdump-ps5_vlatest.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/kdump-ps5_vlatest.elf",
+      "backup_url": null,
+      "description": "",
+      "version": "latest",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": "P5U",
+      "category": "Debug & SDK",
+      "author": "earthonion",
+      "author_url": "https://github.com/earthonion",
+      "checksum": "e3bfbb57030ea7a346a039f19e39b033813eebeefe49161caac6c0b1c1acca45",
+      "icon_key": "c23a3a9e09e6b4198997a472e5d7ab804f67bccc0d53b80b9200177a8e41ece4"
+    },
+    {
+      "name": "ps5-app-dumper",
+      "filename": "ps5-app-dumper_v2.10.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/ps5-app-dumper_v2.10.elf",
+      "backup_url": null,
+      "description": "",
+      "version": "2.10",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": "P5U",
+      "category": "Debug & SDK",
+      "author": "EchoStretch",
+      "author_url": "https://github.com/EchoStretch",
+      "checksum": "c850f1df6f2787824d6ddeeed69ce4144e00569b32135973401c2985cfb0345b",
+      "icon_key": "e50974cbcb8c71b1b6f79a829bf1f95216a3a6382868c6431d3eff72be392144"
     },
     {
       "name": "Self Decrypter: Full System",
@@ -47,7 +101,8 @@
       "category": "Debug & SDK",
       "author": "idlesauce",
       "author_url": "https://github.com/idlesauce",
-      "checksum": "46340d3048a977f5603b3def0a0ba1c85b5c182891388442e51b39e281257b6a"
+      "checksum": "46340d3048a977f5603b3def0a0ba1c85b5c182891388442e51b39e281257b6a",
+      "icon_key": "43fe554aa3323abf57bf9f7c30eb6983f9f970e427effcb21682d89251b7fed5"
     },
     {
       "name": "Self Decrypter: Game",
@@ -63,7 +118,8 @@
       "category": "Debug & SDK",
       "author": "idlesauce",
       "author_url": "https://github.com/idlesauce",
-      "checksum": "190b350759b4f9d50949325e84d131e0953f37a9df271c329ba43c80c0ac7a57"
+      "checksum": "190b350759b4f9d50949325e84d131e0953f37a9df271c329ba43c80c0ac7a57",
+      "icon_key": "43fe554aa3323abf57bf9f7c30eb6983f9f970e427effcb21682d89251b7fed5"
     },
     {
       "name": "Self Decrypter: Shellcore",
@@ -79,7 +135,8 @@
       "category": "Debug & SDK",
       "author": "idlesauce",
       "author_url": "https://github.com/idlesauce",
-      "checksum": "15050c691c21c790ae970a1ee99ad3918dd1065fe5512c762fccee6d521c8066"
+      "checksum": "15050c691c21c790ae970a1ee99ad3918dd1065fe5512c762fccee6d521c8066",
+      "icon_key": "43fe554aa3323abf57bf9f7c30eb6983f9f970e427effcb21682d89251b7fed5"
     },
     {
       "name": "Self Decrypter: System Common Lib",
@@ -95,7 +152,8 @@
       "category": "Debug & SDK",
       "author": "idlesauce",
       "author_url": "https://github.com/idlesauce",
-      "checksum": "6a16c6457c604db4846632510da0975f49faba08e6cab9cfd7f84d78b4557d97"
+      "checksum": "6a16c6457c604db4846632510da0975f49faba08e6cab9cfd7f84d78b4557d97",
+      "icon_key": "43fe554aa3323abf57bf9f7c30eb6983f9f970e427effcb21682d89251b7fed5"
     },
     {
       "name": "Self Pager: Full System",
@@ -111,7 +169,8 @@
       "category": "Debug & SDK",
       "author": "idlesauce",
       "author_url": "https://github.com/idlesauce",
-      "checksum": "fb498d4112611619150281e0c44afbd09f144c09eaca3ab3f5b306b39450d13a"
+      "checksum": "fb498d4112611619150281e0c44afbd09f144c09eaca3ab3f5b306b39450d13a",
+      "icon_key": "5fff7fe5462f265742895c1ee33570cb25aa176851e399834fff1964bc32026b"
     },
     {
       "name": "Self Pager: Game",
@@ -127,7 +186,8 @@
       "category": "Debug & SDK",
       "author": "idlesauce",
       "author_url": "https://github.com/idlesauce",
-      "checksum": "73d94fea5de9086cac26385c117a0b3098890c447d67536877fb7b51c9145aac"
+      "checksum": "73d94fea5de9086cac26385c117a0b3098890c447d67536877fb7b51c9145aac",
+      "icon_key": "5fff7fe5462f265742895c1ee33570cb25aa176851e399834fff1964bc32026b"
     },
     {
       "name": "Self Pager: Shellcore",
@@ -143,7 +203,8 @@
       "category": "Debug & SDK",
       "author": "idlesauce",
       "author_url": "https://github.com/idlesauce",
-      "checksum": "2b500bc356b5bcfca5c3e5187bcec0a37c80ed05e39348b8f06bd2e5a6f3342b"
+      "checksum": "2b500bc356b5bcfca5c3e5187bcec0a37c80ed05e39348b8f06bd2e5a6f3342b",
+      "icon_key": "5fff7fe5462f265742895c1ee33570cb25aa176851e399834fff1964bc32026b"
     },
     {
       "name": "Self Pager: System Common Lib",
@@ -159,7 +220,8 @@
       "category": "Debug & SDK",
       "author": "idlesauce",
       "author_url": "https://github.com/idlesauce",
-      "checksum": "a86c3e69ed38656310b41af4f9221bdb2264ff4daf93fb4c2515fd54a216b701"
+      "checksum": "a86c3e69ed38656310b41af4f9221bdb2264ff4daf93fb4c2515fd54a216b701",
+      "icon_key": "5fff7fe5462f265742895c1ee33570cb25aa176851e399834fff1964bc32026b"
     }
   ]
 }

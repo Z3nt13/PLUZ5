@@ -1,5 +1,6 @@
 {
   "name": "Z3nT13's PLUZ5 -- Game Tools",
+  "icons_url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/manifests/PLUZ-ps5-Icons.json",
   "payloads": [
     {
       "name": "BackPork",
@@ -15,7 +16,8 @@
       "category": "Game Tools",
       "author": "BestPig",
       "author_url": "https://github.com/BestPig",
-      "checksum": "d74e4cd119b2bb1fd423f2f5b1c9a7f096b3e588c753af1ab48b983d56216a52"
+      "checksum": "d74e4cd119b2bb1fd423f2f5b1c9a7f096b3e588c753af1ab48b983d56216a52",
+      "icon_key": "af1b2f7aa4f96f7f5fb470cf56018c044aebaac2f926654a467b20dce1ebace4"
     },
     {
       "name": "CheatRunner",
@@ -31,7 +33,59 @@
       "category": "Game Tools",
       "author": "notmaj0r",
       "author_url": "https://github.com/notmaj0r",
-      "checksum": "80535260027983f09fc9d131e11e13591de61ef5eeea458825598263862d2ce8"
+      "checksum": "80535260027983f09fc9d131e11e13591de61ef5eeea458825598263862d2ce8",
+      "icon_key": "500b028d7f6b6d623dd978d69c95eafdc83d9d569cd3324f9c9fa007a3a0d273"
+    },
+    {
+      "name": "NeoEnabler",
+      "filename": "NeoEnabler_v0.6.2.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/NeoEnabler_v0.6.2.elf",
+      "backup_url": null,
+      "description": "port 8765",
+      "version": "0.6.2",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": "P5U",
+      "category": "Game Tools",
+      "author": "gasb07",
+      "author_url": "https://github.com/gasb07",
+      "checksum": "c0506bd055820a199ddae59a475686fdcf6f832f94594870ba41cee9b3fce1be",
+      "icon_key": "fa264d2b3bbac7c54d5bc3b37b8c5bcc1d3f713fc287536e70f636d96b2cdc6c"
+    },
+    {
+      "name": "PS5-Game-Compressor",
+      "filename": "PS5-Game-Compressor_v1.0.4.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/PS5-Game-Compressor_v1.0.4.elf",
+      "backup_url": null,
+      "description": "",
+      "version": "1.0.4",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": "P5U",
+      "category": "Game Tools",
+      "author": "juma-sayeh",
+      "author_url": "https://github.com/juma-sayeh",
+      "checksum": "e55e90aaade13b6e0d4316c1597ef90a21b67a06475c3e25de054224bc1e941b",
+      "icon_key": "b98ef3082e457faff64f1407fec3b719c8d6fd7cecba4d08a9d3295921a154e2"
+    },
+    {
+      "name": "PatchDL / ps5-patchdl",
+      "filename": "PatchDL-ps5-patchdl_v0.3.12.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/PatchDL-ps5-patchdl_v0.3.12.elf",
+      "backup_url": null,
+      "description": "FW 1.00-13.60 -- port 12880",
+      "version": "0.3.12",
+      "fw_min": "1.00",
+      "fw_max": "13.60",
+      "platform": "ps5",
+      "hw_target": "P5U",
+      "category": "Game Tools",
+      "author": "knutwurst",
+      "author_url": "https://github.com/knutwurst",
+      "checksum": "a8aeb6039825188561b7346bb6f0c9244f72d7be1412dc7dd6c2bea0dd3f396a",
+      "icon_key": "eebb54d06878b0d108bd68292fb24fe2db05462011e91039b9dfea615112eb44"
     },
     {
       "name": "ShadowMountPlus (Alpha)",
@@ -47,7 +101,8 @@
       "category": "Game Tools",
       "author": "drakmor",
       "author_url": "https://github.com/drakmor",
-      "checksum": "15af22e6cefefbcc9f16f137b5255b6b94d546788ba5f404dc9220da4759a6ff"
+      "checksum": "15af22e6cefefbcc9f16f137b5255b6b94d546788ba5f404dc9220da4759a6ff",
+      "icon_key": "2a1985fe1771dd7c0d8a8493a06b3f524493fadcbe1095ab0f29d1c095e92842"
     },
     {
       "name": "ShadowMountPlus (Beta)",
@@ -63,7 +118,42 @@
       "category": "Game Tools",
       "author": "drakmor",
       "author_url": "https://github.com/drakmor",
-      "checksum": "8755172ec9bef1bff5453ea75606e0caf7c41b5963f94f5a1087e7e8c6d9b1bd"
+      "checksum": "8755172ec9bef1bff5453ea75606e0caf7c41b5963f94f5a1087e7e8c6d9b1bd",
+      "icon_key": "2a1985fe1771dd7c0d8a8493a06b3f524493fadcbe1095ab0f29d1c095e92842"
+    },
+    {
+      "name": "apr-emu-updater",
+      "filename": "apr-emu-updater_v2.0.6.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/apr-emu-updater_v2.0.6.elf",
+      "backup_url": null,
+      "description": "",
+      "version": "2.0.6",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": "P5U",
+      "category": "Game Tools",
+      "author": "tsuramatsu1",
+      "author_url": "https://github.com/tsuramatsu1",
+      "checksum": "4f04464283a6a551883e40e36b59134ecad0e38ecbb7ea89cbec3f91a3bd9122",
+      "icon_key": "9062ba2e81c986edfb9c482fc64eeb5fccab24c5e70f545b89c953926676bea6"
+    },
+    {
+      "name": "garlic-savemgr",
+      "filename": "garlic-savemgr-default2_v1.15-beta23.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/garlic-savemgr-default2_v1.15-beta23.elf",
+      "backup_url": null,
+      "description": "port 8082",
+      "version": "1.15-beta23",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": "P5U",
+      "category": "Game Tools",
+      "author": "earthonion",
+      "author_url": "https://github.com/earthonion",
+      "checksum": "b4667d5bc57998e66fd4b093d367a26bec47c9517e2c0d53e0fc5eef5f2c4098",
+      "icon_key": "2fc0ab0cb7d11357d732e862d3dd9cdb88d37f205b634955ae13c8d316462911"
     }
   ]
 }

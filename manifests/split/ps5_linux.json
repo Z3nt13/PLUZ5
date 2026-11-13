@@ -1,0 +1,23 @@
+{
+  "name": "Z3nT13's PLUZ5 -- Linux",
+  "icons_url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/manifests/PLUZ-ps5-Icons.json",
+  "payloads": [
+    {
+      "name": "ps5-linux-1240-build",
+      "filename": "ps5-linux-1240-build_v12.xx.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/ps5-linux-1240-build_v12.xx.elf",
+      "backup_url": null,
+      "description": "FW 12.40-12.40",
+      "version": "12.xx",
+      "fw_min": "12.40",
+      "fw_max": "12.40",
+      "platform": "ps5",
+      "hw_target": "P5",
+      "category": "Linux",
+      "author": "Wigglez-sudo",
+      "author_url": "https://github.com/Wigglez-sudo",
+      "checksum": "42349dd534b3779e6b94e0c5679f984f3ec0266dd4e0dcd8640875f680ec2450",
+      "icon_key": "12e5d2981beff1d75f85fab644a33f7782ca6d87555e51d70a290dcf4c00911d"
+    }
+  ]
+}

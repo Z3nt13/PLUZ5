@@ -1,0 +1,57 @@
+{
+  "name": "Z3nT13's PLUZ5 -- Activation & Spoof",
+  "icons_url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/manifests/PLUZ-ps5-Icons.json",
+  "payloads": [
+    {
+      "name": "PS5 Account Activator",
+      "filename": "PS5-Account-Activator_v2.1.0.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/PS5-Account-Activator_v2.1.0.elf",
+      "backup_url": null,
+      "description": "port 9021",
+      "version": "2.1.0",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": "P5U",
+      "category": "Activation & Spoof",
+      "author": "Epinorr",
+      "author_url": "https://github.com/Epinorr",
+      "checksum": "92ef418c503aea340b058485b42f917f2ceedcc4b64acd6867d20cc30c9e93ff",
+      "icon_key": "af36cb25598f378eb8e0cc24bd4921b84f0bc222bf8dffea1e7b910555b71551"
+    },
+    {
+      "name": "WelcomeHubActivator",
+      "filename": "WelcomeHubActivator_v1.2.0.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/WelcomeHubActivator_v1.2.0.elf",
+      "backup_url": null,
+      "description": "One-shot; persists across reboots. Binary: `WelcomeHubActivator-ghost1372_v1.0.0.elf`. Backs up `app.db` \u2192 `app.bckdb` before edit.",
+      "version": "1.2.0",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": "P5U",
+      "category": "Activation & Spoof",
+      "author": "ghost1372",
+      "author_url": "https://github.com/ghost1372",
+      "checksum": "f989cc412ef782a01f394fe80cf8fc237970884ba90ce4fe4baac165c0b5a2a6",
+      "icon_key": "3ea03c591845792f8ac9aaefdb82b9355590a3815ced14c68379a7617e2d78f3"
+    },
+    {
+      "name": "ps5-account-tools",
+      "filename": "ps5-account-tools_v1.2.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/ps5-account-tools_v1.2.elf",
+      "backup_url": null,
+      "description": "port 6769",
+      "version": "1.2",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": "P5U",
+      "category": "Activation & Spoof",
+      "author": "MangoScango",
+      "author_url": "https://github.com/MangoScango",
+      "checksum": "2e1402d8c088afda55280b28fcc66ccb870528ec948d10ea586088f60f723f2a",
+      "icon_key": "af36cb25598f378eb8e0cc24bd4921b84f0bc222bf8dffea1e7b910555b71551"
+    }
+  ]
+}

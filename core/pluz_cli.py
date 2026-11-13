@@ -18,6 +18,7 @@ COMMANDS = {
     "dedupe": "pluz_dedupe",
     "ghclean": "pluz_ghclean",
     "debug": "pluz_debug",
+    "pack": "pluz_pack",
 }
 
 

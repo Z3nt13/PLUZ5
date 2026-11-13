@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "comment": "PLUZ5 maintained list. Edit with web/builder.html.",
+  "comment": "PLUZ5 maintained list. Edit with web/library.html.",
   "payloads": {
     "etaHEN": {
       "variants": {
@@ -377,6 +377,21 @@
           "protected_fallback": false,
           "note": "separate tool from garlic-worker, shared prefix only | Not on GitHub (Forgejo host): listed only. Add direct_url + version once you have a file link, then remove fetch:false.",
           "fetch": false
+        },
+        "default2": {
+          "display_name": "garlic-savemgr",
+          "source_repo": "https://github.com/earthonion/garlic-savemgr",
+          "author": "earthonion",
+          "author_url": "https://github.com/earthonion",
+          "backup_url": null,
+          "category": "Game Tools",
+          "channel": "stable",
+          "fw_min": null,
+          "fw_max": null,
+          "port": 8082,
+          "protected_fallback": false,
+          "note": "Send to elfldr; open `http://<ps5-ip>:8082`. Binary: `garlic-savemgr-earthonion_v1.7.elf`.",
+          "hw_target": "P5U"
         }
       }
     },
@@ -580,6 +595,21 @@
           "port": null,
           "protected_fallback": false,
           "note": "unset -- fill in from release notes"
+        },
+        "default": {
+          "display_name": "kstuff-lite",
+          "source_repo": "https://github.com/drakmor/kstuff-lite",
+          "author": "drakmor",
+          "author_url": "https://github.com/drakmor",
+          "backup_url": null,
+          "category": "Kernel",
+          "channel": "stable",
+          "fw_min": null,
+          "fw_max": null,
+          "port": null,
+          "protected_fallback": false,
+          "note": "fork of EchoStretch. Alternative optimized build.",
+          "hw_target": "P5U"
         }
       }
     },
@@ -758,6 +788,527 @@
           "port": 1022,
           "protected_fallback": false,
           "note": "WebKit-based jailbreak loader UI on port 1022. Supports FW 1.xx-5.xx, 7.00-12.00, 12.02-12.70. installer.elf. GPL-3.0."
+        }
+      }
+    },
+    "zftpd": {
+      "variants": {
+        "default": {
+          "display_name": "zftpd",
+          "source_repo": "https://github.com/seregonwar/zftpd",
+          "author": "seregonwar",
+          "author_url": "https://github.com/seregonwar",
+          "backup_url": null,
+          "category": "File Management",
+          "channel": "stable",
+          "fw_min": null,
+          "fw_max": null,
+          "port": 2121,
+          "protected_fallback": false,
+          "note": "Default FTP **-p 2121** (fallback range 2120–2129 if busy). ZHTTP often **8888**. Control/teardown `127.0.0.1:28888`. Latest **v1.7.0**. Binary: `zftpd-seregonwar` / `zftpd-ps5[-zhttp]-v1.7.0.elf`.",
+          "hw_target": "P5U",
+          "ports": [
+            2121,
+            8888
+          ]
+        }
+      }
+    },
+    "ps5-payload-dev-fetchpkg": {
+      "variants": {
+        "default": {
+          "display_name": "ps5-payload-dev/fetchpkg",
+          "source_repo": "https://github.com/ps5-payload-dev/fetchpkg",
+          "author": "ps5-payload-dev",
+          "author_url": "https://github.com/ps5-payload-dev",
+          "backup_url": null,
+          "category": "System Utility",
+          "channel": "stable",
+          "fw_min": null,
+          "fw_max": null,
+          "port": null,
+          "protected_fallback": false,
+          "note": "Useful for update pipelines.",
+          "hw_target": "P5U"
+        }
+      }
+    },
+    "nanoDNS": {
+      "variants": {
+        "default": {
+          "display_name": "nanoDNS",
+          "source_repo": "https://github.com/drakmor/nanoDNS",
+          "author": "drakmor",
+          "author_url": "https://github.com/drakmor",
+          "backup_url": null,
+          "category": "Network",
+          "channel": "stable",
+          "fw_min": null,
+          "fw_max": null,
+          "port": null,
+          "protected_fallback": false,
+          "note": "Local DNS proxy useful for blocking/redirecting Sony endpoints.",
+          "hw_target": "P5U"
+        }
+      }
+    },
+    "ampr-emu": {
+      "variants": {
+        "default": {
+          "display_name": "ampr_emu",
+          "source_repo": "https://github.com/drakmor/ampr_emu",
+          "author": "drakmor",
+          "author_url": "https://github.com/drakmor",
+          "backup_url": null,
+          "category": "Game Tools",
+          "channel": "stable",
+          "fw_min": null,
+          "fw_max": null,
+          "port": null,
+          "protected_fallback": false,
+          "note": "Public beta; Discord linked from repo.",
+          "hw_target": "P5U"
+        }
+      }
+    },
+    "ps5debug-NG": {
+      "variants": {
+        "default": {
+          "display_name": "ps5debug-NG",
+          "source_repo": "https://github.com/EchoStretch/ps5debug-NG",
+          "author": "EchoStretch",
+          "author_url": "https://github.com/EchoStretch",
+          "backup_url": null,
+          "category": "Debug & SDK",
+          "channel": "stable",
+          "fw_min": null,
+          "fw_max": null,
+          "port": null,
+          "protected_fallback": false,
+          "note": "GPL-3. For development / reverse engineering.",
+          "hw_target": "P5U"
+        }
+      }
+    },
+    "PS5-Account-Activator": {
+      "variants": {
+        "default": {
+          "display_name": "PS5 Account Activator",
+          "source_repo": "https://github.com/Epinorr/ps5-account-activator",
+          "author": "Epinorr",
+          "author_url": "https://github.com/Epinorr",
+          "backup_url": null,
+          "category": "Activation & Spoof",
+          "channel": "stable",
+          "fw_min": null,
+          "fw_max": null,
+          "port": 9021,
+          "protected_fallback": false,
+          "note": "Send to the foreground user on port 9021. Binary: `AIO-Activator-Epinorr_v2.1.0.elf` (upstream ships as `AIO-Activator.elf`). Skips steps already done. Latest v2.1.0.",
+          "hw_target": "P5U"
+        }
+      }
+    },
+    "np-fake-signin": {
+      "variants": {
+        "default": {
+          "display_name": "np-fake-signin",
+          "source_repo": "https://github.com/earthonion/np-fake-signin",
+          "author": "earthonion",
+          "author_url": "https://github.com/earthonion",
+          "backup_url": null,
+          "category": "Activation & Spoof",
+          "channel": "stable",
+          "fw_min": null,
+          "fw_max": null,
+          "port": null,
+          "protected_fallback": false,
+          "note": "Primary GitHub home for the payload.",
+          "hw_target": "P5U"
+        }
+      }
+    },
+    "ps5-account-tools": {
+      "variants": {
+        "default": {
+          "display_name": "ps5-account-tools",
+          "source_repo": "https://github.com/MangoScango/ps5-account-tools",
+          "author": "MangoScango",
+          "author_url": "https://github.com/MangoScango",
+          "backup_url": null,
+          "category": "Activation & Spoof",
+          "channel": "stable",
+          "fw_min": null,
+          "fw_max": null,
+          "port": 6769,
+          "protected_fallback": false,
+          "note": "After activation, note Account IDs, reboot, then pair remote play. Pair with nanoDNS to keep PSN blocked.",
+          "hw_target": "P5U"
+        }
+      }
+    },
+    "ps5-fw-spoof": {
+      "variants": {
+        "default": {
+          "display_name": "ps5-fw-spoof",
+          "source_repo": "https://github.com/illusionyy/ps5-fw-spoof",
+          "author": "illusionyy",
+          "author_url": "https://github.com/illusionyy",
+          "backup_url": null,
+          "category": "Activation & Spoof",
+          "channel": "stable",
+          "fw_min": null,
+          "fw_max": null,
+          "port": null,
+          "protected_fallback": false,
+          "note": "Version spoof helper for tools that gate on FW/SDK version. Binary: `ps5-fw-spoof-illusionyy.elf`.",
+          "hw_target": "P5U"
+        }
+      }
+    },
+    "ps-patch-system": {
+      "variants": {
+        "default": {
+          "display_name": "ps-patch-system",
+          "source_repo": "https://github.com/illusionyy/ps-patch-system",
+          "author": "illusionyy",
+          "author_url": "https://github.com/illusionyy",
+          "backup_url": null,
+          "category": "Game Tools",
+          "channel": "stable",
+          "fw_min": null,
+          "fw_max": null,
+          "port": 23900,
+          "protected_fallback": false,
+          "note": "Send `patch-bundle-loader-prospero.elf` (PS5) or `…-orbis.elf` (PS4) to elfldr :9021. XMLs from [PS-Game-Patch](https://github.com/illusionyy/PS-Game-Patch) → `/data/user/patches` (`xml_prospero` / `xml_orbis`). Pairs with CheatRunner. Binary: `ps-patch-system-illusionyy`. Web: `http://<ps5-ip>:23900`. Related: NeoEnabler (https://github.com/gasb07/NeoEnabler) depends on this (load order: patch-system first).",
+          "hw_target": "P5U"
+        }
+      }
+    },
+    "NeoEnabler": {
+      "variants": {
+        "default": {
+          "display_name": "NeoEnabler",
+          "source_repo": "https://github.com/gasb07/NeoEnabler",
+          "author": "gasb07",
+          "author_url": "https://github.com/gasb07",
+          "backup_url": null,
+          "category": "Game Tools",
+          "channel": "stable",
+          "fw_min": null,
+          "fw_max": null,
+          "port": 8765,
+          "protected_fallback": false,
+          "note": "Load order every boot: **ps-patch-system → neo-manager.elf** (9021). Panel `http://<ps5-ip>:8765`. Patches synced into `/data/user/patches/xml_orbis/`. 8 GiB without HV on 13.20/13.60 (validated paths). Logs `/data/neo-enabler/`. Latest **~0.5.0**. Binary: `NeoEnabler-gasb07` / `neo-manager.elf`.",
+          "hw_target": "P5U"
+        }
+      }
+    },
+    "WelcomeHubActivator": {
+      "variants": {
+        "default": {
+          "display_name": "WelcomeHubActivator",
+          "source_repo": "https://github.com/ghost1372/WelcomeHubActivator",
+          "author": "ghost1372",
+          "author_url": "https://github.com/ghost1372",
+          "backup_url": null,
+          "category": "Activation & Spoof",
+          "channel": "stable",
+          "fw_min": null,
+          "fw_max": null,
+          "port": null,
+          "protected_fallback": false,
+          "note": "One-shot; persists across reboots. Binary: `WelcomeHubActivator-ghost1372_v1.0.0.elf`. Backs up `app.db` → `app.bckdb` before edit.",
+          "hw_target": "P5U"
+        }
+      }
+    },
+    "ddd-status": {
+      "variants": {
+        "default": {
+          "display_name": "ddd_status",
+          "source_repo": "https://github.com/earthonion/ddd_status",
+          "author": "earthonion",
+          "author_url": "https://github.com/earthonion",
+          "backup_url": null,
+          "category": "Debug & SDK",
+          "channel": "stable",
+          "fw_min": null,
+          "fw_max": null,
+          "port": null,
+          "protected_fallback": false,
+          "note": "",
+          "hw_target": "P5U"
+        }
+      }
+    },
+    "kdump-ps5": {
+      "variants": {
+        "default": {
+          "display_name": "kdump_ps5",
+          "source_repo": "https://github.com/earthonion/kdump_ps5",
+          "author": "earthonion",
+          "author_url": "https://github.com/earthonion",
+          "backup_url": null,
+          "category": "Debug & SDK",
+          "channel": "stable",
+          "fw_min": null,
+          "fw_max": null,
+          "port": null,
+          "protected_fallback": false,
+          "note": "",
+          "hw_target": "P5U"
+        }
+      }
+    },
+    "PS5-Power-Payloads-Project": {
+      "variants": {
+        "default": {
+          "display_name": "PS5-Power-Payloads-Project",
+          "source_repo": "https://github.com/MasterPS0/PS5-Power-Payloads-Project",
+          "author": "MasterPS0",
+          "author_url": "https://github.com/MasterPS0",
+          "backup_url": null,
+          "category": "System Utility",
+          "channel": "stable",
+          "fw_min": null,
+          "fw_max": null,
+          "port": null,
+          "protected_fallback": false,
+          "note": "Binaries: `reboot-MasterPS0.elf`, `poweroff-MasterPS0.elf`, `suspend-MasterPS0.elf`.",
+          "hw_target": "P5U"
+        }
+      }
+    },
+    "PatchDL-ps5-patchdl": {
+      "variants": {
+        "default": {
+          "display_name": "PatchDL / ps5-patchdl",
+          "source_repo": "https://github.com/knutwurst/ps5-patchdl",
+          "author": "knutwurst",
+          "author_url": "https://github.com/knutwurst",
+          "backup_url": null,
+          "category": "Game Tools",
+          "channel": "stable",
+          "fw_min": "1.00",
+          "fw_max": "13.60",
+          "port": 12880,
+          "protected_fallback": false,
+          "note": "Open `http://<ps5-ip>:12880/`. Version history via prosperopatches.com / orbispatches.com. Latest **v0.3.12**. Binary: `patchdl-knutwurst_v0.3.12.elf`.",
+          "hw_target": "P5U"
+        }
+      }
+    },
+    "PS5-NetDis": {
+      "variants": {
+        "default": {
+          "display_name": "PS5-NetDis",
+          "source_repo": "https://github.com/eladharels/PS5-NetDis",
+          "author": "eladharels",
+          "author_url": "https://github.com/eladharels",
+          "backup_url": null,
+          "category": "Debug & SDK",
+          "channel": "stable",
+          "fw_min": null,
+          "fw_max": null,
+          "port": 8070,
+          "protected_fallback": false,
+          "note": "UI at `http://<ps5-ip>:8070`. Binary: `NetDis-eladharels_v1.0.0.elf`.",
+          "hw_target": "P5U",
+          "ports": [
+            8070,
+            9021
+          ]
+        }
+      }
+    },
+    "App-Title": {
+      "variants": {
+        "default": {
+          "display_name": "App Title",
+          "source_repo": "https://github.com/porhe911/App-Title",
+          "author": "porhe911",
+          "author_url": "https://github.com/porhe911",
+          "backup_url": null,
+          "category": "Media",
+          "channel": "stable",
+          "fw_min": null,
+          "fw_max": null,
+          "port": null,
+          "protected_fallback": false,
+          "note": "Config `/data/AppTitle/`. Latest **v0.2.8**. Binary: `App_Title-porhe911_v0.2.8.elf`.",
+          "hw_target": "P5U"
+        }
+      }
+    },
+    "ps5-web-file-manager": {
+      "variants": {
+        "default": {
+          "display_name": "ps5-web-file-manager",
+          "source_repo": "https://github.com/owendswang/ps5-web-file-manager",
+          "author": "owendswang",
+          "author_url": "https://github.com/owendswang",
+          "backup_url": null,
+          "category": "File Management",
+          "channel": "stable",
+          "fw_min": null,
+          "fw_max": null,
+          "port": null,
+          "protected_fallback": false,
+          "note": "",
+          "hw_target": "P5U"
+        }
+      }
+    },
+    "BFpilot": {
+      "variants": {
+        "default": {
+          "display_name": "BFpilot",
+          "source_repo": "https://github.com/ItsBlurf/BFpilot",
+          "author": "ItsBlurf",
+          "author_url": "https://github.com/ItsBlurf",
+          "backup_url": null,
+          "category": "File Management",
+          "channel": "stable",
+          "fw_min": null,
+          "fw_max": null,
+          "port": null,
+          "protected_fallback": false,
+          "note": "",
+          "hw_target": "P5U"
+        }
+      }
+    },
+    "ps5-linux-1240-build": {
+      "variants": {
+        "default": {
+          "display_name": "ps5-linux-1240-build",
+          "source_repo": "https://github.com/Wigglez-sudo/ps5-linux-1240-build",
+          "author": "Wigglez-sudo",
+          "author_url": "https://github.com/Wigglez-sudo",
+          "backup_url": null,
+          "category": "Linux",
+          "channel": "stable",
+          "fw_min": "12.40",
+          "fw_max": "12.40",
+          "port": null,
+          "protected_fallback": false,
+          "note": "`loader-1240-7ed8615b.elf`. Image: ps5-ubuntu2604.img.xz.",
+          "hw_target": "P5"
+        }
+      }
+    },
+    "ps5-payloads-mirror": {
+      "variants": {
+        "default": {
+          "display_name": "ps5-payloads-mirror",
+          "source_repo": "https://github.com/itsPLK/ps5-payloads-mirror",
+          "author": "itsPLK",
+          "author_url": "https://github.com/itsPLK",
+          "backup_url": null,
+          "category": "System Utility",
+          "channel": "stable",
+          "fw_min": null,
+          "fw_max": null,
+          "port": null,
+          "protected_fallback": false,
+          "note": "",
+          "hw_target": "P5U"
+        }
+      }
+    },
+    "PS5-Stuff": {
+      "variants": {
+        "default": {
+          "display_name": "PS5-Stuff",
+          "source_repo": "https://github.com/TheWizWikii/PS5-Stuff",
+          "author": "TheWizWikii",
+          "author_url": "https://github.com/TheWizWikii",
+          "backup_url": null,
+          "category": "System Utility",
+          "channel": "stable",
+          "fw_min": null,
+          "fw_max": null,
+          "port": null,
+          "protected_fallback": false,
+          "note": "",
+          "hw_target": "P5U"
+        }
+      }
+    },
+    "ps5-custom-payloads": {
+      "variants": {
+        "default": {
+          "display_name": "ps5-custom-payloads",
+          "source_repo": "https://github.com/TheWizWikii/ps5-custom-payloads",
+          "author": "TheWizWikii",
+          "author_url": "https://github.com/TheWizWikii",
+          "backup_url": null,
+          "category": "System Utility",
+          "channel": "stable",
+          "fw_min": null,
+          "fw_max": null,
+          "port": null,
+          "protected_fallback": false,
+          "note": "",
+          "hw_target": "P5U"
+        }
+      }
+    },
+    "PS5-Game-Compressor": {
+      "variants": {
+        "default": {
+          "display_name": "PS5-Game-Compressor",
+          "source_repo": "https://github.com/juma-sayeh/PS5-Game-Compressor",
+          "author": "juma-sayeh",
+          "author_url": "https://github.com/juma-sayeh",
+          "backup_url": null,
+          "category": "Game Tools",
+          "channel": "stable",
+          "fw_min": null,
+          "fw_max": null,
+          "port": null,
+          "protected_fallback": false,
+          "note": "",
+          "hw_target": "P5U"
+        }
+      }
+    },
+    "ps5-app-dumper": {
+      "variants": {
+        "default": {
+          "display_name": "ps5-app-dumper",
+          "source_repo": "https://github.com/EchoStretch/ps5-app-dumper",
+          "author": "EchoStretch",
+          "author_url": "https://github.com/EchoStretch",
+          "backup_url": null,
+          "category": "Debug & SDK",
+          "channel": "stable",
+          "fw_min": null,
+          "fw_max": null,
+          "port": null,
+          "protected_fallback": false,
+          "note": "",
+          "hw_target": "P5U"
+        }
+      }
+    },
+    "apr-emu-updater": {
+      "variants": {
+        "default": {
+          "display_name": "apr-emu-updater",
+          "source_repo": "https://github.com/tsuramatsu1/apr-emu-updater",
+          "author": "tsuramatsu1",
+          "author_url": "https://github.com/tsuramatsu1",
+          "backup_url": null,
+          "category": "Game Tools",
+          "channel": "stable",
+          "fw_min": null,
+          "fw_max": null,
+          "port": null,
+          "protected_fallback": false,
+          "note": "",
+          "hw_target": "P5U"
         }
       }
     }

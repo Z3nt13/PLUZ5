@@ -29,6 +29,10 @@ def build_url(gh_user: str, gh_repo: str, gh_branch: str, subdir: str, filename:
     return f"https://raw.githubusercontent.com/{gh_user}/{gh_repo}/{gh_branch}/{subdir}/{filename}"
 
 
+ICONS: dict = {}   # icon_key -> data URI, filled while entries are built
+ICONS_ON = True
+
+
 def make_manifest_entry(payload_name: str, variant: str, artifact: dict, reg: dict, env: dict, subdir: str) -> dict:
     url = artifact.get("url") or build_url(env["GH_USER"], env["GH_REPO"], env["GH_BRANCH"], subdir, artifact["filename"])
     display_name = reg.get("display_name", payload_name if variant == "default" else f"{payload_name} ({variant})")
@@ -46,6 +50,12 @@ def make_manifest_entry(payload_name: str, variant: str, artifact: dict, reg: di
         desc_bits.append(reg["note"])
     description = " -- ".join(desc_bits) if desc_bits else ""
 
+    icon_key = None
+    if ICONS_ON:
+        from pluz_icons import icon_for
+        icon_key, uri = icon_for(display_name, reg.get("category", "Unknown"))
+        ICONS[icon_key] = uri
+
     return {
         "name": display_name,
         "filename": artifact["filename"],
@@ -61,6 +71,7 @@ def make_manifest_entry(payload_name: str, variant: str, artifact: dict, reg: di
         "author": reg.get("author"),
         "author_url": reg.get("author_url"),
         "checksum": artifact["sha256"],
+        **({"icon_key": icon_key} if icon_key else {}),
     }
 
 
@@ -77,6 +88,9 @@ def main(argv=None):
     root = repo_root()
     log = Log(root, "pluz_update")
     cfg = load_config(root)
+    global ICONS_ON
+    ICONS_ON = bool(cfg["settings"].get("icons", True))
+    ICONS.clear()
     env = load_env(root)
 
     missing_env = [k for k in ("GH_USER", "GH_REPO", "GH_BRANCH") if not env.get(k)]
@@ -176,8 +190,14 @@ def main(argv=None):
     owner = env.get("GH_USER") or "My"
     store = str(cfg["registry"].get("store_name") or "").strip()   # set in the builder
     base = store or f"{owner}'s PLUZ5"
-    main_manifest = {"name": base if store else f"{base} -- Source", "payloads": main_entries}
-    hosted_manifest = {"name": f"{base} -- Hosted", "payloads": hosted_entries}
+    icons_url = build_url(env["GH_USER"], env["GH_REPO"], env["GH_BRANCH"], "manifests", "PLUZ-ps5-Icons.json") if ICONS else None
+    head = {"icons_url": icons_url} if icons_url else {}
+    main_manifest = {"name": base if store else f"{base} -- Source", **head, "payloads": main_entries}
+    hosted_manifest = {"name": f"{base} -- Hosted", **head, "payloads": hosted_entries}
+    if ICONS:
+        ip = root / "manifests" / "PLUZ-ps5-Icons.json"
+        ip.parent.mkdir(parents=True, exist_ok=True)
+        ip.write_text(json.dumps({"icons": dict(sorted(ICONS.items()))}, indent=2), encoding="utf-8")
 
     (root / cfg["settings"]["manifest_files"]["main"]).parent.mkdir(parents=True, exist_ok=True)
     (root / cfg["settings"]["manifest_files"]["main"]).write_text(json.dumps(main_manifest, indent=2), encoding="utf-8")
@@ -193,7 +213,7 @@ def main(argv=None):
         old.unlink()
     for category, entries in split_buckets.items():
         safe_name = category.lower().replace(" ", "_").replace("&", "and")
-        out = {"name": f"{base} -- {category}", "payloads": entries}
+        out = {"name": f"{base} -- {category}", **head, "payloads": entries}
         (split_dir / f"ps5_{safe_name}.json").write_text(json.dumps(out, indent=2), encoding="utf-8")
     log.line(f"Category splits written: {len(split_buckets)}")
     log.line(f"Wrote {len(main_entries)} entries to {cfg['settings']['manifest_files']['main']}")

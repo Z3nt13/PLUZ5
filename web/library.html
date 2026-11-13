@@ -64,7 +64,7 @@ footer b{color:var(--accent);font-weight:600}
 <body>
 <header>
   <div class="logo">PLUZ5<span> Library</span></div>
-  <a href="builder.html">Builder</a><a href="catalog.html">Catalog</a>
+  <a href="start.html">Start</a><a href="builder.html">Builder</a><a href="catalog.html">Catalog</a><a href="pldmgr.html">pldmgr link</a>
   <span class="hint" id="count" style="margin:0 0 0 auto"></span>
 </header>
 <main>
@@ -182,20 +182,41 @@ footer b{color:var(--accent);font-weight:600}
     [["media", "player", "video", "dlna"], "Media"], [["activator", "account", "spoof", "np"], "Activation & Spoof"],
     [["sdk", "debug", "dev"], "Debug & SDK"], [["menu", "overlay", "fan-control", "theme", "autoload", "loader"], "System Utility"]
   ];
+  function fwDot(n) { n = String(n); return n.length >= 3 ? n.slice(0, -2) + "." + n.slice(-2) : n; }
   function toStoreEntry(e) {
-    var tags = (e.tags || []).map(function (t) { return t.toLowerCase(); }), cat = "Unknown", hw = "", port = null;
-    CATMAP.some(function (c) { return c[0].some(function (t) { if (tags.indexOf(t) >= 0) { cat = c[1]; return true; } }); });
+    var tags = (e.tags || []).map(function (t) { return t.toLowerCase(); }), cat = e.category || "", hw = e.hw || "", port = null;
+    if (!cat) { cat = "Unknown"; CATMAP.some(function (c) { return c[0].some(function (t) { if (tags.indexOf(t) >= 0) { cat = c[1]; return true; } }); }); }
     (e.tags || []).forEach(function (t) {
       if (!hw && /^P5[PU]?$/i.test(t)) hw = t.toUpperCase();
       var m = t.match(/^port-(\d+)/i); if (port === null && m) port = +m[1];
     });
-    var variant = (!e.variant || e.variant === "org") ? "default" : safeId(e.variant);
-    var o = { display_name: e.name, source_repo: e.url, author: e.author || ownerOf(e.url),
-      author_url: ownerOf(e.url) ? "https://github.com/" + ownerOf(e.url) : "", backup_url: null, category: cat, channel: "stable",
-      fw_min: null, fw_max: null, port: port, protected_fallback: false, note: String(e.notes || e.desc || "").slice(0, 300) };
+    if (e.ports && e.ports.length) port = +e.ports[0];
+    var plain = !e.variant || e.variant === "org" || e.variant === e.author;
+    var variant = plain ? "default" : safeId(e.variant);
+    var note = String(e.notes || e.desc || "");
+    if (e.relation) note = e.relation.replace(":", " of ") + ". " + note;
+    var o = { display_name: plain ? e.name : e.name + " (" + e.variant + ")", source_repo: e.url, author: e.author || ownerOf(e.url),
+      author_url: ownerOf(e.url) ? "https://github.com/" + ownerOf(e.url) : "", backup_url: null, category: cat, channel: e.channel || "stable",
+      fw_min: null, fw_max: null, port: port, protected_fallback: !!e.keep, note: note.slice(0, 300) };
+    if (e.fw) { var f = e.fw.split("-"); o.fw_min = fwDot(f[0]); o.fw_max = fwDot(f[1]); }
+    else if (e.fw_list && e.fw_list.length) { var l = e.fw_list.slice().sort(function (x, y) { return x - y; }); o.fw_min = fwDot(l[0]); o.fw_max = fwDot(l[l.length - 1]); if (l.length > 1) o.fw_list = l; }
+    if (e.ports && e.ports.length > 1) o.ports = e.ports.map(Number);
+    if (e.fw_not && e.fw_not.length) o.fw_not = e.fw_not;
     if (hw) o.hw_target = hw;
     if (tags.indexOf("ps4") >= 0) o.platform = "ps4/ps5";
     return { id: safeId(e.name), variant: variant, e: o };
+  }
+  function extrasOf(e) {
+    var p = [];
+    if (e.hw) p.push(e.hw); if (e.type) p.push(e.type); if (e.relation) p.push(e.relation);
+    (e.formats || []).forEach(function (f) { p.push(f); });
+    if (e.channel) p.push(e.channel);
+    if (e.fw) p.push("fw:" + e.fw); if (e.fw_list && e.fw_list.length) p.push("fw:" + e.fw_list.join(","));
+    if (e.fw_not && e.fw_not.length) p.push("!fw:" + e.fw_not.join(","));
+    if (e.ports && e.ports.length) p.push("port:" + e.ports.join(","));
+    if (e.delivery) p.push(e.delivery); if (e.keep) p.push("keep");
+    (e.needs || []).forEach(function (n) { p.push("needs:" + n); });
+    return p.concat(e.extras_unknown || []).join(" | ");
   }
 
   // ---------- history ----------
@@ -356,8 +377,14 @@ footer b{color:var(--accent);font-weight:600}
   $("fromStore").addEventListener("click", function () { doFromStore(); });
 
   function docBlock(e) {
-    return ["### " + e.name, "- **URL:** " + (e.url || "(none)"), "- **Author:** " + (e.author || ""), "- **Variant:** " + (e.variant || "org"),
-      "- **Desc:** " + (e.desc || ""), "- **Tags:** " + (e.tags || []).map(function (t) { return "#" + t; }).join(" "), "- **Notes:** " + (e.notes || "")].join("\n");
+    var by = (e.author || "") + (e.variant && e.variant !== e.author && e.variant !== "org" ? " / " + e.variant : "");
+    var L = ["### " + e.name, "- **URL:** " + (e.url || "(none)")];
+    if (by) L.push("- **By:** " + by);
+    if (e.desc) L.push("- **Desc:** " + e.desc);
+    L.push("- **Tags:** #" + String(e.category || "Unknown").replace(/ & /g, "-").replace(/ /g, "-") + ((e.tags || []).length ? " - " + e.tags.map(function (t) { return "#" + t; }).join(" ") : ""));
+    var x = extrasOf(e); if (x) L.push("- **Extras:** " + x);
+    if (e.notes) L.push("- **Notes:** " + e.notes);
+    return L.join("\n");
   }
   function copyText(text, what) {
     function fallback() {

@@ -1,6 +1,41 @@
 {
   "name": "Z3nT13's PLUZ5",
+  "icons_url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/manifests/PLUZ-ps5-Icons.json",
   "payloads": [
+    {
+      "name": "App Title",
+      "filename": "App-Title_v0.2.15.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/App-Title_v0.2.15.elf",
+      "backup_url": null,
+      "description": "Config `/data/AppTitle/`. Latest **v0.2.8**. Binary: `App_Title-porhe911_v0.2.8.elf`.",
+      "version": "0.2.15",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": "P5U",
+      "category": "Media",
+      "author": "porhe911",
+      "author_url": "https://github.com/porhe911",
+      "checksum": "d3d2f5d27d6ace1e8722becd09aff1a5d6821dcb5535c7e04236f0987075e505",
+      "icon_key": "3ba33f8005964cf473e1cc90aa81cae5af85583d0b078eacab24931a596e888a"
+    },
+    {
+      "name": "BFpilot",
+      "filename": "BFpilot_v0.4.4.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/BFpilot_v0.4.4.elf",
+      "backup_url": null,
+      "description": "",
+      "version": "0.4.4",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": "P5U",
+      "category": "File Management",
+      "author": "ItsBlurf",
+      "author_url": "https://github.com/ItsBlurf",
+      "checksum": "5a8237630260026ad054d71fbbe661e433ac9ffa2cb4eea2785769c1eb7ee1c1",
+      "icon_key": "bde82469bde1c68f2ab67f356da72a52b540d11c3bf928dedd40afbfe2f6cb76"
+    },
     {
       "name": "BackPork",
       "filename": "BackPork_v0.1.elf",
@@ -15,7 +50,8 @@
       "category": "Game Tools",
       "author": "BestPig",
       "author_url": "https://github.com/BestPig",
-      "checksum": "d74e4cd119b2bb1fd423f2f5b1c9a7f096b3e588c753af1ab48b983d56216a52"
+      "checksum": "d74e4cd119b2bb1fd423f2f5b1c9a7f096b3e588c753af1ab48b983d56216a52",
+      "icon_key": "af1b2f7aa4f96f7f5fb470cf56018c044aebaac2f926654a467b20dce1ebace4"
     },
     {
       "name": "CheatRunner",
@@ -31,7 +67,8 @@
       "category": "Game Tools",
       "author": "notmaj0r",
       "author_url": "https://github.com/notmaj0r",
-      "checksum": "80535260027983f09fc9d131e11e13591de61ef5eeea458825598263862d2ce8"
+      "checksum": "80535260027983f09fc9d131e11e13591de61ef5eeea458825598263862d2ce8",
+      "icon_key": "500b028d7f6b6d623dd978d69c95eafdc83d9d569cd3324f9c9fa007a3a0d273"
     },
     {
       "name": "ChronicLoader",
@@ -47,15 +84,16 @@
       "category": "System Utility",
       "author": "StonedModder",
       "author_url": "https://github.com/StonedModder",
-      "checksum": "3561120f85e0ec32de5de15cdd61a1fe8d5146eb4c6aa99ee88209914a2774b1"
+      "checksum": "3561120f85e0ec32de5de15cdd61a1fe8d5146eb4c6aa99ee88209914a2774b1",
+      "icon_key": "2e98ff0407579e40133bb13d75ea92f822286303c304c7b47342993885d27c43"
     },
     {
       "name": "JailbreakStore",
-      "filename": "JailbreakStore_vRelease.elf",
-      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/JailbreakStore_vRelease.elf",
+      "filename": "JailbreakStore_vRelapse.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/JailbreakStore_vRelapse.elf",
       "backup_url": null,
       "description": "unset -- fill in from release notes",
-      "version": "Release",
+      "version": "Relapse",
       "fw_min": null,
       "fw_max": null,
       "platform": "ps5",
@@ -63,7 +101,25 @@
       "category": "System Utility",
       "author": "notmaj0r",
       "author_url": "https://github.com/notmaj0r",
-      "checksum": "deb47ab4a9cee35c58a6777fb99eaeb397528e2518b4d4f5db52e8dce373de55"
+      "checksum": "ca6b3c707f86c040269a34234046925080466bcc9266683e731e5442d22458ba",
+      "icon_key": "e4581bf9259c834fb0e050f017df32db0b6de5a25cfbc9a319727d8420fb0d69"
+    },
+    {
+      "name": "NeoEnabler",
+      "filename": "NeoEnabler_v0.6.2.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/NeoEnabler_v0.6.2.elf",
+      "backup_url": null,
+      "description": "port 8765",
+      "version": "0.6.2",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": "P5U",
+      "category": "Game Tools",
+      "author": "gasb07",
+      "author_url": "https://github.com/gasb07",
+      "checksum": "c0506bd055820a199ddae59a475686fdcf6f832f94594870ba41cee9b3fce1be",
+      "icon_key": "fa264d2b3bbac7c54d5bc3b37b8c5bcc1d3f713fc287536e70f636d96b2cdc6c"
     },
     {
       "name": "PIZZA-HEN",
@@ -79,7 +135,76 @@
       "category": "Kernel",
       "author": "Michele-M-Media",
       "author_url": "https://github.com/Michele-M-Media",
-      "checksum": "8535d399612d61c50a528b2ae416f2fc3ccfb7480296df99c17302583fb3e345"
+      "checksum": "8535d399612d61c50a528b2ae416f2fc3ccfb7480296df99c17302583fb3e345",
+      "icon_key": "c0d20f1e52b6c024565e31ed97d03f4ebbd1effa2394927bae314951f845cb92"
+    },
+    {
+      "name": "PS5 Account Activator",
+      "filename": "PS5-Account-Activator_v2.1.0.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/PS5-Account-Activator_v2.1.0.elf",
+      "backup_url": null,
+      "description": "port 9021",
+      "version": "2.1.0",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": "P5U",
+      "category": "Activation & Spoof",
+      "author": "Epinorr",
+      "author_url": "https://github.com/Epinorr",
+      "checksum": "92ef418c503aea340b058485b42f917f2ceedcc4b64acd6867d20cc30c9e93ff",
+      "icon_key": "af36cb25598f378eb8e0cc24bd4921b84f0bc222bf8dffea1e7b910555b71551"
+    },
+    {
+      "name": "PS5-Game-Compressor",
+      "filename": "PS5-Game-Compressor_v1.0.4.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/PS5-Game-Compressor_v1.0.4.elf",
+      "backup_url": null,
+      "description": "",
+      "version": "1.0.4",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": "P5U",
+      "category": "Game Tools",
+      "author": "juma-sayeh",
+      "author_url": "https://github.com/juma-sayeh",
+      "checksum": "e55e90aaade13b6e0d4316c1597ef90a21b67a06475c3e25de054224bc1e941b",
+      "icon_key": "b98ef3082e457faff64f1407fec3b719c8d6fd7cecba4d08a9d3295921a154e2"
+    },
+    {
+      "name": "PS5-NetDis",
+      "filename": "PS5-NetDis_v1.0.0.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/PS5-NetDis_v1.0.0.elf",
+      "backup_url": null,
+      "description": "port 8070",
+      "version": "1.0.0",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": "P5U",
+      "category": "Debug & SDK",
+      "author": "eladharels",
+      "author_url": "https://github.com/eladharels",
+      "checksum": "9b635ff7aacd785ff79c09d17c3734fd0427d0a7c644abb7f8bea4093420c534",
+      "icon_key": "c0062ac10f90b33dc0013828595a74da452ed953067433f91760a0c4f15f6da2"
+    },
+    {
+      "name": "PatchDL / ps5-patchdl",
+      "filename": "PatchDL-ps5-patchdl_v0.3.12.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/PatchDL-ps5-patchdl_v0.3.12.elf",
+      "backup_url": null,
+      "description": "FW 1.00-13.60 -- port 12880",
+      "version": "0.3.12",
+      "fw_min": "1.00",
+      "fw_max": "13.60",
+      "platform": "ps5",
+      "hw_target": "P5U",
+      "category": "Game Tools",
+      "author": "knutwurst",
+      "author_url": "https://github.com/knutwurst",
+      "checksum": "a8aeb6039825188561b7346bb6f0c9244f72d7be1412dc7dd6c2bea0dd3f396a",
+      "icon_key": "eebb54d06878b0d108bd68292fb24fe2db05462011e91039b9dfea615112eb44"
     },
     {
       "name": "ProsperoMgr",
@@ -95,7 +220,8 @@
       "category": "System Utility",
       "author": "notmaj0r",
       "author_url": "https://github.com/notmaj0r",
-      "checksum": "127394cc4f1ac7347fea509e010e80bab7b5ee13d820665474cdc3928d173bce"
+      "checksum": "127394cc4f1ac7347fea509e010e80bab7b5ee13d820665474cdc3928d173bce",
+      "icon_key": "6d0c1481cc4fe1de0881307f6f89826fc4cb2c9a19a090d9f0e2dcf4bc3dec6c"
     },
     {
       "name": "ShadowMountPlus (Alpha)",
@@ -111,7 +237,8 @@
       "category": "Game Tools",
       "author": "drakmor",
       "author_url": "https://github.com/drakmor",
-      "checksum": "15af22e6cefefbcc9f16f137b5255b6b94d546788ba5f404dc9220da4759a6ff"
+      "checksum": "15af22e6cefefbcc9f16f137b5255b6b94d546788ba5f404dc9220da4759a6ff",
+      "icon_key": "2a1985fe1771dd7c0d8a8493a06b3f524493fadcbe1095ab0f29d1c095e92842"
     },
     {
       "name": "ShadowMountPlus (Beta)",
@@ -127,7 +254,42 @@
       "category": "Game Tools",
       "author": "drakmor",
       "author_url": "https://github.com/drakmor",
-      "checksum": "8755172ec9bef1bff5453ea75606e0caf7c41b5963f94f5a1087e7e8c6d9b1bd"
+      "checksum": "8755172ec9bef1bff5453ea75606e0caf7c41b5963f94f5a1087e7e8c6d9b1bd",
+      "icon_key": "2a1985fe1771dd7c0d8a8493a06b3f524493fadcbe1095ab0f29d1c095e92842"
+    },
+    {
+      "name": "WelcomeHubActivator",
+      "filename": "WelcomeHubActivator_v1.2.0.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/WelcomeHubActivator_v1.2.0.elf",
+      "backup_url": null,
+      "description": "One-shot; persists across reboots. Binary: `WelcomeHubActivator-ghost1372_v1.0.0.elf`. Backs up `app.db` \u2192 `app.bckdb` before edit.",
+      "version": "1.2.0",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": "P5U",
+      "category": "Activation & Spoof",
+      "author": "ghost1372",
+      "author_url": "https://github.com/ghost1372",
+      "checksum": "f989cc412ef782a01f394fe80cf8fc237970884ba90ce4fe4baac165c0b5a2a6",
+      "icon_key": "3ea03c591845792f8ac9aaefdb82b9355590a3815ced14c68379a7617e2d78f3"
+    },
+    {
+      "name": "apr-emu-updater",
+      "filename": "apr-emu-updater_v2.0.6.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/apr-emu-updater_v2.0.6.elf",
+      "backup_url": null,
+      "description": "",
+      "version": "2.0.6",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": "P5U",
+      "category": "Game Tools",
+      "author": "tsuramatsu1",
+      "author_url": "https://github.com/tsuramatsu1",
+      "checksum": "4f04464283a6a551883e40e36b59134ecad0e38ecbb7ea89cbec3f91a3bd9122",
+      "icon_key": "9062ba2e81c986edfb9c482fc64eeb5fccab24c5e70f545b89c953926676bea6"
     },
     {
       "name": "ELF Launcher (X-F1REBALL-X)",
@@ -143,7 +305,8 @@
       "category": "File Management",
       "author": "X-F1REBALL-X",
       "author_url": "https://github.com/X-F1REBALL-X",
-      "checksum": "5c4a9c3146cf7ac14ce0dab35358eb5ab9cd17c647735d9fcd0932913ac2a9d2"
+      "checksum": "5c4a9c3146cf7ac14ce0dab35358eb5ab9cd17c647735d9fcd0932913ac2a9d2",
+      "icon_key": "bfee8d2b9cff381e5ab4c29373a2f43761f2f48b58b247d4bae577823429b259"
     },
     {
       "name": "elfldr (itsPLK)",
@@ -159,7 +322,8 @@
       "category": "Network",
       "author": "itsPLK",
       "author_url": "https://github.com/itsPLK",
-      "checksum": "116d023e9a6cb243d1d6c539b325bd0d140cc79de3afc3add5f34a98ccda4c93"
+      "checksum": "116d023e9a6cb243d1d6c539b325bd0d140cc79de3afc3add5f34a98ccda4c93",
+      "icon_key": "33a16891fe0d7363dec0575fcdc1748f3c699a738712fd184583e7caa7271f7f"
     },
     {
       "name": "elfldr",
@@ -175,7 +339,8 @@
       "category": "Network",
       "author": "ps5-payload-dev",
       "author_url": "https://github.com/ps5-payload-dev",
-      "checksum": "82f6227610172c98bad6efe68219fc93a10027035991f47eb4b75532d023407d"
+      "checksum": "82f6227610172c98bad6efe68219fc93a10027035991f47eb4b75532d023407d",
+      "icon_key": "33a16891fe0d7363dec0575fcdc1748f3c699a738712fd184583e7caa7271f7f"
     },
     {
       "name": "etaHEN (EchoStretch)",
@@ -191,7 +356,8 @@
       "category": "Kernel",
       "author": "EchoStretch / LightningMods",
       "author_url": "https://github.com/etaHEN",
-      "checksum": "9669c993a1036ac28cb7a84f7fc6f12aeafbf9be1104169d72547a851e09b2d4"
+      "checksum": "9669c993a1036ac28cb7a84f7fc6f12aeafbf9be1104169d72547a851e09b2d4",
+      "icon_key": "740ac66797e42011291d452133599850a5fdd6f1a336d625abdfee17f356411c"
     },
     {
       "name": "etaHEN (Zecoxao)",
@@ -207,7 +373,8 @@
       "category": "Kernel",
       "author": "Zecoxao",
       "author_url": "https://github.com/zecoxao",
-      "checksum": "512c74a9d6f56bb5a4ab871a0306a8cbefb8b3d5454ba8f1d833b020b245a126"
+      "checksum": "512c74a9d6f56bb5a4ab871a0306a8cbefb8b3d5454ba8f1d833b020b245a126",
+      "icon_key": "740ac66797e42011291d452133599850a5fdd6f1a336d625abdfee17f356411c"
     },
     {
       "name": "FGG Unpack (FGGstore)",
@@ -223,7 +390,8 @@
       "category": "File Management",
       "author": "FGGstore",
       "author_url": "https://github.com/FGGstore",
-      "checksum": "e8c8e57bbda31b5d16d131797aac6f83b555cae8d439b1f475c952f3d9554eff"
+      "checksum": "e8c8e57bbda31b5d16d131797aac6f83b555cae8d439b1f475c952f3d9554eff",
+      "icon_key": "717b97af4a0f2b8508b54d23325825693eedf520457f433b15d88d2b23d243b3"
     },
     {
       "name": "ftpsrv (ps5-payload-dev)",
@@ -239,7 +407,25 @@
       "category": "Network",
       "author": "ps5-payload-dev",
       "author_url": "https://github.com/ps5-payload-dev",
-      "checksum": "41148c2c1cad1ea9e7cfde03e389fa918e3338e896d06167346de09adbdc8757"
+      "checksum": "41148c2c1cad1ea9e7cfde03e389fa918e3338e896d06167346de09adbdc8757",
+      "icon_key": "f992141d459811922ecd29c44b2de4822678fed8785ac8d73f9edebde0f616d3"
+    },
+    {
+      "name": "garlic-savemgr",
+      "filename": "garlic-savemgr-default2_v1.15-beta23.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/garlic-savemgr-default2_v1.15-beta23.elf",
+      "backup_url": null,
+      "description": "port 8082",
+      "version": "1.15-beta23",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": "P5U",
+      "category": "Game Tools",
+      "author": "earthonion",
+      "author_url": "https://github.com/earthonion",
+      "checksum": "b4667d5bc57998e66fd4b093d367a26bec47c9517e2c0d53e0fc5eef5f2c4098",
+      "icon_key": "2fc0ab0cb7d11357d732e862d3dd9cdb88d37f205b634955ae13c8d316462911"
     },
     {
       "name": "HWInfo Bench",
@@ -255,7 +441,8 @@
       "category": "Debug & SDK",
       "author": "drakmor",
       "author_url": "https://github.com/drakmor",
-      "checksum": "4514bdbc0c556df1a66544615942d5087d1cbee5c2026b3b66e688ba01e5a5b0"
+      "checksum": "4514bdbc0c556df1a66544615942d5087d1cbee5c2026b3b66e688ba01e5a5b0",
+      "icon_key": "44f6c06c1d3fb7ca11eabd3a19570422423fa1cf57ac70644d8720aa6f11fe88"
     },
     {
       "name": "HWInfo Sysinfo",
@@ -271,7 +458,25 @@
       "category": "Debug & SDK",
       "author": "drakmor",
       "author_url": "https://github.com/drakmor",
-      "checksum": "ad5014112dec619779619d0ea01a984b3c8267fed682eca5687f34c9eade51cb"
+      "checksum": "ad5014112dec619779619d0ea01a984b3c8267fed682eca5687f34c9eade51cb",
+      "icon_key": "2823abbdf49b91db44c02aed3f2c37ff4e61c8ae96f33cd3a64bd10d62cdc82d"
+    },
+    {
+      "name": "kdump_ps5",
+      "filename": "kdump-ps5_vlatest.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/kdump-ps5_vlatest.elf",
+      "backup_url": null,
+      "description": "",
+      "version": "latest",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": "P5U",
+      "category": "Debug & SDK",
+      "author": "earthonion",
+      "author_url": "https://github.com/earthonion",
+      "checksum": "e3bfbb57030ea7a346a039f19e39b033813eebeefe49161caac6c0b1c1acca45",
+      "icon_key": "c23a3a9e09e6b4198997a472e5d7ab804f67bccc0d53b80b9200177a8e41ece4"
     },
     {
       "name": "kstuff-lite (EchoStretch)",
@@ -287,7 +492,25 @@
       "category": "Kernel",
       "author": "EchoStretch",
       "author_url": "https://github.com/EchoStretch",
-      "checksum": "ab9a6cb4d3b1daf139d4d646e402b1cf569071acd64599c936d7a3a6164dc779"
+      "checksum": "ab9a6cb4d3b1daf139d4d646e402b1cf569071acd64599c936d7a3a6164dc779",
+      "icon_key": "4ab896aedafca2d80168fdbbe4f36c37dd1b37915a2933cb8df7629646513e00"
+    },
+    {
+      "name": "kstuff-lite",
+      "filename": "kstuff-lite_v1.2-dr-test1.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/kstuff-lite_v1.2-dr-test1.elf",
+      "backup_url": null,
+      "description": "fork of EchoStretch. Alternative optimized build.",
+      "version": "1.2-dr-test1",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": "P5U",
+      "category": "Kernel",
+      "author": "drakmor",
+      "author_url": "https://github.com/drakmor",
+      "checksum": "9c1b242eaed3704ef18be45d001a2c4ebf2d9222cfe3cbb0f0c3db33309abac9",
+      "icon_key": "4ab896aedafca2d80168fdbbe4f36c37dd1b37915a2933cb8df7629646513e00"
     },
     {
       "name": "onionHEN",
@@ -303,23 +526,8 @@
       "category": "Kernel",
       "author": "aydencharles",
       "author_url": "https://github.com/aydencharles",
-      "checksum": "1f1f7c883d5d998be1d95d7d80b718f85180f8156f257661b0f445a7c6b7c212"
-    },
-    {
-      "name": "PoorDS4 (rc38)",
-      "filename": "poords4-rc_v0.1.0-rc51.elf",
-      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/poords4-rc_v0.1.0-rc51.elf",
-      "backup_url": null,
-      "description": "sibling tool -- see docs/rename-map.md",
-      "version": "0.1.0-rc51",
-      "fw_min": null,
-      "fw_max": null,
-      "platform": "ps5",
-      "hw_target": null,
-      "category": "System Utility",
-      "author": "ItsBlurf",
-      "author_url": "https://github.com/ItsBlurf",
-      "checksum": "e1b9f257f51678a977edaeafd4ca1f8a03e9df0afda7d5dd84435841fa20795d"
+      "checksum": "1f1f7c883d5d998be1d95d7d80b718f85180f8156f257661b0f445a7c6b7c212",
+      "icon_key": "ec05f70c1b34b8595f0e80a5385317ec93f757834d530fd72783d156d4417754"
     },
     {
       "name": "PoorDS4 (status)",
@@ -335,7 +543,8 @@
       "category": "System Utility",
       "author": "ItsBlurf",
       "author_url": "https://github.com/ItsBlurf",
-      "checksum": "100a21631a86a1fed456d822bb923012252575adf9cb0ca8e5346ccdacb38da5"
+      "checksum": "100a21631a86a1fed456d822bb923012252575adf9cb0ca8e5346ccdacb38da5",
+      "icon_key": "80f0d9ae2637e830067766babb29ada1c76a96b1aaadb171c05fe5b31564861a"
     },
     {
       "name": "PoorDS4 (stop)",
@@ -351,7 +560,59 @@
       "category": "System Utility",
       "author": "ItsBlurf",
       "author_url": "https://github.com/ItsBlurf",
-      "checksum": "fab1ad04daf8346e5952c115f3a08621598d29e222ff80e328a14e73a0f968c8"
+      "checksum": "fab1ad04daf8346e5952c115f3a08621598d29e222ff80e328a14e73a0f968c8",
+      "icon_key": "80f0d9ae2637e830067766babb29ada1c76a96b1aaadb171c05fe5b31564861a"
+    },
+    {
+      "name": "ps5-account-tools",
+      "filename": "ps5-account-tools_v1.2.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/ps5-account-tools_v1.2.elf",
+      "backup_url": null,
+      "description": "port 6769",
+      "version": "1.2",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": "P5U",
+      "category": "Activation & Spoof",
+      "author": "MangoScango",
+      "author_url": "https://github.com/MangoScango",
+      "checksum": "2e1402d8c088afda55280b28fcc66ccb870528ec948d10ea586088f60f723f2a",
+      "icon_key": "af36cb25598f378eb8e0cc24bd4921b84f0bc222bf8dffea1e7b910555b71551"
+    },
+    {
+      "name": "ps5-app-dumper",
+      "filename": "ps5-app-dumper_v2.10.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/ps5-app-dumper_v2.10.elf",
+      "backup_url": null,
+      "description": "",
+      "version": "2.10",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": "P5U",
+      "category": "Debug & SDK",
+      "author": "EchoStretch",
+      "author_url": "https://github.com/EchoStretch",
+      "checksum": "c850f1df6f2787824d6ddeeed69ce4144e00569b32135973401c2985cfb0345b",
+      "icon_key": "e50974cbcb8c71b1b6f79a829bf1f95216a3a6382868c6431d3eff72be392144"
+    },
+    {
+      "name": "ps5-linux-1240-build",
+      "filename": "ps5-linux-1240-build_v12.xx.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/ps5-linux-1240-build_v12.xx.elf",
+      "backup_url": null,
+      "description": "FW 12.40-12.40",
+      "version": "12.xx",
+      "fw_min": "12.40",
+      "fw_max": "12.40",
+      "platform": "ps5",
+      "hw_target": "P5",
+      "category": "Linux",
+      "author": "Wigglez-sudo",
+      "author_url": "https://github.com/Wigglez-sudo",
+      "checksum": "42349dd534b3779e6b94e0c5679f984f3ec0266dd4e0dcd8640875f680ec2450",
+      "icon_key": "12e5d2981beff1d75f85fab644a33f7782ca6d87555e51d70a290dcf4c00911d"
     },
     {
       "name": "PS5 Payload Manager",
@@ -367,7 +628,8 @@
       "category": "System Utility",
       "author": "itsPLK",
       "author_url": "https://github.com/itsPLK",
-      "checksum": "2a42054fd9725e1d9595ff4add95abc30e5b49446fcdcb96c06775a376a841c4"
+      "checksum": "2a42054fd9725e1d9595ff4add95abc30e5b49446fcdcb96c06775a376a841c4",
+      "icon_key": "b2909d31d7234eaf2d016a77f98e62a71f77cf472ae65f23328c555e89996c84"
     },
     {
       "name": "PS5 PKG Manager (itsPLK)",
@@ -383,7 +645,8 @@
       "category": "File Management",
       "author": "itsPLK",
       "author_url": "https://github.com/itsPLK",
-      "checksum": "82e3548edcc41419b644482cccaef65689334fc0315dc20247f48b90bf182dca"
+      "checksum": "82e3548edcc41419b644482cccaef65689334fc0315dc20247f48b90bf182dca",
+      "icon_key": "7b43636affbbd1e99ba6740be824b0c31672a98498622aa5df54ed9f5cb79f82"
     },
     {
       "name": "Self Decrypter: Full System",
@@ -399,7 +662,8 @@
       "category": "Debug & SDK",
       "author": "idlesauce",
       "author_url": "https://github.com/idlesauce",
-      "checksum": "46340d3048a977f5603b3def0a0ba1c85b5c182891388442e51b39e281257b6a"
+      "checksum": "46340d3048a977f5603b3def0a0ba1c85b5c182891388442e51b39e281257b6a",
+      "icon_key": "43fe554aa3323abf57bf9f7c30eb6983f9f970e427effcb21682d89251b7fed5"
     },
     {
       "name": "Self Decrypter: Game",
@@ -415,7 +679,8 @@
       "category": "Debug & SDK",
       "author": "idlesauce",
       "author_url": "https://github.com/idlesauce",
-      "checksum": "190b350759b4f9d50949325e84d131e0953f37a9df271c329ba43c80c0ac7a57"
+      "checksum": "190b350759b4f9d50949325e84d131e0953f37a9df271c329ba43c80c0ac7a57",
+      "icon_key": "43fe554aa3323abf57bf9f7c30eb6983f9f970e427effcb21682d89251b7fed5"
     },
     {
       "name": "Self Decrypter: Shellcore",
@@ -431,7 +696,8 @@
       "category": "Debug & SDK",
       "author": "idlesauce",
       "author_url": "https://github.com/idlesauce",
-      "checksum": "15050c691c21c790ae970a1ee99ad3918dd1065fe5512c762fccee6d521c8066"
+      "checksum": "15050c691c21c790ae970a1ee99ad3918dd1065fe5512c762fccee6d521c8066",
+      "icon_key": "43fe554aa3323abf57bf9f7c30eb6983f9f970e427effcb21682d89251b7fed5"
     },
     {
       "name": "Self Decrypter: System Common Lib",
@@ -447,7 +713,8 @@
       "category": "Debug & SDK",
       "author": "idlesauce",
       "author_url": "https://github.com/idlesauce",
-      "checksum": "6a16c6457c604db4846632510da0975f49faba08e6cab9cfd7f84d78b4557d97"
+      "checksum": "6a16c6457c604db4846632510da0975f49faba08e6cab9cfd7f84d78b4557d97",
+      "icon_key": "43fe554aa3323abf57bf9f7c30eb6983f9f970e427effcb21682d89251b7fed5"
     },
     {
       "name": "Self Pager: Full System",
@@ -463,7 +730,8 @@
       "category": "Debug & SDK",
       "author": "idlesauce",
       "author_url": "https://github.com/idlesauce",
-      "checksum": "fb498d4112611619150281e0c44afbd09f144c09eaca3ab3f5b306b39450d13a"
+      "checksum": "fb498d4112611619150281e0c44afbd09f144c09eaca3ab3f5b306b39450d13a",
+      "icon_key": "5fff7fe5462f265742895c1ee33570cb25aa176851e399834fff1964bc32026b"
     },
     {
       "name": "Self Pager: Game",
@@ -479,7 +747,8 @@
       "category": "Debug & SDK",
       "author": "idlesauce",
       "author_url": "https://github.com/idlesauce",
-      "checksum": "73d94fea5de9086cac26385c117a0b3098890c447d67536877fb7b51c9145aac"
+      "checksum": "73d94fea5de9086cac26385c117a0b3098890c447d67536877fb7b51c9145aac",
+      "icon_key": "5fff7fe5462f265742895c1ee33570cb25aa176851e399834fff1964bc32026b"
     },
     {
       "name": "Self Pager: Shellcore",
@@ -495,7 +764,8 @@
       "category": "Debug & SDK",
       "author": "idlesauce",
       "author_url": "https://github.com/idlesauce",
-      "checksum": "2b500bc356b5bcfca5c3e5187bcec0a37c80ed05e39348b8f06bd2e5a6f3342b"
+      "checksum": "2b500bc356b5bcfca5c3e5187bcec0a37c80ed05e39348b8f06bd2e5a6f3342b",
+      "icon_key": "5fff7fe5462f265742895c1ee33570cb25aa176851e399834fff1964bc32026b"
     },
     {
       "name": "Self Pager: System Common Lib",
@@ -511,7 +781,8 @@
       "category": "Debug & SDK",
       "author": "idlesauce",
       "author_url": "https://github.com/idlesauce",
-      "checksum": "a86c3e69ed38656310b41af4f9221bdb2264ff4daf93fb4c2515fd54a216b701"
+      "checksum": "a86c3e69ed38656310b41af4f9221bdb2264ff4daf93fb4c2515fd54a216b701",
+      "icon_key": "5fff7fe5462f265742895c1ee33570cb25aa176851e399834fff1964bc32026b"
     },
     {
       "name": "PS5 Webkit Autoloader",
@@ -527,7 +798,8 @@
       "category": "Kernel",
       "author": "itsPLK",
       "author_url": "https://github.com/itsPLK",
-      "checksum": "df60538570e9811bb0b4652a3fdb3e1a35ec3455b3ca7c80edc4140c5bb47ce2"
+      "checksum": "df60538570e9811bb0b4652a3fdb3e1a35ec3455b3ca7c80edc4140c5bb47ce2",
+      "icon_key": "613e43cadd088927853dc6edbf69e0e851d9829440de66b14c09f22729deabde"
     },
     {
       "name": "PS5Library Agent (rdiol12)",
@@ -543,7 +815,8 @@
       "category": "File Management",
       "author": "rdiol12",
       "author_url": "https://github.com/rdiol12",
-      "checksum": "ac78389a628401edba3c081f00156238ad5652b1b7ad241f5ccc7713179f0c82"
+      "checksum": "ac78389a628401edba3c081f00156238ad5652b1b7ad241f5ccc7713179f0c82",
+      "icon_key": "7c7e553e4fa88bf4245dfeba94abda6e79afb48fd65cc2f445376aea04ba11a7"
     },
     {
       "name": "websrv",
@@ -559,23 +832,8 @@
       "category": "Network",
       "author": "ps5-payload-dev",
       "author_url": "https://github.com/ps5-payload-dev",
-      "checksum": "54730c867c6e1148536fdcb370e63a7762d989ea87b62488ad4caff64d43f263"
-    },
-    {
-      "name": "WK-AutoLoader (X-F1REBALL-X)",
-      "filename": "wk-autoloader_v1.1.2.elf",
-      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/wk-autoloader_v1.1.2.elf",
-      "backup_url": null,
-      "description": "FW 1.00-12.70 -- port 1022",
-      "version": "1.1.2",
-      "fw_min": "1.00",
-      "fw_max": "12.70",
-      "platform": "ps5",
-      "hw_target": null,
-      "category": "Network",
-      "author": "X-F1REBALL-X",
-      "author_url": "https://github.com/X-F1REBALL-X",
-      "checksum": "c5489f708e0e19769fd8d84c667942916778af39924d23c13e42f9a8f93c544c"
+      "checksum": "54730c867c6e1148536fdcb370e63a7762d989ea87b62488ad4caff64d43f263",
+      "icon_key": "78982fbf16bd3cb7f2577b36dfd31fd01e3f24b5ef376af8cc1ce7f2874bf697"
     }
   ]
 }
