@@ -38,11 +38,11 @@
     },
     {
       "name": "ProsperoMgr",
-      "filename": "ProsperoMgr_v1.2.elf",
-      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/ProsperoMgr_v1.2.elf",
+      "filename": "ProsperoMgr_v1.2.1.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/ProsperoMgr_v1.2.1.elf",
       "backup_url": null,
       "description": "All-in-one PS5 manager -- files, transfers, PKG installer, save backups, payload autoloader.",
-      "version": "1.2",
+      "version": "1.2.1",
       "fw_min": null,
       "fw_max": null,
       "platform": "ps5",
@@ -50,7 +50,7 @@
       "category": "System Utility",
       "author": "notmaj0r",
       "author_url": "https://github.com/notmaj0r",
-      "checksum": "127394cc4f1ac7347fea509e010e80bab7b5ee13d820665474cdc3928d173bce",
+      "checksum": "f9240e53ac5f035b36fb6eca2845dd49827eddfb133d1bbb2810b1a025db9c5b",
       "icon_key": "6d0c1481cc4fe1de0881307f6f89826fc4cb2c9a19a090d9f0e2dcf4bc3dec6c"
     },
     {
