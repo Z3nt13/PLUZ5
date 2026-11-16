@@ -112,6 +112,24 @@
     },
     {
       "name": "NeoEnabler",
+      "filename": "NeoEnabler_v0.7.0.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/NeoEnabler_v0.7.0.elf",
+      "backup_url": null,
+      "description": "port 8765",
+      "version": "0.7.0",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": "P5U",
+      "category": "Game Tools",
+      "author": "gasb07",
+      "author_url": "https://github.com/gasb07",
+      "checksum": "4195e02fa9f1d3d6ecacdf37149db1ba4ba3e6261d6a10d47d3c92b56ce9d4c6",
+      "icon_key": "fa264d2b3bbac7c54d5bc3b37b8c5bcc1d3f713fc287536e70f636d96b2cdc6c",
+      "retention": "current"
+    },
+    {
+      "name": "NeoEnabler",
       "filename": "NeoEnabler_v0.6.2.elf",
       "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/NeoEnabler_v0.6.2.elf",
       "backup_url": null,
@@ -126,7 +144,7 @@
       "author_url": "https://github.com/gasb07",
       "checksum": "c0506bd055820a199ddae59a475686fdcf6f832f94594870ba41cee9b3fce1be",
       "icon_key": "fa264d2b3bbac7c54d5bc3b37b8c5bcc1d3f713fc287536e70f636d96b2cdc6c",
-      "retention": "current"
+      "retention": "previous"
     },
     {
       "name": "PIZZA-HEN",
@@ -307,6 +325,24 @@
       "checksum": "8755172ec9bef1bff5453ea75606e0caf7c41b5963f94f5a1087e7e8c6d9b1bd",
       "icon_key": "2a1985fe1771dd7c0d8a8493a06b3f524493fadcbe1095ab0f29d1c095e92842",
       "retention": "current"
+    },
+    {
+      "name": "ShadowMountPlus (Beta)",
+      "filename": "ShadowMountPlus-Beta_v1.7beta8.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/ShadowMountPlus-Beta_v1.7beta8.elf",
+      "backup_url": null,
+      "description": "Slower-moving, more-tested track. Always kept regardless of retention count.",
+      "version": "1.7beta8",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": null,
+      "category": "Game Tools",
+      "author": "drakmor",
+      "author_url": "https://github.com/drakmor",
+      "checksum": "7163472217a2390f5bcbe3b61a96963976f7b7bd84d960b8d926f35b9cbecf28",
+      "icon_key": "2a1985fe1771dd7c0d8a8493a06b3f524493fadcbe1095ab0f29d1c095e92842",
+      "retention": "previous"
     },
     {
       "name": "WelcomeHubActivator",

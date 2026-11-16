@@ -106,11 +106,11 @@
     },
     {
       "name": "NeoEnabler",
-      "filename": "NeoEnabler_v0.6.2.elf",
-      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/NeoEnabler_v0.6.2.elf",
+      "filename": "NeoEnabler_v0.7.0.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/NeoEnabler_v0.7.0.elf",
       "backup_url": null,
       "description": "port 8765",
-      "version": "0.6.2",
+      "version": "0.7.0",
       "fw_min": null,
       "fw_max": null,
       "platform": "ps5",
@@ -118,7 +118,7 @@
       "category": "Game Tools",
       "author": "gasb07",
       "author_url": "https://github.com/gasb07",
-      "checksum": "c0506bd055820a199ddae59a475686fdcf6f832f94594870ba41cee9b3fce1be",
+      "checksum": "4195e02fa9f1d3d6ecacdf37149db1ba4ba3e6261d6a10d47d3c92b56ce9d4c6",
       "icon_key": "fa264d2b3bbac7c54d5bc3b37b8c5bcc1d3f713fc287536e70f636d96b2cdc6c"
     },
     {
