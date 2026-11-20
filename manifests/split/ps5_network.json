@@ -21,11 +21,11 @@
     },
     {
       "name": "elfldr",
-      "filename": "elfldr_v0.27.elf",
-      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/elfldr_v0.27.elf",
+      "filename": "elfldr_v0.28.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/elfldr_v0.28.elf",
       "backup_url": null,
       "description": "port 9021",
-      "version": "0.27",
+      "version": "0.28",
       "fw_min": null,
       "fw_max": null,
       "platform": "ps5",
@@ -33,7 +33,7 @@
       "category": "Network",
       "author": "ps5-payload-dev",
       "author_url": "https://github.com/ps5-payload-dev",
-      "checksum": "82f6227610172c98bad6efe68219fc93a10027035991f47eb4b75532d023407d",
+      "checksum": "66968bae6159d8fb06125fcd43fb99cf64d6bfdf730c70f37a6f5d056ff63458",
       "icon_key": "33a16891fe0d7363dec0575fcdc1748f3c699a738712fd184583e7caa7271f7f"
     },
     {

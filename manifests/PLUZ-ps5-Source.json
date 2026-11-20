@@ -327,11 +327,11 @@
     },
     {
       "name": "elfldr",
-      "filename": "elfldr_v0.27.elf",
-      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/elfldr_v0.27.elf",
+      "filename": "elfldr_v0.28.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/elfldr_v0.28.elf",
       "backup_url": null,
       "description": "port 9021",
-      "version": "0.27",
+      "version": "0.28",
       "fw_min": null,
       "fw_max": null,
       "platform": "ps5",
@@ -339,7 +339,7 @@
       "category": "Network",
       "author": "ps5-payload-dev",
       "author_url": "https://github.com/ps5-payload-dev",
-      "checksum": "82f6227610172c98bad6efe68219fc93a10027035991f47eb4b75532d023407d",
+      "checksum": "66968bae6159d8fb06125fcd43fb99cf64d6bfdf730c70f37a6f5d056ff63458",
       "icon_key": "33a16891fe0d7363dec0575fcdc1748f3c699a738712fd184583e7caa7271f7f"
     },
     {
@@ -786,11 +786,11 @@
     },
     {
       "name": "PS5 Webkit Autoloader",
-      "filename": "ps5-webkit-autoloader_v0.7.1.elf",
-      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/ps5-webkit-autoloader_v0.7.1.elf",
+      "filename": "ps5-webkit-autoloader_v0.8.2.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/ps5-webkit-autoloader_v0.8.2.elf",
       "backup_url": null,
       "description": "Unified exploit autoloader -- umtx2 (FW 1.00-5.50), slopkit (9.00-12.00), p2jb (12.02-12.70).",
-      "version": "0.7.1",
+      "version": "0.8.2",
       "fw_min": null,
       "fw_max": null,
       "platform": "ps5",
@@ -798,7 +798,7 @@
       "category": "Kernel",
       "author": "itsPLK",
       "author_url": "https://github.com/itsPLK",
-      "checksum": "df60538570e9811bb0b4652a3fdb3e1a35ec3455b3ca7c80edc4140c5bb47ce2",
+      "checksum": "1c415bc124944c85b86a4751006b98010b977f142142d67306d13804899bad54",
       "icon_key": "613e43cadd088927853dc6edbf69e0e851d9829440de66b14c09f22729deabde"
     },
     {
