@@ -526,6 +526,24 @@
     },
     {
       "name": "garlic-savemgr",
+      "filename": "garlic-savemgr-default2_v2.0.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/garlic-savemgr-default2_v2.0.elf",
+      "backup_url": null,
+      "description": "port 8082",
+      "version": "2.0",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": "P5U",
+      "category": "Game Tools",
+      "author": "earthonion",
+      "author_url": "https://github.com/earthonion",
+      "checksum": "805902a1ef3d54854850518b11602e0ab973192e0338fc30b28a3a9e4aae5be6",
+      "icon_key": "2fc0ab0cb7d11357d732e862d3dd9cdb88d37f205b634955ae13c8d316462911",
+      "retention": "current"
+    },
+    {
+      "name": "garlic-savemgr",
       "filename": "garlic-savemgr-default2_v1.15-beta23.elf",
       "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/garlic-savemgr-default2_v1.15-beta23.elf",
       "backup_url": null,
@@ -540,7 +558,7 @@
       "author_url": "https://github.com/earthonion",
       "checksum": "b4667d5bc57998e66fd4b093d367a26bec47c9517e2c0d53e0fc5eef5f2c4098",
       "icon_key": "2fc0ab0cb7d11357d732e862d3dd9cdb88d37f205b634955ae13c8d316462911",
-      "retention": "current"
+      "retention": "previous"
     },
     {
       "name": "HWInfo Bench",
@@ -922,6 +940,24 @@
     },
     {
       "name": "PS5 Webkit Autoloader",
+      "filename": "ps5-webkit-autoloader_v0.8.3.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/ps5-webkit-autoloader_v0.8.3.elf",
+      "backup_url": null,
+      "description": "Unified exploit autoloader -- umtx2 (FW 1.00-5.50), slopkit (9.00-12.00), p2jb (12.02-12.70).",
+      "version": "0.8.3",
+      "fw_min": null,
+      "fw_max": null,
+      "platform": "ps5",
+      "hw_target": null,
+      "category": "Kernel",
+      "author": "itsPLK",
+      "author_url": "https://github.com/itsPLK",
+      "checksum": "f4b0dee9af572ea1cb77aaf1e6fc5bf8ef520fc0a0a30753dd94a5cbdc04dd8e",
+      "icon_key": "613e43cadd088927853dc6edbf69e0e851d9829440de66b14c09f22729deabde",
+      "retention": "current"
+    },
+    {
+      "name": "PS5 Webkit Autoloader",
       "filename": "ps5-webkit-autoloader_v0.8.2.elf",
       "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/ps5-webkit-autoloader_v0.8.2.elf",
       "backup_url": null,
@@ -936,7 +972,7 @@
       "author_url": "https://github.com/itsPLK",
       "checksum": "1c415bc124944c85b86a4751006b98010b977f142142d67306d13804899bad54",
       "icon_key": "613e43cadd088927853dc6edbf69e0e851d9829440de66b14c09f22729deabde",
-      "retention": "current"
+      "retention": "previous"
     },
     {
       "name": "PS5 Webkit Autoloader",
@@ -954,7 +990,7 @@
       "author_url": "https://github.com/itsPLK",
       "checksum": "df60538570e9811bb0b4652a3fdb3e1a35ec3455b3ca7c80edc4140c5bb47ce2",
       "icon_key": "613e43cadd088927853dc6edbf69e0e851d9829440de66b14c09f22729deabde",
-      "retention": "previous"
+      "retention": "previous-2"
     },
     {
       "name": "PS5Library Agent (rdiol12)",
