@@ -4,11 +4,11 @@
   "payloads": [
     {
       "name": "App Title",
-      "filename": "App-Title_v0.2.15.elf",
-      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/App-Title_v0.2.15.elf",
+      "filename": "App-Title_v0.2.16.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/App-Title_v0.2.16.elf",
       "backup_url": null,
       "description": "Config `/data/AppTitle/`. Latest **v0.2.8**. Binary: `App_Title-porhe911_v0.2.8.elf`.",
-      "version": "0.2.15",
+      "version": "0.2.16",
       "fw_min": null,
       "fw_max": null,
       "platform": "ps5",
@@ -16,7 +16,7 @@
       "category": "Media",
       "author": "porhe911",
       "author_url": "https://github.com/porhe911",
-      "checksum": "d3d2f5d27d6ace1e8722becd09aff1a5d6821dcb5535c7e04236f0987075e505",
+      "checksum": "1cce350410947f0901d2b03c11712fc577522f574454cc3d8aea2666ef1f7b0d",
       "icon_key": "3ba33f8005964cf473e1cc90aa81cae5af85583d0b078eacab24931a596e888a"
     }
   ]
