@@ -106,11 +106,11 @@
     },
     {
       "name": "PS5 Webkit Autoloader",
-      "filename": "ps5-webkit-autoloader_v0.8.3.elf",
-      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/ps5-webkit-autoloader_v0.8.3.elf",
+      "filename": "ps5-webkit-autoloader_v0.8.4.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/ps5-webkit-autoloader_v0.8.4.elf",
       "backup_url": null,
       "description": "Unified exploit autoloader -- umtx2 (FW 1.00-5.50), slopkit (9.00-12.00), p2jb (12.02-12.70).",
-      "version": "0.8.3",
+      "version": "0.8.4",
       "fw_min": null,
       "fw_max": null,
       "platform": "ps5",
@@ -118,7 +118,7 @@
       "category": "Kernel",
       "author": "itsPLK",
       "author_url": "https://github.com/itsPLK",
-      "checksum": "f4b0dee9af572ea1cb77aaf1e6fc5bf8ef520fc0a0a30753dd94a5cbdc04dd8e",
+      "checksum": "6224b1d4e221b3dcae1f198883ee998f16c824e518112e64189c5d1d376ed8d6",
       "icon_key": "613e43cadd088927853dc6edbf69e0e851d9829440de66b14c09f22729deabde"
     }
   ]
