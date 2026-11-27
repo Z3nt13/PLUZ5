@@ -140,11 +140,11 @@
     },
     {
       "name": "garlic-savemgr",
-      "filename": "garlic-savemgr-default2_v2.0.elf",
-      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/garlic-savemgr-default2_v2.0.elf",
+      "filename": "garlic-savemgr-default2_v2.0.2.elf",
+      "url": "https://raw.githubusercontent.com/Z3nt13/PLUZ5/main/payloads/garlic-savemgr-default2_v2.0.2.elf",
       "backup_url": null,
       "description": "port 8082",
-      "version": "2.0",
+      "version": "2.0.2",
       "fw_min": null,
       "fw_max": null,
       "platform": "ps5",
@@ -152,7 +152,7 @@
       "category": "Game Tools",
       "author": "earthonion",
       "author_url": "https://github.com/earthonion",
-      "checksum": "805902a1ef3d54854850518b11602e0ab973192e0338fc30b28a3a9e4aae5be6",
+      "checksum": "b1d8c2b4f8f3f97273a774e4efeda32273ede6217de1be171c816224b98ac277",
       "icon_key": "2fc0ab0cb7d11357d732e862d3dd9cdb88d37f205b634955ae13c8d316462911"
     }
   ]
